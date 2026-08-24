@@ -119,3 +119,88 @@
 76. **[ملخص]** *The effect of moisture on the electrical resistivity of building structures*, IEEE. https://ieeexplore.ieee.org/document/10701443/
 77. **[ملخص]** *Innovative and easy-to-implement moisture monitoring system for brick units*. https://www.sciencedirect.com/science/article/abs/pii/S0950061818317975
 78. **[ملخص]** *The application of electrical resistance measurements to water transport in lime–masonry systems*, Applied Physics A. https://link.springer.com/article/10.1007/s00339-011-6653-0
+
+---
+
+# المصادر — المرحلة 2 (العزل، التثبيت، الانضغاط — عالمياً)
+
+## 11. المواصفات والنشرات الفنية
+
+79. **[م]** BIA Technical Note 3A — *Brick Masonry Material Properties*. جداول مقاومة الوحدات، طريقة مقاومة الوحدة لـ f'm، معامل الكسر، الإجهاد المسموح للشد بالانحناء، معامل المرونة، معاملات الثبات البُعدي، وحدّ IRA. https://www.gobrick.com/media/file/TN_3A_Brick_Masonry_Material_Properties.pdf
+80. **[م]** EOTA **ETAG 020 — Part 5**: *Plastic anchors for use in autoclaved aerated concrete (AAC)*, تعديل ديسمبر 2011. https://www.eota.eu/sites/default/files/uploads/ETAGs/etag-020-part5.pdf
+81. مواصفات مرجعية: **EN 1996-1-1** (اليوروكود 6)، **EN 771-4** (وحدات AAC)، **EN 12602** (مكوّنات AAC المسلّحة)، **EN 1745** (الخواص الحرارية للبناء ومعامل التحويل الرطوبي)، **EN ISO 8990** و**EN 1934** (الصندوق الساخن)، **ASTM C1314** (مناشير البناء)، **IS 2222** (الطابوق المثقّب — الهند)، **DIN 20000-404** (أصناف AAC)، **GOST 26602.1-99**.
+
+## 12. العزل الحراري
+
+82. **[م]** Phonphuak, Teerakun, Srisuwan, Ruenruangrit, Saraphirom — *The Use of Sawdust Waste on Physical Properties and Thermal Conductivity of Fired Clay Brick Production*, **International Journal of GEOMATE**, May 2020, Vol.18 Issue 69, pp. 24–29, DOI: 10.21660/2020.69.5706 — **تايلاند**. https://geomatejournal.com/geomate/article/download/1479/1402
+83. **[م]** *Numerical thermal assessment and theoretical analysis of horizontal-hole interlock composite insulation blocks*, PMC10900997 — هندسة الفجوات H مقابل المتصالبة. https://pmc.ncbi.nlm.nih.gov/articles/PMC10900997/
+84. **[ن]** *Thermal properties of fired clay bricks from waste recycling. A review of studies*, **Fire Research** (PagePress). https://materials.pagepress.org/index.php/fire/article/view/71
+85. **[ن]** *Comprehensive 4E performance assessment of novel porous clay bricks across new climate zones of Türkiye*, Scientific Reports. https://www.nature.com/articles/s41598-026-37241-3
+86. **[ن]** *Assessment of thermal performance of different types of masonry bricks used in Saudi Arabia*, Applied Thermal Engineering. https://www.sciencedirect.com/science/article/abs/pii/S1359431108002615
+87. **[ن]** *Improvement of the thermal performance of hollow clay bricks for structural masonry walls*, Construction and Building Materials. https://www.sciencedirect.com/science/article/abs/pii/S0950061824002010
+88. **[ن]** *Changes in Clay Hollow Block Geometry for Energy Efficiency Benefits — Thermal Simulation for Brazil*, Buildings 13(7):1594. https://doi.org/10.3390/buildings13071594
+89. **[ن]** *Thermal Performance of Hollow Clay Brick with Low Emissivity Treatment in Surface Enclosures*, Coatings 4(4):715. https://www.mdpi.com/2079-6412/4/4/715
+90. **[ن]** *Experimental and numerical investigation of a hollow brick filled with perlite insulation*, Energy and Buildings. https://www.sciencedirect.com/science/article/abs/pii/S0378778810000861
+91. **[ن]** *Modeling the Thermal Behavior of Egyptian Perforated Masonry Red Brick Filled with Material of Low Thermal Conductivity*. https://www.sciencedirect.com/science/article/abs/pii/S2352710215300541
+92. **[ن]** *Exploring the thermal behaviour of building materials: Terracotta, concrete hollow block and hollow brick, under the arid climate, case study of Biskra-Algeria*. https://www.sciencedirect.com/science/article/abs/pii/S2214785322008665
+93. **[ن]** *Development of energy-efficient hollow concrete blocks using perlite, vermiculite, volcanic scoria, and expanded polystyrene*, Construction and Building Materials. https://www.sciencedirect.com/science/article/abs/pii/S0950061823004348
+94. **[ن]** *Dataset showing thermal conductivity of South-Eastern Nigerian kaolinite clay admixtures with sawdust and iron filings for fired-bricks production*, PMC6864342.
+95. **[ن]** *Thermal conductivity of insulation brick developed from sawdust and selected Uganda clays*. https://www.academia.edu/21026997
+96. **[ن]** *Preparation of geopolymer insulating bricks from waste raw materials*, Construction and Building Materials. https://www.sciencedirect.com/science/article/abs/pii/S0950061819316113
+97. **[ن]** *Fabrication of thermal insulation geopolymer bricks using ferrosilicon slag and alumina waste*, Case Studies in Construction Materials. https://www.sciencedirect.com/science/article/pii/S2214509521002527
+98. **[ن]** *On Thermal Insulation Properties of Various Foaming Materials Modified Fly Ash Based Geopolymers*, PMC10421359.
+99. **[ن]** *Mechanical Properties and Thermal Conductivity of Lightweight Foamed Geopolymer Concretes*, IOP Conf. Ser. 551:012089 — **ماليزيا**.
+100. **[ن]** *A unifying equation for the five fundamental effective thermal conductivity structural models* (Series / Parallel / Maxwell-Eucken 1 & 2 / EMT). https://www.academia.edu/14701251
+101. **[ن]** *Effective thermal conductivity of porous building materials — analysis and verification*. https://www.researchgate.net/publication/244972504
+102. **[ن]** *The thermal conductivity of the masonry of handmade brick Cultural Heritage with respect to density and humidity*, Journal of Cultural Heritage — **إسبانيا**. https://www.sciencedirect.com/science/article/pii/S1296207421001898
+103. **[ن]** *Comparative Analysis of the Thermal Conductivity of Handmade and Mechanical Bricks Used in the Cultural Heritage*, Materials 15(11):4001. https://doi.org/10.3390/ma15114001
+104. **[ن]** *Influence of rising damp and evaporation on heat transfer of traditional masonry walls* — **الصين**. https://www.sciencedirect.com/science/article/abs/pii/S2352710226014853
+105. **[ن]** *U-value of a dried wall made of perforated porous clay bricks: Hot box measurement versus numerical analysis*, Energy and Buildings.
+106. **[ن]** *Thermal performance evaluation of traditional walls and roof used in tropical climate using guarded hot box* — **الهند**.
+107. **[ن]** *Effect of incorporating Expanded polystyrene beads on Thermophysical, mechanical properties and life cycle analysis of lightweight earth blocks*. https://www.sciencedirect.com/science/article/abs/pii/S0950061823006608
+108. **[ن]** *Thermophysical properties of fired clay bricks with waste ceramics and paper pulp as pore-forming agent*, J. Thermal Analysis and Calorimetry. https://link.springer.com/article/10.1007/s10973-018-7092-3
+109. **[ن]** *Green building development utilising modified fired clay bricks and eggshell waste*, PMC11772682.
+110. **[ن]** *Thermophysical characterization of earth blocks stabilized by cement, sawdust and lime*. https://www.academia.edu/10313093
+111. **[ن]** *Development of bio-based lightweight and thermally insulated bricks … hot arid climates* — اختُبر في **القاهرة وجازان**. https://www.sciencedirect.com/science/article/abs/pii/S235271022401235X
+112. **[ن]** *Effect of using natural and local environment contents on the thermal conductivity of building materials; case in Medina, Saudi Arabia*. https://www.sciencedirect.com/science/article/pii/S2214157X21007607
+113. **[ن]** *Sawdust recycling in the production of lightweight bricks: How the amount of additive and the firing temperature influence the physical properties*. https://sciencedirect.com/science/article/abs/pii/S0950061819328880
+
+## 13. الترابط والتثبيت
+
+114. **[ن]** *Experimental pull-out tests and design indications for strength anchors installed in masonry walls* — 108 فحص سحب على 5 جدران (طابوق مصمت، مثقّب، AAC). https://www.researchgate.net/publication/343199971
+115. **[ن]** *Predicting pull-out strength and failure modes of metal anchors embedded in masonry structures using explainable machine learning models and empirical equations*, Results in Engineering. https://www.sciencedirect.com/science/article/pii/S259012302501357X
+116. **[ن]** *Laboratory investigation of pull-out capacity of chemical anchors in individual new and vintage masonry units under quasi-static, cyclic and impact load*. https://www.sciencedirect.com/science/article/abs/pii/S2352012421007281
+117. **[ن]** *Anchors to solid clay brick masonry in tension: Behavior under monotonic and repeated loading for varied embedment depths*. https://www.sciencedirect.com/science/article/abs/pii/S2352012424015200
+118. **[ن]** *Shear and tensile bond strengths of autoclaved aerated concrete (AAC) masonry with different mortar mixtures and thicknesses*. https://www.researchgate.net/publication/353295864
+119. **[ن]** *Bond strength of Autoclaved Aerated Concrete (AAC) masonry using various joint materials*, J. Building Engineering. https://www.sciencedirect.com/science/article/abs/pii/S2352710219315025
+120. **[ن]** *Experimental Characterization of the Initial Shear Strength of Composite Masonry including AAC Blocks and DPC Layers*, Sustainability 13(22):12749. https://doi.org/10.3390/su132212749
+121. **[ن]** *IRA and the Flexural Bond Strength of Clay Brick Masonry*, ASTM STP24988S. https://dl.astm.org/stps/book/chapter-pdf/44106/10_1520_stp24988s.pdf
+122. **[ن]** Portland Cement Association IS278 — *Factors Affecting Bond Strength of Masonry*.
+123. **[ن]** *Flexural bond strength of masonry using various blocks and mortars*, Materials and Structures. https://link.springer.com/article/10.1007/BF02486202
+124. **[ن]** Yuen & Lissel — *Flexural bond strength of clay brick masonry*, WIT Press. https://www.witpress.com/Secure/elibrary/papers/MC07/MC07025FU1.pdf
+125. **[ن]** *Influence of conditioning of clay bricks over shear strength of brick masonry*. https://www.sciencedirect.com/science/article/abs/pii/S2352710223023185
+126. **[ن]** *A Review on the Mechanical Properties of Natural Fiber Reinforced Compressed Earth Blocks*, Journal of Natural Fibers 19(14). https://www.tandfonline.com/doi/abs/10.1080/15440478.2021.1958405
+127. **[ن]** *Physical and mechanical behavior of cement-stabilized compressed earth blocks reinforced by sisal fibers*. https://www.sciencedirect.com/science/article/abs/pii/S221478532108189X
+
+## 14. مقاومة الانضغاط والمسامية
+
+128. **[ن]** *Compressive strength of masonry prisms under compression according to Eurocode 6 — EN 1996-1-1 (2005)*. https://www.researchgate.net/publication/333731008
+129. **[ن]** *Compressive Strength of Hollow Concrete Block Masonry Compared with Eurocode 6*, International Masonry Society.
+130. **[ن]** *A General Relationship Between Porosity and Uniaxial Strength of Engineering Materials* (Ryshkewitch–Duckworth). https://www.researchgate.net/publication/237188809
+131. **[ن]** *Compression Strength of Porous Sintered Alumina and Zirconia*. https://www.researchgate.net/publication/229747088
+132. **[ن]** *Moisture impact on compressive strength and deformability of brick masonry*, Scientific Reports / PMC12877167. https://www.nature.com/articles/s41598-025-31595-w
+133. **[ن]** *Effect of moisture condition on mechanical behavior of low strength brick masonry*. https://www.sciencedirect.com/science/article/abs/pii/S2352710217306800
+134. **[ن]** *Experimental analysis of the compressive behaviour of perforated brick masonry using digital image correlation* — **جامعة كاتالونيا التقنية، إسبانيا**. https://www.sciencedirect.com/science/article/pii/S095006182401612X
+135. **[ن]** *Anisotropy and compressive strength evaluation of solid fired clay bricks by testing small specimens*. https://www.sciencedirect.com/science/article/pii/S0950061822018591
+136. **[ن]** *Effect of mix design on compressed earth block strength*, Construction and Building Materials. https://www.sciencedirect.com/science/article/abs/pii/S0950061817320354
+137. **[ن]** *Strength, durability, and life cycle assessment of compressed stabilized earth blocks with ceramic waste powder*. https://www.sciencedirect.com/science/article/abs/pii/S0950061826009827
+138. **[ن]** *Validation of Selected Non-Destructive Methods for Determining the Compressive Strength of Masonry Units Made of Autoclaved Aerated Concrete*, PMC6385005 — **بولندا**.
+139. **[ن]** *Autoclaved aerated concrete masonry for energy efficient buildings: State of the art and future developments*, Construction and Building Materials. https://www.sciencedirect.com/science/article/pii/S0950061823027137
+140. **[ن]** *Recent trend on the valorization of waste fired clay bricks in construction materials: A review* — التوزيع الجغرافي للإنتاج البحثي. https://www.sciencedirect.com/science/article/pii/S2666539526000350
+141. **[ن]** *Towards sustainable bricks production: An overview*. https://www.sciencedirect.com/science/article/abs/pii/S0950061818300382
+142. **[ن]** *Utilization of Construction and Demolition Mix Waste in the Fired Brick Production*, PMC9822509.
+143. **[ن]** *Eco-Friendly Fired Brick Produced from Industrial Ash and Natural Clay*, PMC7918474.
+144. **[ن]** *Production of Sustainable concrete brick units using Nano-silica*, Case Studies in Construction Materials. https://www.sciencedirect.com/science/article/pii/S2214509521000139
+145. **[ن]** *Synergistic Improvement of Strength Characteristics in Recycled Aggregates Using Nano-Clay and Polypropylene Fiber*, PMC10857017.
+146. **[ن]** *Effects of expanded polystyrene (EPS) particles on fire resistance, thermal conductivity and compressive strength of foamed concrete*. https://www.sciencedirect.com/science/article/abs/pii/S0950061816302756
+147. **[ن]** *Optimization and performance of expanded polystyrene concrete for sustainable infill wall construction*, Scientific Reports. https://www.nature.com/articles/s41598-025-07705-z

@@ -234,6 +234,18 @@ input[type=range]{width:100%; accent-color:var(--accent)}
 .readout .sub{font-size:.82rem; color:var(--ink-2); margin-top:.9rem; border-top:1px solid var(--line-soft); padding-top:.9rem}
 .bar{height:8px; border-radius:99px; background:var(--line-soft); overflow:hidden; margin:1rem 0 .3rem}
 .bar>i{display:block; height:100%; background:var(--ember); border-radius:99px; transition:width .18s ease}
+.dual{display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:.4rem}
+.dual>div{display:flex; flex-direction:column; gap:.15rem}
+.mini{font-size:.76rem; color:var(--muted); line-height:1.4}
+.big2{font-family:"IBM Plex Mono",monospace; font-size:clamp(1.6rem,4.5vw,2.2rem); font-weight:600; line-height:1.05; color:var(--ember); font-variant-numeric:tabular-nums}
+.verdict-row{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.9rem}
+.pill{font-size:.76rem; font-weight:600; padding:.22rem .6rem; border-radius:999px; border:1px solid transparent; white-space:nowrap}
+.pill.ok{background:color-mix(in srgb,var(--ok) 15%,transparent); color:var(--ok); border-color:color-mix(in srgb,var(--ok) 35%,transparent)}
+.pill.no{background:var(--line-soft); color:var(--muted); border-color:var(--line)}
+.gbar{display:grid; grid-template-columns:minmax(7.5rem,auto) 1fr auto; gap:.6rem; align-items:center; margin:.5rem 0; font-size:.85rem}
+.gbar .track{height:14px; background:var(--line-soft); border-radius:3px; overflow:hidden}
+.gbar .track>i{display:block; height:100%; background:var(--accent); border-radius:3px}
+.gbar .val{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; color:var(--ink-2); font-size:.82rem}
 .formula{
   font-family:"IBM Plex Mono",monospace; font-size:.95rem; text-align:center;
   background:var(--raised); border:1px solid var(--line-soft); border-radius:9px; padding:.6rem .8rem;
@@ -276,7 +288,7 @@ footer p{max-width:70ch}
   <div class="topbar-in">
     <div class="brand"><span class="glyph" aria-hidden="true"></span> أطلس الطابوق</div>
     <div style="display:flex;align-items:center;gap:.6rem">
-      <span class="phase-chip">المرحلة 1 من 6 · منجزة</span>
+      <span class="phase-chip">المرحلتان 1 و2 من 6 · منجزتان</span>
       <button class="theme-btn" id="themeBtn" type="button">◐ السمة</button>
     </div>
   </div>
@@ -293,9 +305,9 @@ footer p{max-width:70ch}
     </p>
     <div class="hero-stats">
       <div class="stat"><span class="n">70</span><span class="l">نوعاً مفهرساً في 9 مجموعات</span></div>
-      <div class="stat"><span class="n">78</span><span class="l">مصدراً علمياً ومواصفة</span></div>
+      <div class="stat"><span class="n">147</span><span class="l">مصدراً علمياً ومواصفة</span></div>
       <div class="stat"><span class="n">2</span><span class="l">منتجان مستهدفان: حامل وعازل</span></div>
-      <div class="stat"><span class="n">5</span><span class="l">مسارات تصنيع مرشّحة</span></div>
+      <div class="stat"><span class="n">20+</span><span class="l">دولة مصدرها في المراجعة</span></div>
     </div>
   </header>
 
@@ -304,14 +316,20 @@ footer p{max-width:70ch}
       <p class="rail-title">الفهرس</p>
       <ol id="railList">
         <li><a href="#tension"><span class="num">01</span> التناقض الهندسي</a></li>
-        <li><a href="#tradeoff"><span class="num">02</span> خريطة المقايضة</a></li>
-        <li><a href="#types"><span class="num">03</span> مستكشف الأنواع</a></li>
-        <li><a href="#fire"><span class="num">04</span> حاسبة تصنيف الحريق</a></li>
-        <li><a href="#additives"><span class="num">05</span> مصفوفة الإضافات</a></li>
-        <li><a href="#standards"><span class="num">06</span> المواصفة العراقية</a></li>
-        <li><a href="#iraq"><span class="num">07</span> السياق العراقي</a></li>
-        <li><a href="#routes"><span class="num">08</span> المسارات المرشّحة</a></li>
-        <li><a href="#plan"><span class="num">09</span> خطة المراحل</a></li>
+        <li><a href="#tradeoffs"><span class="num">02</span> المقايضات الخمس</a></li>
+        <li><a href="#tradeoff"><span class="num">03</span> خريطة المقايضة</a></li>
+        <li><a href="#porelab"><span class="num">04</span> مختبر المسامية</a></li>
+        <li><a href="#unitwall"><span class="num">05</span> من الوحدة إلى الجدار</a></li>
+        <li><a href="#thermal"><span class="num">06</span> العزل الحراري</a></li>
+        <li><a href="#fixing"><span class="num">07</span> قوة التثبيت</a></li>
+        <li><a href="#types"><span class="num">08</span> مستكشف الأنواع</a></li>
+        <li><a href="#fire"><span class="num">09</span> تصنيف الحريق</a></li>
+        <li><a href="#additives"><span class="num">10</span> مصفوفة الإضافات</a></li>
+        <li><a href="#standards"><span class="num">11</span> المواصفة العراقية</a></li>
+        <li><a href="#iraq"><span class="num">12</span> السياق العراقي</a></li>
+        <li><a href="#routes"><span class="num">13</span> المسارات المرشّحة</a></li>
+        <li><a href="#atlas"><span class="num">14</span> الفهرس الجغرافي</a></li>
+        <li><a href="#plan"><span class="num">15</span> خطة المراحل</a></li>
       </ol>
     </nav>
 
@@ -348,8 +366,41 @@ footer p{max-width:70ch}
       </section>
 
       <!-- 02 -->
+      <section id="tradeoffs">
+        <p class="sec-kicker">02 — ما كشفته المراجعة العالمية</p>
+        <h2>المقايضة ليست ثنائية — إنها شبكة من خمس مقايضات</h2>
+        <p>
+          يُقال عادةً إن الأمر مفاضلة بين العزل والمقاومة. مراجعة أدبيات عشرين دولة تُظهر أن الأمر أعقد:
+          كل رافعة تحسّن العزل عبر <strong>الكيمياء</strong> تدفع الثمن في ثلاثة حسابات دفعةً واحدة.
+        </p>
+        <div class="tw">
+          <table>
+            <thead><tr><th class="n">#</th><th>المقايضة</th><th>الآلية</th><th>حجم الضرر الموثّق</th></tr></thead>
+            <tbody>
+              <tr><td class="code-cell">م1</td><td>مسامية ↑ ← مقاومة ↓</td><td>قانون Ryshkewitch–Duckworth الأُسّي</td><td><strong>كل +10 نقاط مسامية تحذف نصف المقاومة</strong> — معامل b ≈ 6.4</td></tr>
+              <tr><td class="code-cell">م2</td><td>مسامية مفتوحة ↑ ← ترابط ↓</td><td>الطابوقة تسحب ماء إماهة المونة عبر معدل الامتصاص الابتدائي</td><td>الترابط يهبط حتى <span class="mono">0.083</span> MPa في أسوأ التوليفات</td></tr>
+              <tr><td class="code-cell">م3</td><td>كثافة ↓ ← قوة سحب المثبتات ↓</td><td>قدرة السحب دالة للكثافة وعمق التعشيق</td><td>الخرسانة الخلوية: <span class="mono">0.5–2.5</span> kN، وتثبيت متعدد <strong>إجباري بالمواصفة</strong></td></tr>
+              <tr><td class="code-cell">م4</td><td>مثبِّت ↑ ← مقاومة ↑ لكن λ ↑</td><td>المثبّت يملأ المسام فيوصل الحرارة</td><td>من 2.5% إلى 12.5% إسمنت: <strong>λ +164%</strong></td></tr>
+              <tr><td class="code-cell">م5</td><td>مونة أقوى ← الترابط يشبع</td><td>أُسّ المونة 0.3 فقط في صيغة اليوروكود</td><td>مضاعفة مقاومة المونة = <span class="mono">+23%</span> فقط في الجدار</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          <span class="tag">الرافعة التي تكسر الشبكة</span>
+          <p>
+            رافعة واحدة لا تدفع أياً من هذه الأثمان: <strong>الهندسة</strong>. الفراغ المصمَّم لا يدخل في
+            قانون المسامية (المقاومة تُحسب على المساحة الصافية)، ولا يسحب ماء المونة، ويمكن تفادي أثره على
+            التثبيت بترك أضلاع مصمتة مقصودة. <strong>الدليل: بلوك بفجوات على شكل H أعطى توصيلاً مكافئاً
+            0.43–0.50 مقابل 0.78–0.81 للمتصالب — بنفس المادة ونفس الكثافة — ومقاومته بقيت 13.0–15.9 ميغاباسكال.</strong>
+            لا توجد إضافة كيميائية واحدة في الأدبيات كلها تعطي هذا المكسب بلا خسارة.
+          </p>
+          <p style="margin-top:.6rem"><strong>القاعدة المستخلصة: قبل أن تعدّل الخلطة، عدّل القالب.</strong></p>
+        </div>
+      </section>
+
+      <!-- 03 -->
       <section id="tradeoff">
-        <p class="sec-kicker">02 — الأدلة</p>
+        <p class="sec-kicker">03 — الأدلة</p>
         <h2>خريطة المقايضة: أين تقع كل مادة بين العزل والمقاومة</h2>
         <p>
           كل نقطة مادة قائمة فعلاً في السوق أو في الأدبيات. المحور الأفقي هو التوصيل الحراري (كلما قلّ كان أعزل)،
@@ -382,9 +433,289 @@ footer p{max-width:70ch}
         </div>
       </section>
 
-      <!-- 03 -->
+      <!-- 04 -->
+      <section id="porelab">
+        <p class="sec-kicker">04 — الأداة</p>
+        <h2>مختبر المسامية: كم تكلّف كل نقطة عزل؟</h2>
+        <p>
+          حرّك المسامية وشاهد ما يحدث للمقاومة والتوصيل في آنٍ واحد. المقاومة محسوبة بقانون
+          <strong>Ryshkewitch–Duckworth</strong> المعايَر على بيانات منشورة (53 ميغاباسكال عند مسامية 3.5%
+          و7 ميغاباسكال عند 35%)، والتوصيل مقدَّر بنموذج الوسط الفعّال.
+        </p>
+        <div class="card">
+          <div class="calc-grid">
+            <div>
+              <div class="field">
+                <label class="f" for="pP">المسامية الكلية للمادة: <span class="mono" id="pPv">18</span>%</label>
+                <input type="range" id="pP" min="5" max="45" step="1" value="18">
+                <div class="ticks"><span>5</span><span>25</span><span>45</span></div>
+              </div>
+              <div class="field">
+                <label class="f" for="pV">نسبة التثقيب (الفجوات المصمَّمة): <span class="mono" id="pVv">35</span>%</label>
+                <input type="range" id="pV" min="0" max="55" step="1" value="35">
+                <div class="ticks"><span>0</span><span>30</span><span>55</span></div>
+              </div>
+              <div class="field">
+                <label class="f" for="pG">هندسة الفجوة</label>
+                <select id="pG">
+                  <option value="1">فجوات تقليدية (متصالبة أو صفوف مستقيمة)</option>
+                  <option value="1.75" selected>فجوات محسّنة على شكل H (÷ 1.75)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="f" for="pW">حالة التصميم</label>
+                <select id="pW">
+                  <option value="1">جافة (كما تُنشر الأرقام في الأدبيات)</option>
+                  <option value="2" selected>تصميمية للجنوب: خصم رطوبة على الاثنين</option>
+                </select>
+              </div>
+            </div>
+            <div class="readout" style="text-align:right">
+              <div class="dual">
+                <div><span class="mini">مقاومة المادة (مساحة صافية)</span><span class="big2" id="pS">—</span><span class="mini">ميغاباسكال</span></div>
+                <div><span class="mini">التوصيل الحراري المكافئ</span><span class="big2" id="pL">—</span><span class="mini">واط/م·كلفن</span></div>
+              </div>
+              <div class="sub" style="text-align:right">
+                <span class="mini">مقاومة المادة جافةً (قبل خصم الرطوبة): <b class="mono" id="pDry">—</b> ميغاباسكال</span><br>
+                <span class="mini">حمولة الوحدة على المساحة الإجمالية: <b class="mono" id="pSg">—</b> ميغاباسكال</span><br>
+                <span class="mini">مقاومة الجدار المتوقعة (مونة M/S): <b class="mono" id="pFm">—</b> ميغاباسكال</span>
+              </div>
+              <div id="pVerdict" class="verdict-row"></div>
+            </div>
+          </div>
+          <p class="dim" style="font-size:.8rem;margin:1rem 0 0">
+            نماذج تقديرية للاستكشاف والمعايرة، لا بديل عن الفحص. σ = σ₀·exp(−6.4·P) بـ σ₀ = 66 ميغاباسكال، معايَراً على 53 و7 ميغاباسكال عند مسامية 3.5% و35%؛ λ بالمتوسط الهندسي بين الطور الصلب (1.4) والهواء (0.026)؛ خصم الرطوبة −18% على المقاومة و+25% على λ. أهداف المقاومة تُقاس على القيمة الجافة، وأهداف التوصيل على القيمة التصميمية.
+          </p>
+        </div>
+      </section>
+
+      <!-- 05 -->
+      <section id="unitwall">
+        <p class="sec-kicker">05 — الأداة</p>
+        <h2>من الوحدة إلى الجدار: أكبر خطأ في هذا الموضوع</h2>
+        <p>
+          مقاومة الطابوقة <strong>ليست</strong> مقاومة الجدار. الجدار يحقّق <strong>35–59% فقط</strong> من مقاومة
+          وحدته — والنسبة تسوء كلما ارتفعت المقاومة. هذه الحاسبة تطبّق طريقتين معتمدتين معاً.
+        </p>
+        <div class="card">
+          <div class="calc-grid">
+            <div>
+              <div class="field">
+                <label class="f" for="uS">مقاومة الوحدة على المساحة الصافية: <span class="mono" id="uSv">25</span> ميغاباسكال</label>
+                <input type="range" id="uS" min="5" max="85" step="1" value="25">
+                <div class="ticks"><span>5</span><span>45</span><span>85</span></div>
+              </div>
+              <div class="field">
+                <label class="f" for="uM">نوع المونة (جداول TMS)</label>
+                <select id="uM">
+                  <option value="MS" selected>نوع M أو S</option>
+                  <option value="N">نوع N</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="f" for="uF">مقاومة المونة لصيغة اليوروكود 6: <span class="mono" id="uFv">10</span> ميغاباسكال</label>
+                <input type="range" id="uF" min="2" max="20" step="1" value="10">
+                <div class="ticks"><span>2</span><span>10</span><span>20</span></div>
+              </div>
+            </div>
+            <div class="readout" style="text-align:right">
+              <div class="dual">
+                <div><span class="mini">طريقة مقاومة الوحدة — TMS</span><span class="big2" id="uT">—</span><span class="mini">f′<sub>m</sub> ميغاباسكال</span></div>
+                <div><span class="mini">اليوروكود 6 — f<sub>k</sub></span><span class="big2" id="uE">—</span><span class="mini">ميغاباسكال</span></div>
+              </div>
+              <div class="sub" style="text-align:right">
+                <span class="mini" id="uRatio"></span>
+              </div>
+              <div class="formula" dir="ltr" style="margin-top:.8rem">f<sub>k</sub> = 0.55 · f<sub>b</sub><sup>0.7</sup> · f<sub>m</sub><sup>0.3</sup></div>
+            </div>
+          </div>
+          <p class="dim" style="font-size:.8rem;margin:1rem 0 0">
+            جدول TMS مبنيّ على الاستيفاء الخطي بين نقاطه السبع؛ مونة النوع N لا تبلغ أصلاً f′<sub>m</sub> فوق
+            20.69 ميغاباسكال مهما قوّيت الوحدة — سقف تفرضه المونة لا الطابوقة.
+          </p>
+        </div>
+      </section>
+
+      <!-- 06 -->
+      <section id="thermal">
+        <p class="sec-kicker">06 — المحور الأول</p>
+        <h2>العزل الحراري: ترتيب الرافعات بالكفاءة لا بالشهرة</h2>
+        <p>
+          الترتيب أدناه مبني على المكسب في التوصيل لكل وحدة خسارة في المقاومة والكلفة — لا على ما هو
+          شائع في الأدبيات.
+        </p>
+        <div class="tw">
+          <table>
+            <thead><tr><th class="n">#</th><th>الرافعة</th><th>المكسب</th><th>الثمن</th></tr></thead>
+            <tbody>
+              <tr><td class="code-cell">1</td><td><strong>هندسة الفجوات</strong> (شكل H، نتوءات، عدد الصفوف)</td><td>λ ÷ <strong>1.7–1.8</strong></td><td>قالب بثق جديد فقط — <strong>صفر خسارة مقاومة</strong></td></tr>
+              <tr><td class="code-cell">2</td><td>مُولّد مسام محترق معتدل (2.5–7.5%)</td><td>λ −25 إلى −45%</td><td>مقاومة −20 إلى −40%، امتصاص ↑</td></tr>
+              <tr><td class="code-cell">3</td><td>رفع حرارة الحرق لتعويض المقاومة</td><td>+0.26 ميغاباسكال لكل درجة برنامج</td><td>وقود + انكماش + يلغي جزءاً من مكسب λ</td></tr>
+              <tr><td class="code-cell">4</td><td>ركام خفيف (خفّان، بورسلانايت، بيرلايت)</td><td>λ −40%</td><td><strong>مقاومة −84%</strong> عند النسب العالية</td></tr>
+              <tr><td class="code-cell">5</td><td>ملء الفجوات بعازل</td><td>مرتفع</td><td>عملية إنتاج ثانية</td></tr>
+              <tr><td class="code-cell">6</td><td>طلاء منخفض الانبعاثية داخل الفجوة</td><td>يخفض الإشعاع عبر التجويف</td><td>لم ينضج صناعياً</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="viz">
+          <div class="viz-head"><div>
+            <p class="viz-title">أثر شكل الفجوة وحده على التوصيل المكافئ</p>
+            <p class="viz-sub">نفس المادة، نفس الكثافة، نفس السماكة — الفارق في شكل التجويف فقط.</p>
+          </div></div>
+          <div id="geoBars"></div>
+        </div>
+
+        <h3>المصفوفة الكاملة الوحيدة في الأدبيات</h3>
+        <p>
+          معظم الدراسات تعطي نقطة واحدة. دراسة تايلاندية (GEOMATE 2020) أعطت المصفوفة كاملةً:
+          خمس نسب نشارة × ثلاث درجات حرق.
+        </p>
+        <div class="tw">
+          <table>
+            <caption>Phonphuak وآخرون، جامعة راجابهات ماها ساراخام — تايلاند. نشارة 0–10% وزناً، حرق 900/1000/1100 °م.</caption>
+            <thead><tr><th>الخاصية</th><th>النتيجة</th><th>الملاحظة</th></tr></thead>
+            <tbody>
+              <tr><td>التوصيل الحراري (عند 1000 °م)</td><td class="n"><strong>0.47 ← 0.22</strong></td><td>انخفاض 53% من 0 إلى 10% نشارة</td></tr>
+              <tr><td>الكثافة الظاهرية</td><td class="n">1.41–1.83 g/cm³</td><td>تنخفض مع النشارة</td></tr>
+              <tr><td>امتصاص الماء</td><td class="n">12.3–22.5%</td><td>الشاهد 10.8–14.5%</td></tr>
+              <tr><td>المسامية الظاهرة</td><td class="n">22.80–32.40%</td><td>الأعلى عند 10% نشارة و900 °م</td></tr>
+              <tr><td>مقاومة الانضغاط</td><td class="n">4.35–18.2 MPa</td><td>أفضل خلطة: 2.5% نشارة عند 1100 °م</td></tr>
+              <tr><td>انكماش الحرق</td><td class="n">4.27–7.31%</td><td>كلها ضمن حد ASTM (&lt; 8%)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          <span class="tag">شذوذان يكسران القاعدة الساذجة</span>
+          <p>
+            <strong>رماد الخشب عند 25%:</strong> رفع المسامية وخفض الكثافة، ومع ذلك <strong>لم يخفض التوصيل</strong> —
+            لأن أكاسيده رفعت توصيل المصفوفة نفسها فألغت مكسب المسامية.
+          </p>
+          <p style="margin-top:.5rem">
+            <strong>البيرلايت عند 60%:</strong> خفض التوصيل 42% وكلّف <strong>84%</strong> من المقاومة — أي أن كل 1%
+            مكسب عزل كلّف 2% مقاومة. صفقة سيئة مقارنةً بالنشارة عند 10%.
+          </p>
+          <p style="margin-top:.5rem">
+            <strong>الدرس:</strong> لا تُختار الإضافة بنسبتها، بل بما تتركه في المصفوفة بعد الحرق.
+          </p>
+        </div>
+
+        <div class="note" style="border-right-color:var(--accent);background:var(--accent-soft)">
+          <span class="tag" style="color:var(--accent-ink)">تحذير على كل الأرقام أعلاه</span>
+          <p>
+            كل قيم λ المنشورة تقريباً <strong>جافة</strong>. بناء بكثافة 1800 ومحتوى رطوبي 0.150 م³/م³ قِيس
+            توصيله عند <strong>1.43</strong> — نحو ضعف قيمته الجافة. في مناخ البصرة (رطوبة عالية + مياه جوفية
+            قريبة + صعود شعري) الأداء الفعلي سيكون أسوأ من المُعلَن ما لم يُضمن جفاف الجدار.
+          </p>
+        </div>
+      </section>
+
+      <!-- 07 -->
+      <section id="fixing">
+        <p class="sec-kicker">07 — المحور الثاني</p>
+        <h2>قوة التثبيت: المحور الأقل تغطيةً والأكثر تحديداً للنجاح التجاري</h2>
+        <p>
+          «قوة التثبيت» تحتمل ثلاثة معانٍ هندسية مختلفة، وكلها مهمة — فغطّيتُ الثلاثة:
+          <strong>الترابط مع المونة</strong>، و<strong>تثبيت الأحمال على الجدار</strong>،
+          و<strong>المثبِّت داخل الخلطة</strong>.
+        </p>
+
+        <h3>ت1 — الترابط مع المونة</h3>
+        <div class="tw">
+          <table>
+            <caption>معامل الكسر f<sub>r</sub> بالميغاباسكال — جداول TMS. لاحظ المدى: من 0.211 إلى 2.310.</caption>
+            <thead><tr><th>اتجاه الإجهاد ونوع البناء</th><th class="n">بورتلاندي/جير — M أو S</th><th class="n">N</th><th class="n">إسمنت بناء — M أو S</th><th class="n">N</th></tr></thead>
+            <tbody>
+              <tr><td>عمودياً على المداميك — وحدات مصمتة</td><td class="n"><strong>0.919</strong></td><td class="n">0.690</td><td class="n">0.552</td><td class="n">0.349</td></tr>
+              <tr><td>عمودياً — مجوّفة غير محشوة</td><td class="n">0.579</td><td class="n">0.441</td><td class="n">0.349</td><td class="n"><strong>0.211</strong></td></tr>
+              <tr><td>عمودياً — مجوّفة محشوة بالكامل</td><td class="n">1.124</td><td class="n">1.089</td><td class="n">1.055</td><td class="n">1.000</td></tr>
+              <tr><td>موازياً للمداميك (رباط جارٍ) — مصمتة ومحشوة</td><td class="n"><strong>1.839</strong></td><td class="n">1.379</td><td class="n">1.103</td><td class="n">0.689</td></tr>
+              <tr><td>موازياً — مجوّفة غير محشوة أو جزئياً</td><td class="n">1.149</td><td class="n">0.873</td><td class="n">0.689</td><td class="n">0.441</td></tr>
+              <tr><td>موازياً، رباط غير جارٍ — مقطع حشو متصل</td><td class="n"><strong>2.310</strong></td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          <span class="tag">أرخص طريقة لمضاعفة قوة تثبيت جدارك</span>
+          <p>
+            <strong>نوع المونة يغيّر الترابط بمقدار 4.4 ضعف</strong> (من 0.211 إلى 0.919). المونة ليست تفصيلاً —
+            هي نصف المنتج. وإسمنت البناء والمونة المُهوّاة يخسران نحو <strong>40%</strong> من الترابط: الهواء الذي
+            يحسّن القابلية للتشغيل يقتل الالتصاق. والحشو <strong>يضاعف</strong> ترابط الوحدات المجوّفة.
+          </p>
+        </div>
+
+        <h3>المتغيّر المُهمَل الأخطر: معدل الامتصاص الابتدائي</h3>
+        <div class="grid2">
+          <div class="card">
+            <p style="margin:0 0 .5rem"><strong>الحدود المقنَّنة</strong></p>
+            <ul style="margin:0;padding-inline-start:1.1rem;font-size:.9rem;color:var(--ink-2)">
+              <li>أفضل ترابط عند امتصاص <span class="mono">&lt; 1.55 kg/(m²·min)</span></li>
+              <li>فوق ذلك: <strong>الترطيب إجباري</strong> قبل البناء بـ 3–24 ساعة</li>
+              <li>المدى النموذجي للطابوق: <span class="mono">0.35–3.60</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <p style="margin:0 0 .5rem"><strong>لماذا يهمّك هذا تحديداً</strong></p>
+            <p style="font-size:.9rem;margin:0;color:var(--ink-2)">
+              كل رافعة عزل ترفع المسامية المفتوحة <strong>ترفع معدل الامتصاص</strong> — فتضرب الترابط ونفاذية الماء
+              معاً. وحدّ الامتصاص المتساهل في المواصفة العراقية (20–28%) يعني أن المشكلة <strong>قائمة أصلاً</strong>
+              في السوق، وأي منتج مسامي جديد سيفاقمها ما لم يُصمَّم لمسامية مغلقة.
+            </p>
+          </div>
+        </div>
+
+        <h3>ت2 — تثبيت الأحمال على الجدار</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th>البند</th><th>ما تقوله المصادر</th></tr></thead>
+            <tbody>
+              <tr><td>الدراسة المرجعية</td><td>108 فحص سحب على 5 جدران (طابوق مصمت، مثقّب عمودياً، خرسانة خلوية) بثلاثة أعماق تعشيق</td></tr>
+              <tr><td><strong>النتيجة الأولى</strong></td><td>المثبّتات المحقونة في <strong>فواصل المونة تتفوّق بفارق كبير</strong> على المحقونة في جسم الطابوقة</td></tr>
+              <tr><td><strong>النتيجة الثانية</strong></td><td>الانتقال من عمق 90 مم إلى 160 مم يرفع قدرة السحب <strong>بما لا يقل عن 40%</strong></td></tr>
+              <tr><td>المواصفة الأوروبية ETAG 020-5</td><td>المثبّتات البلاستيكية في الخرسانة الخلوية <strong>للتثبيتات المتعددة فقط</strong> — لا يُسمح بمثبّت مفرد أصلاً</td></tr>
+              <tr><td>القيم الافتراضية للمواصفة</td><td>n₁ ≥ 4 نقاط تثبيت مع حمل تصميمي ≤ <span class="mono">4.5</span> kN للنقطة، أو n₁ ≥ 3 مع ≤ <span class="mono">3.0</span> kN</td></tr>
+              <tr><td>القدرات العملية المتداولة</td><td>الخرسانة الخلوية: <span class="mono">0.5</span> kN (خزائن) إلى <span class="mono">2.5</span> kN (رفوف ثقيلة)؛ فوقها تلزم براغي نافذة بلوحة ظهر</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          <span class="tag">فجوة بحثية — وفرصة</span>
+          <p>
+            <strong>لم أعثر على أي دراسة منشورة تقارن قدرة السحب بالكيلونيوتن عبر أنواع الطابوق الشائعة بمنهجية
+            واحدة وجدول أرقام مفتوح.</strong> المتاح إما مواصفات اعتماد تعطي إجراءات لا قيماً، أو بيانات مُصنّعين،
+            أو دراسات على الخرسانة والحجر. فحص بسيط ومنهجي على 5–6 أنواع من السوق العراقي هو بحث قابل للنشر
+            دولياً بكلفة مختبرية زهيدة — <strong>وورقة تسويق قوية إن تفوّق منتجك</strong>.
+          </p>
+        </div>
+
+        <h3>ت3 — المثبِّت داخل الخلطة</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th>المثبّت</th><th>النسبة</th><th>الأثر</th></tr></thead>
+            <tbody>
+              <tr><td>إسمنت في الكتل الترابية</td><td>4% ← 10%</td><td>المقاومة <strong>× 3.7</strong>؛ والحد الأدنى للديمومة 6%</td></tr>
+              <tr><td>الثمن الحراري للمثبّت</td><td>2.5% ← 12.5%</td><td><strong>λ +164.54%</strong> — والجير أقل ضرراً حرارياً من الإسمنت</td></tr>
+              <tr><td>ألياف نخيل الزيت</td><td>0.25%</td><td>مقاومة الشد <strong>+38%</strong></td></tr>
+              <tr><td>ألياف الموز</td><td>1%</td><td>شد 7.457 ميغاباسكال ≈ <strong>4 أضعاف</strong> غير المسلّح</td></tr>
+              <tr><td>ألياف جوز الهند</td><td>0.5%</td><td>الانحناء +12%</td></tr>
+              <tr><td>نانو كلاي</td><td>4.5%</td><td>+33.4% عند 3 أيام، لكن <strong>+12.2% فقط عند 28 يوماً</strong></td></tr>
+              <tr><td>نانو سيليكا</td><td>0.75%</td><td>+24.4%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          <span class="tag">قراءة صحيحة لأثر النانو</span>
+          <p>
+            أثر المواد النانوية <strong>يتلاشى مع الزمن</strong> (‏+33% عند 3 أيام ← +12% عند 28 يوماً). فهي
+            <strong>مُسرّع لا مُقوٍّ نهائي</strong>. قيمتها الحقيقية في تسريع دورة الإنتاج — إنتاجية أعلى من نفس
+            المصنع — لا في الرقم النهائي. تُقيَّم اقتصادياً على هذا الأساس.
+          </p>
+        </div>
+      </section>
+
+      <!-- 08 -->
       <section id="types">
-        <p class="sec-kicker">03 — الفهرس</p>
+        <p class="sec-kicker">08 — الفهرس</p>
         <h2>مستكشف الأنواع: سبعون نوعاً بترميز موحّد</h2>
         <p>ابحث بالاسم أو الرمز، أو رشِّح حسب المجموعة. الرمز نفسه مستخدم في كل ملفات المشروع.</p>
         <div class="controls">
@@ -406,7 +737,7 @@ footer p{max-width:70ch}
 
       <!-- 04 -->
       <section id="fire">
-        <p class="sec-kicker">04 — الأداة</p>
+        <p class="sec-kicker">09 — الأداة</p>
         <h2>حاسبة تصنيف مقاومة الحريق</h2>
         <p>
           تصنيف الحريق لا يأتي من «نوع المادة» بل من <strong>السماكة المكافئة ونوع الركام</strong> — وفق
@@ -477,7 +808,7 @@ footer p{max-width:70ch}
 
       <!-- 05 -->
       <section id="additives">
-        <p class="sec-kicker">05 — التصميم</p>
+        <p class="sec-kicker">10 — التصميم</p>
         <h2>مصفوفة الإضافات: ماذا تفعل كل مادة بالخلطة</h2>
         <p>
           هذه المصفوفة هي قلب المشروع. الأسهم تعني: ↑ زيادة، ↓ نقصان، ≈ بلا أثر يُذكر.
@@ -524,7 +855,7 @@ footer p{max-width:70ch}
 
       <!-- 06 -->
       <section id="standards">
-        <p class="sec-kicker">06 — المرجعية</p>
+        <p class="sec-kicker">11 — المرجعية</p>
         <h2>ما الذي يجب تجاوزه: المواصفة القياسية العراقية 25 / 1988</h2>
         <div class="tw">
           <table>
@@ -555,7 +886,7 @@ footer p{max-width:70ch}
 
       <!-- 07 -->
       <section id="iraq">
-        <p class="sec-kicker">07 — الواقع</p>
+        <p class="sec-kicker">12 — الواقع</p>
         <h2>لماذا لا تُنسَخ الحلول العالمية كما هي</h2>
         <p>معظم أدبيات «الطابوق المستدام» مبنية على ثلاث مواد غير متوفّرة عملياً في العراق:</p>
         <div class="tw">
@@ -615,7 +946,7 @@ footer p{max-width:70ch}
 
       <!-- 08 -->
       <section id="routes">
-        <p class="sec-kicker">08 — القرار</p>
+        <p class="sec-kicker">13 — القرار</p>
         <h2>المسارات المرشّحة والمستبعَدة</h2>
         <p class="dim" style="font-size:.88rem">
           استنتاجات المرحلة 1، مبنية على أدلة موثّقة لكنها ليست قراراً نهائياً — ستُختبر في المراحل التالية وقد يسقط بعضها.
@@ -630,9 +961,44 @@ footer p{max-width:70ch}
         <div class="reject"><b>ترابي غير محروق للجدران الخارجية</b> — لا يصمد أمام المياه الجوفية المالحة والرطوبة العالية.</div>
       </section>
 
-      <!-- 09 -->
+      <!-- 14 -->
+      <section id="atlas">
+        <p class="sec-kicker">14 — النطاق</p>
+        <h2>الفهرس الجغرافي: من أين جاءت الأدلة</h2>
+        <p>
+          البحث لم يُحصر بالعراق. هذه الدول التي ظهرت مصادرها فعلياً في المراجعة — والعراق فيها حالة
+          تطبيق لا حدّ بحث.
+        </p>
+        <div class="tw">
+          <table>
+            <thead><tr><th>الإقليم</th><th>الدول</th><th>محاور المساهمة</th></tr></thead>
+            <tbody>
+              <tr><td>جنوب شرق آسيا</td><td><strong>تايلاند</strong> (المصفوفة الكاملة للنشارة)، <strong>ماليزيا</strong> (الجيوبوليمر الرغوي)، فيتنام</td><td>العزل، الجيوبوليمر</td></tr>
+              <tr><td>جنوب آسيا</td><td><strong>الهند</strong> (مناشير البناء، ترابط الخرسانة الخلوية، IS 2222)، باكستان، بنغلاديش</td><td>الانضغاط، الترابط</td></tr>
+              <tr><td>شرق آسيا</td><td><strong>الصين</strong> (هندسة الفجوات، الرطوبة في الجدران)</td><td>العزل، الرطوبة</td></tr>
+              <tr><td>الشرق الأوسط وشمال أفريقيا</td><td><strong>العراق</strong>، <strong>السعودية</strong> (11 نوع طابوق)، <strong>مصر</strong>، الأردن، <strong>الجزائر</strong>، المغرب</td><td>العزل في المناخ الحار</td></tr>
+              <tr><td>تركيا</td><td>الطابوق المسامي بالخفّان والڤيرميكوليت</td><td>العزل</td></tr>
+              <tr><td>أفريقيا جنوب الصحراء</td><td><strong>نيجيريا</strong>، <strong>أوغندا</strong>، <strong>جنوب أفريقيا</strong> (قياس λ وفق ASTM C1363)</td><td>العزل</td></tr>
+              <tr><td>أوروبا</td><td><strong>إسبانيا</strong>، <strong>إيطاليا</strong> (فحوص السحب)، <strong>بولندا</strong>، فرنسا، ومنظومة EN و EOTA</td><td>التثبيت، التقنين</td></tr>
+              <tr><td>الأمريكتان</td><td><strong>الولايات المتحدة</strong> (ASTM، TMS، ACI 216.1، BIA، NCMA)، <strong>البرازيل</strong></td><td>التقنين، الحريق، العزل</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          <span class="tag">نمط بارز</span>
+          <p>
+            الثقل البحثي يتبع الثقل الإنتاجي: الصين تنتج نحو <strong>700–800 مليار طابوقة سنوياً</strong>،
+            والهند وباكستان وبنغلاديش وفيتنام مجتمعةً أكثر من <strong>260 مليار</strong> — أي نحو
+            <strong>75% من الطلب العالمي</strong> على الطابوق المحروق. ولذلك فإن <strong>أقرب الأدبيات إلى
+            ظروف العراق التقنية والاقتصادية هي الآسيوية الجنوبية، لا الأوروبية</strong> — وهذا يغيّر أي
+            دراسات ينبغي تقليدها.
+          </p>
+        </div>
+      </section>
+
+      <!-- 15 -->
       <section id="plan">
-        <p class="sec-kicker">09 — الطريق</p>
+        <p class="sec-kicker">15 — الطريق</p>
         <h2>خطة المراحل</h2>
         <p>
           العمل مقسّم على ست مراحل لتفادي استهلاك الحد اليومي دفعة واحدة، وأُعيد ترتيبها بعد قرار
@@ -641,8 +1007,8 @@ footer p{max-width:70ch}
         </p>
         <ol class="phases">
           <li><span class="pnum">01</span><span class="pbody"><b>الفهرسة والخواص المرجعية</b><span>سبعون نوعاً، جداول الخواص، مقاومة الحريق، السياق العراقي، بذرة مصفوفة الإضافات</span></span><span class="pstate done">منجزة</span></li>
-          <li><span class="pnum">02</span><span class="pbody"><b>مصفوفة الأدبيات التجريبية</b><span>توثيق فردي لكل دراسة: النسب، منحنى الحرق، النتائج العددية، تحليل الاتجاه والتناقضات</span></span><span class="pstate next">التالية</span></li>
-          <li><span class="pnum">03</span><span class="pbody"><b>الكيمياء والديمومة والسلوك الحراري</b><span>الأطوار، TGA/DTA، المقاومة المتبقية، الكبريتات والأملاح، الخواص الكهربائية</span></span><span class="pstate wait">قيد الانتظار</span></li>
+          <li><span class="pnum">02</span><span class="pbody"><b>المراجعة العالمية: العزل والتثبيت والانضغاط</b><span>عشرون دولة، المصفوفات الكاملة، قوانين المسامية والترابط والتثبيت، والمقايضات الخمس</span></span><span class="pstate done">منجزة</span></li>
+          <li><span class="pnum">03</span><span class="pbody"><b>الكيمياء والديمومة والسلوك الحراري</b><span>الأطوار، TGA/DTA، المقاومة المتبقية، الكبريتات والأملاح، الخواص الكهربائية</span></span><span class="pstate next">التالية</span></li>
           <li><span class="pnum">04</span><span class="pbody"><b>الخلطات التصميمية وبروتوكول التجارب</b><span>خلطات المنتجَين «ث» و«خ»، بروتوكولان: أساسي بأدوات بسيطة ومتقدّم بالتوصيف الدقيق</span></span><span class="pstate wait">قيد الانتظار</span></li>
           <li><span class="pnum">05</span><span class="pbody"><b>الجدوى الاقتصادية التقديرية</b><span>سلاسل التوريد، الطاقة، كلفة الوحدة، المقارنة بالسوق</span></span><span class="pstate wait">قيد الانتظار</span></li>
           <li><span class="pnum">06</span><span class="pbody"><b>التقرير النهائي ومصفوفة القرار</b><span>خارطة طريق: مختبر ← نموذج أولي ← خط إنتاج</span></span><span class="pstate wait">قيد الانتظار</span></li>
@@ -1044,6 +1410,84 @@ function calc(){
 }
 [selMat,rng,wSel].forEach(function(el){ el.addEventListener('input',calc); el.addEventListener('change',calc); });
 calc();
+
+/* ---------------- pore lab ---------------- */
+var pP=document.getElementById('pP'), pV=document.getElementById('pV'), pG=document.getElementById('pG'), pW=document.getElementById('pW');
+var TMS_MS=[[11.72,6.90],[23.10,10.34],[34.13,13.79],[45.51,17.24],[56.88,20.69],[68.26,24.13],[79.29,27.58]];
+var TMS_N =[[14.48,6.90],[28.61,10.34],[42.75,13.79],[56.88,17.24],[71.02,20.69]];
+function interpTable(tab, x){
+  if(x<=tab[0][0]) return tab[0][1]*x/tab[0][0];
+  for(var i=0;i<tab.length-1;i++){
+    if(x>=tab[i][0] && x<=tab[i+1][0]){
+      var t=(x-tab[i][0])/(tab[i+1][0]-tab[i][0]);
+      return tab[i][1]+t*(tab[i+1][1]-tab[i][1]);
+    }
+  }
+  return tab[tab.length-1][1];
+}
+function poreCalc(){
+  var P=+pP.value/100, V=+pV.value/100, g=+pG.value, wet=(+pW.value===2);
+  document.getElementById('pPv').textContent=pP.value;
+  document.getElementById('pVv').textContent=pV.value;
+  var sigDry=66*Math.exp(-6.4*P);                     // Ryshkewitch-Duckworth, calibrated
+  var lam=Math.pow(1.4,1-P)*Math.pow(0.026,P);        // geometric-mean effective medium
+  lam=lam/g;                                          // cavity-geometry factor
+  var sig=sigDry;
+  if(wet){ sig=sigDry*0.82; lam*=1.25; }              // design values for a humid climate
+  var gross=sig*(1-V);
+  var fm=interpTable(TMS_MS, sig);
+  document.getElementById('pS').textContent=sig.toFixed(1);
+  document.getElementById('pL').textContent=lam.toFixed(3);
+  document.getElementById('pSg').textContent=gross.toFixed(1);
+  document.getElementById('pFm').textContent=fm.toFixed(1);
+  document.getElementById('pDry').textContent=sigDry.toFixed(1);
+  // targets: strength is set on the DRY value, conductivity on the moisture-corrected value
+  var okTh = sigDry>=20 && lam<=0.50;
+  var okKh = sigDry>=7  && lam<=0.28;
+  document.getElementById('pVerdict').innerHTML =
+    '<span class="pill '+(okTh?'ok':'no')+'">'+(okTh?'✓':'✕')+' المنتج «ث» الحامل — ‏20 MPa جافاً و λ تصميمي 0.50</span>'+
+    '<span class="pill '+(okKh?'ok':'no')+'">'+(okKh?'✓':'✕')+' المنتج «خ» العازل — ‏7 MPa جافاً و λ تصميمي 0.28</span>';
+}
+[pP,pV,pG,pW].forEach(function(e){ e.addEventListener('input',poreCalc); e.addEventListener('change',poreCalc); });
+poreCalc();
+
+/* ---------------- unit → wall ---------------- */
+var uS=document.getElementById('uS'), uM=document.getElementById('uM'), uF=document.getElementById('uF');
+function unitCalc(){
+  var fb=+uS.value, fmm=+uF.value;
+  document.getElementById('uSv').textContent=fb;
+  document.getElementById('uFv').textContent=fmm;
+  var tab = uM.value==='MS' ? TMS_MS : TMS_N;
+  var cap = tab[tab.length-1][0];
+  var tms = interpTable(tab, fb);
+  var ec6 = 0.55*Math.pow(fb,0.7)*Math.pow(fmm,0.3);
+  document.getElementById('uT').textContent = tms.toFixed(1);
+  document.getElementById('uE').textContent = ec6.toFixed(1);
+  var ratio=(tms/fb*100);
+  var msg='الجدار يحقّق <b class="mono">'+ratio.toFixed(0)+'%</b> من مقاومة وحدته.';
+  if(fb>cap && uM.value==='N'){
+    msg+=' <strong>مونة النوع N لا تتجاوز f′<sub>m</sub> = 20.69 ميغاباسكال مهما قوّيت الوحدة — السقف من المونة لا من الطابوقة.</strong>';
+  } else if(fb>cap){
+    msg+=' القيمة خارج أعلى صف في الجدول — تُقرأ كحدّ أقصى لا كاستقراء.';
+  }
+  document.getElementById('uRatio').innerHTML=msg;
+}
+[uS,uM,uF].forEach(function(e){ e.addEventListener('input',unitCalc); e.addEventListener('change',unitCalc); });
+unitCalc();
+
+/* ---------------- geometry bars ---------------- */
+(function(){
+  var rows=[
+    {n:'فجوات متصالبة (BC240)', v:0.795, lab:'0.78 – 0.81'},
+    {n:'فجوات على شكل H (BH240)', v:0.465, lab:'0.43 – 0.50'}
+  ];
+  var max=0.85;
+  document.getElementById('geoBars').innerHTML = rows.map(function(r){
+    return '<div class="gbar"><span>'+r.n+'</span><span class="track"><i style="width:'+(r.v/max*100).toFixed(1)+'%"></i></span>'+
+           '<span class="val">'+r.lab+' W/m·K</span></div>';
+  }).join('') +
+  '<p class="dim" style="font-size:.8rem;margin:.6rem 0 0">الفارق: <strong>أقل توصيلاً بـ 1.69–1.82 مرة</strong> — ومقاومة البلوكات المتعاشقة العازلة بقيت 13.0–15.9 ميغاباسكال، أي حاملة فعلاً.</p>';
+})();
 
 /* ---------------- scrollspy ---------------- */
 var links=Array.prototype.slice.call(document.querySelectorAll('.rail a'));
