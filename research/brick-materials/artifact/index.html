@@ -1,0 +1,1063 @@
+<title>أطلس الطابوق</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  color-scheme: light;
+  --ground:#E9E7E2; --surface:#F6F4F0; --raised:#FDFCFA;
+  --ink:#15181B; --ink-2:#3C4247; --muted:#61676D;
+  --line:#D6D1C8; --line-soft:#E3DFD7;
+  --accent:#0E6C8C; --accent-ink:#08536C; --accent-soft:#DDEDF3;
+  --ember:#A03A1E; --ember-soft:#F5E3DC;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --ok:#1f7a4d; --warn:#8a5a00;
+  --shadow:0 1px 2px rgba(21,24,27,.05), 0 8px 24px -14px rgba(21,24,27,.28);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --ground:#101316; --surface:#181C20; --raised:#1F252B;
+    --ink:#E9E7E2; --ink-2:#C3C7CB; --muted:#949BA2;
+    --line:#2B3238; --line-soft:#232A30;
+    --accent:#4FB3D4; --accent-ink:#8CD2E9; --accent-soft:#123240;
+    --ember:#D9704E; --ember-soft:#33180F;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+    --ok:#4bb583; --warn:#d0a020;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --ground:#101316; --surface:#181C20; --raised:#1F252B;
+  --ink:#E9E7E2; --ink-2:#C3C7CB; --muted:#949BA2;
+  --line:#2B3238; --line-soft:#232A30;
+  --accent:#4FB3D4; --accent-ink:#8CD2E9; --accent-soft:#123240;
+  --ember:#D9704E; --ember-soft:#33180F;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+  --ok:#4bb583; --warn:#d0a020;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:5rem}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important; transition:none!important} }
+
+body{
+  direction:rtl;
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:"IBM Plex Sans Arabic","Segoe UI",system-ui,sans-serif;
+  font-size:16px; line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- shell ---------- */
+.shell{max-width:1280px; margin:0 auto; padding:0 clamp(1rem,3vw,2.5rem)}
+.layout{display:grid; grid-template-columns:1fr; gap:0}
+.layout>*{min-width:0}   /* grid items default to min-width:auto — a wide table would blow the track out */
+@media (min-width:1060px){
+  .layout{grid-template-columns:15.5rem 1fr; gap:clamp(2rem,4vw,4rem); align-items:start}
+}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:sticky; top:0; z-index:40;
+  background:color-mix(in srgb, var(--ground) 88%, transparent);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line-soft);
+}
+.topbar-in{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.7rem 0; max-width:1280px; margin:0 auto; padding-inline:clamp(1rem,3vw,2.5rem)}
+.brand{display:flex; align-items:center; gap:.6rem; font-family:"Noto Kufi Arabic",sans-serif; font-weight:800; font-size:1.02rem; letter-spacing:-.01em}
+.brand .glyph{
+  width:1.7rem;height:1.7rem;border-radius:3px;flex:none;
+  background:
+    linear-gradient(var(--line) 0 0) 0 33.3%/100% 1px no-repeat,
+    linear-gradient(var(--line) 0 0) 0 66.6%/100% 1px no-repeat,
+    linear-gradient(var(--line) 0 0) 25% 0/1px 33.3% no-repeat,
+    linear-gradient(var(--line) 0 0) 75% 33.3%/1px 33.3% no-repeat,
+    linear-gradient(var(--line) 0 0) 25% 66.6%/1px 33.4% no-repeat,
+    var(--ember-soft);
+  border:1px solid var(--line);
+}
+.phase-chip{
+  font-family:"IBM Plex Mono",monospace; font-size:.7rem; font-weight:500;
+  padding:.18rem .5rem; border-radius:999px;
+  background:var(--accent-soft); color:var(--accent-ink); border:1px solid color-mix(in srgb,var(--accent) 28%, transparent);
+  white-space:nowrap;
+}
+.theme-btn{
+  border:1px solid var(--line); background:var(--raised); color:var(--ink-2);
+  border-radius:8px; padding:.35rem .6rem; cursor:pointer; font:inherit; font-size:.8rem; line-height:1;
+}
+.theme-btn:hover{border-color:var(--accent)}
+.theme-btn:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(1.5rem,3vw,2.5rem); border-bottom:1px solid var(--line-soft)}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted); margin:0 0 1rem;
+}
+h1{
+  font-family:"Noto Kufi Arabic",sans-serif; font-weight:800;
+  font-size:clamp(1.9rem,4.6vw,3.25rem); line-height:1.22; letter-spacing:-.02em;
+  margin:0 0 1.1rem; text-wrap:balance; max-width:22ch;
+}
+h1 .hl{color:var(--ember)}
+.lede{font-size:clamp(1.02rem,1.6vw,1.18rem); color:var(--ink-2); max-width:60ch; margin:0 0 2rem}
+.hero-stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); border-radius:12px; overflow:hidden}
+.stat{background:var(--surface); padding:1rem 1.1rem}
+.stat .n{font-family:"IBM Plex Mono",monospace; font-size:1.65rem; font-weight:600; line-height:1.1; color:var(--ink); font-variant-numeric:tabular-nums; display:block}
+.stat .l{font-size:.8rem; color:var(--muted); margin-top:.3rem; display:block}
+
+/* ---------- nav rail ---------- */
+.rail{display:none}
+@media (min-width:1060px){
+  .rail{display:block; position:sticky; top:4.2rem; padding:2.5rem 0; max-height:calc(100vh - 4.2rem); overflow-y:auto}
+}
+.rail-title{font-family:"IBM Plex Mono",monospace; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 .9rem}
+.rail ol{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.1rem}
+.rail a{
+  display:flex; gap:.6rem; align-items:baseline;
+  text-decoration:none; color:var(--ink-2); font-size:.88rem;
+  padding:.4rem .6rem; border-radius:7px; border-right:2px solid transparent;
+}
+.rail a .num{font-family:"IBM Plex Mono",monospace; font-size:.72rem; color:var(--muted); font-variant-numeric:tabular-nums}
+.rail a:hover{background:var(--surface); color:var(--ink)}
+.rail a.active{background:var(--accent-soft); color:var(--accent-ink); border-right-color:var(--accent); font-weight:600}
+.rail a:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+
+/* ---------- sections ---------- */
+main{padding-bottom:5rem; min-width:0}
+section{padding:clamp(2.5rem,5vw,4rem) 0; border-bottom:1px solid var(--line-soft)}
+section:last-of-type{border-bottom:none}
+h2{
+  font-family:"Noto Kufi Arabic",sans-serif; font-weight:700;
+  font-size:clamp(1.35rem,2.6vw,1.85rem); line-height:1.3; letter-spacing:-.015em;
+  margin:0 0 .5rem; text-wrap:balance;
+}
+h3{font-family:"Noto Kufi Arabic",sans-serif; font-weight:700; font-size:1.05rem; margin:2rem 0 .7rem; letter-spacing:-.01em}
+.sec-kicker{font-family:"IBM Plex Mono",monospace; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 .6rem}
+p{margin:0 0 1rem; max-width:68ch}
+.dim{color:var(--muted)}
+strong{font-weight:600}
+a{color:var(--accent-ink)}
+code, .mono{font-family:"IBM Plex Mono",monospace; font-size:.88em; font-variant-numeric:tabular-nums}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- cards & callouts ---------- */
+.card{background:var(--surface); border:1px solid var(--line-soft); border-radius:12px; padding:clamp(1.1rem,2.5vw,1.6rem); box-shadow:var(--shadow)}
+.note{
+  border-right:3px solid var(--ember); background:var(--ember-soft);
+  padding:.95rem 1.1rem; border-radius:0 10px 10px 0; margin:1.5rem 0;
+}
+.note p:last-child{margin-bottom:0}
+.note .tag{font-family:"IBM Plex Mono",monospace; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ember); display:block; margin-bottom:.3rem}
+.grid2{display:grid; grid-template-columns:1fr; gap:1rem}
+@media(min-width:760px){ .grid2{grid-template-columns:1fr 1fr; gap:1.25rem} }
+
+/* ---------- tables ---------- */
+.tw.scroll-y{max-height:34rem; overflow-y:auto}
+.tw{overflow-x:auto; border:1px solid var(--line-soft); border-radius:12px; background:var(--surface); margin:1.25rem 0}
+table{border-collapse:collapse; width:100%; font-size:.87rem; min-width:520px}
+caption{text-align:right; padding:.85rem 1rem .2rem; font-size:.82rem; color:var(--muted)}
+th,td{padding:.6rem .85rem; text-align:right; border-bottom:1px solid var(--line-soft); vertical-align:top}
+thead th{
+  font-family:"IBM Plex Sans Arabic",sans-serif; font-weight:600; font-size:.78rem;
+  color:var(--muted); background:var(--raised); position:sticky; top:0;
+  border-bottom:1px solid var(--line); white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--raised)}
+td.n, th.n{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; white-space:nowrap}
+
+/* ---------- explorer ---------- */
+.controls{display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; margin:1.25rem 0 1rem}
+.search{
+  flex:1 1 220px; min-width:180px;
+  background:var(--raised); border:1px solid var(--line); border-radius:9px;
+  padding:.5rem .8rem; font:inherit; font-size:.88rem; color:var(--ink);
+}
+.search:focus{outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent)}
+.chip{
+  border:1px solid var(--line); background:var(--raised); color:var(--ink-2);
+  border-radius:999px; padding:.32rem .75rem; font:inherit; font-size:.8rem; cursor:pointer; white-space:nowrap;
+}
+.chip:hover{border-color:var(--accent); color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600}
+:root[data-theme="dark"] .chip[aria-pressed="true"]{color:#0b1418}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .chip[aria-pressed="true"]{color:#0b1418} }
+.chip:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.code-cell{font-family:"IBM Plex Mono",monospace; font-weight:600; color:var(--accent-ink); font-size:.82rem}
+.status{font-size:.75rem; color:var(--muted); white-space:nowrap}
+.count{font-size:.82rem; color:var(--muted); font-family:"IBM Plex Mono",monospace}
+
+/* ---------- chart ---------- */
+.viz{background:var(--surface); border:1px solid var(--line-soft); border-radius:12px; padding:1.1rem; margin:1.25rem 0}
+.viz-head{display:flex; flex-wrap:wrap; gap:.75rem; align-items:baseline; justify-content:space-between; margin-bottom:.4rem}
+.viz-title{font-family:"Noto Kufi Arabic",sans-serif; font-weight:700; font-size:1rem; margin:0}
+.viz-sub{font-size:.82rem; color:var(--muted); margin:.15rem 0 0; max-width:62ch}
+.legend{display:flex; flex-wrap:wrap; gap:.9rem; margin:.7rem 0 .2rem; font-size:.8rem}
+.legend span{display:inline-flex; align-items:center; gap:.38rem; color:var(--ink-2)}
+.legend .swatch{width:.7rem; height:.7rem; flex:none}
+.plot-wrap{overflow-x:auto; direction:ltr}
+svg.plot{display:block; min-width:560px; width:100%; height:auto; font-family:"IBM Plex Mono",monospace}
+.tip{
+  position:fixed; pointer-events:none; z-index:60; opacity:0; transition:opacity .12s;
+  background:var(--raised); border:1px solid var(--line); border-radius:9px;
+  padding:.5rem .7rem; font-size:.8rem; box-shadow:var(--shadow); max-width:16rem; direction:rtl;
+}
+.tip.on{opacity:1}
+.tip b{display:block; font-weight:600; margin-bottom:.2rem}
+.toggle-row{display:flex; gap:.5rem; margin-top:.8rem}
+
+/* ---------- calculator ---------- */
+.calc-grid{display:grid; grid-template-columns:1fr; gap:1rem}
+@media(min-width:820px){ .calc-grid{grid-template-columns:1.15fr .85fr; gap:1.5rem} }
+label.f{display:block; font-size:.82rem; color:var(--muted); margin:0 0 .3rem}
+select, input[type=number]{
+  width:100%; background:var(--raised); border:1px solid var(--line); border-radius:9px;
+  padding:.5rem .7rem; font:inherit; font-size:.88rem; color:var(--ink);
+}
+select:focus, input[type=number]:focus{outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent)}
+.field{margin-bottom:.9rem}
+input[type=range]{width:100%; accent-color:var(--accent)}
+.readout{
+  background:var(--raised); border:1px solid var(--line-soft); border-radius:12px;
+  padding:1.2rem; display:flex; flex-direction:column; justify-content:center; text-align:center; min-height:100%;
+}
+.readout .big{font-family:"IBM Plex Mono",monospace; font-size:clamp(2.4rem,7vw,3.4rem); font-weight:600; line-height:1; color:var(--ember); font-variant-numeric:tabular-nums}
+.readout .unit{font-size:.9rem; color:var(--muted); margin-top:.45rem}
+.readout .sub{font-size:.82rem; color:var(--ink-2); margin-top:.9rem; border-top:1px solid var(--line-soft); padding-top:.9rem}
+.bar{height:8px; border-radius:99px; background:var(--line-soft); overflow:hidden; margin:1rem 0 .3rem}
+.bar>i{display:block; height:100%; background:var(--ember); border-radius:99px; transition:width .18s ease}
+.formula{
+  font-family:"IBM Plex Mono",monospace; font-size:.95rem; text-align:center;
+  background:var(--raised); border:1px solid var(--line-soft); border-radius:9px; padding:.6rem .8rem;
+}
+.formula sub, .formula sup{font-size:.68em}
+.ticks{display:flex; justify-content:space-between; font-family:"IBM Plex Mono",monospace; font-size:.68rem; color:var(--muted)}
+
+/* ---------- routes ---------- */
+.routes{display:grid; grid-template-columns:1fr; gap:1rem; margin-top:1.25rem}
+@media(min-width:900px){ .routes{grid-template-columns:1fr 1fr} }
+.route{background:var(--surface); border:1px solid var(--line-soft); border-radius:12px; padding:1.2rem; display:flex; flex-direction:column; gap:.5rem}
+.route.top{border-color:var(--accent); background:linear-gradient(to bottom, var(--accent-soft), var(--surface) 62%)}
+.route h4{font-family:"Noto Kufi Arabic",sans-serif; font-size:1rem; font-weight:700; margin:0}
+.route .codes{font-family:"IBM Plex Mono",monospace; font-size:.72rem; color:var(--accent-ink); letter-spacing:.04em}
+.route p{font-size:.87rem; margin:0; color:var(--ink-2)}
+.rate{display:flex; gap:.2rem; font-size:.9rem; color:var(--ember); letter-spacing:.06em; margin-top:auto; padding-top:.5rem}
+.rate .off{color:var(--line)}
+.verdict{font-size:.8rem; font-weight:600; color:var(--ink)}
+.reject{border-right:3px solid var(--line); padding-right:.9rem; margin:.6rem 0; font-size:.87rem; color:var(--ink-2)}
+.reject b{color:var(--ink)}
+
+/* ---------- phases ---------- */
+.phases{list-style:none; margin:1.25rem 0 0; padding:0; display:flex; flex-direction:column; gap:0}
+.phases li{display:grid; grid-template-columns:auto 1fr; gap:1rem; padding:.9rem 0; border-top:1px solid var(--line-soft)}
+.phases li:first-child{border-top:none}
+.pnum{font-family:"IBM Plex Mono",monospace; font-size:.78rem; color:var(--muted); padding-top:.15rem; font-variant-numeric:tabular-nums}
+.pbody b{display:block; font-weight:600; font-size:.95rem}
+.pbody span{font-size:.85rem; color:var(--ink-2)}
+.pstate{font-family:"IBM Plex Mono",monospace; font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; padding:.12rem .45rem; border-radius:4px; white-space:nowrap; align-self:start; margin-top:.2rem}
+.pstate.done{background:color-mix(in srgb,var(--ok) 16%, transparent); color:var(--ok)}
+.pstate.next{background:var(--accent-soft); color:var(--accent-ink)}
+.pstate.wait{background:var(--line-soft); color:var(--muted)}
+
+footer{padding:2.5rem 0 3.5rem; color:var(--muted); font-size:.83rem; border-top:1px solid var(--line-soft)}
+footer p{max-width:70ch}
+.vis-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brand"><span class="glyph" aria-hidden="true"></span> أطلس الطابوق</div>
+    <div style="display:flex;align-items:center;gap:.6rem">
+      <span class="phase-chip">المرحلة 1 من 6 · منجزة</span>
+      <button class="theme-btn" id="themeBtn" type="button">◐ السمة</button>
+    </div>
+  </div>
+</div>
+
+<div class="shell">
+  <header class="hero">
+    <p class="eyebrow">مراجعة مرجعية · مواد بناء الجدران · العراق</p>
+    <h1>مادة جدارية تقاوم <span class="hl">الحريق والحِمل</span> — وتُصنَّع في الجنوب بكلفة السوق</h1>
+    <p class="lede">
+      فهرسة منظّمة لسبعين نوعاً من الطابوق ووحدات البناء، وخواصها الفيزيائية والحرارية والإنشائية،
+      وأثر كل إضافة تصميمية عليها — بهدف واحد: تحديد الخلطة التي يمكن إنتاجها في جنوب العراق
+      بكلفة لا تتجاوز المنتج السائد.
+    </p>
+    <div class="hero-stats">
+      <div class="stat"><span class="n">70</span><span class="l">نوعاً مفهرساً في 9 مجموعات</span></div>
+      <div class="stat"><span class="n">78</span><span class="l">مصدراً علمياً ومواصفة</span></div>
+      <div class="stat"><span class="n">2</span><span class="l">منتجان مستهدفان: حامل وعازل</span></div>
+      <div class="stat"><span class="n">5</span><span class="l">مسارات تصنيع مرشّحة</span></div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="rail" aria-label="فهرس الصفحة">
+      <p class="rail-title">الفهرس</p>
+      <ol id="railList">
+        <li><a href="#tension"><span class="num">01</span> التناقض الهندسي</a></li>
+        <li><a href="#tradeoff"><span class="num">02</span> خريطة المقايضة</a></li>
+        <li><a href="#types"><span class="num">03</span> مستكشف الأنواع</a></li>
+        <li><a href="#fire"><span class="num">04</span> حاسبة تصنيف الحريق</a></li>
+        <li><a href="#additives"><span class="num">05</span> مصفوفة الإضافات</a></li>
+        <li><a href="#standards"><span class="num">06</span> المواصفة العراقية</a></li>
+        <li><a href="#iraq"><span class="num">07</span> السياق العراقي</a></li>
+        <li><a href="#routes"><span class="num">08</span> المسارات المرشّحة</a></li>
+        <li><a href="#plan"><span class="num">09</span> خطة المراحل</a></li>
+      </ol>
+    </nav>
+
+    <main>
+      <!-- 01 -->
+      <section id="tension">
+        <p class="sec-kicker">01 — نقطة البداية</p>
+        <h2>الهدف يحتوي على تناقض هندسي، ومواجهته صريحةً هي أول خطوة صحيحة</h2>
+        <p>
+          طلبُ مادةٍ تقاوم الحريق والأحمال وتعزل حرارياً وتكون رخيصة ليس طلباً واحداً بل أربعة أهداف
+          يسحب بعضها بعضاً. كل هدف يفرض بنية مجهرية مختلفة:
+        </p>
+        <div class="tw">
+          <table>
+            <caption>الأهداف الأربعة ومتطلباتها المتعارضة</caption>
+            <thead><tr><th>الهدف</th><th>يتطلّب</th><th>يتعارض مع</th></tr></thead>
+            <tbody>
+              <tr><td>مقاومة أحمال عالية</td><td>كثافة عالية، مسامية منخفضة، طور رابط متّصل</td><td>العزل الحراري</td></tr>
+              <tr><td>عزل حراري (λ منخفض)</td><td>مسامية عالية، كثافة منخفضة، فجوات هوائية</td><td>مقاومة الأحمال</td></tr>
+              <tr><td>تصنيف حريق بالساعات</td><td>سماكة مكافئة كبيرة + سعة حرارية + عدم اشتعال</td><td>خفّة الوزن والكلفة</td></tr>
+              <tr><td>كلفة منخفضة</td><td>مواد محلية، حرق أقل، معالجة بسيطة</td><td>الأداء العالي عادةً</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          <span class="tag">الاستنتاج المنهجي</span>
+          <p>
+            المخرج الصحيح ليس «مادة مثالية واحدة» بل <strong>حيّز تصميمي</strong> يُختار منه حسب الاستعمال —
+            وغالباً <strong>مقطع مركّب</strong> لا مادة متجانسة. لذلك ثُبِّت هدفان لا هدف واحد:
+            <strong>المنتج «ث»</strong> الثقيل الحامل (‏≥ 15–20 ميغاباسكال، λ ≤ 0.55)، و<strong>المنتج «خ»</strong>
+            الخفيف العازل (‏≥ 5–7 ميغاباسكال، λ ≤ 0.25) — من التقنية نفسها بخلطتين.
+          </p>
+        </div>
+      </section>
+
+      <!-- 02 -->
+      <section id="tradeoff">
+        <p class="sec-kicker">02 — الأدلة</p>
+        <h2>خريطة المقايضة: أين تقع كل مادة بين العزل والمقاومة</h2>
+        <p>
+          كل نقطة مادة قائمة فعلاً في السوق أو في الأدبيات. المحور الأفقي هو التوصيل الحراري (كلما قلّ كان أعزل)،
+          والعمودي مقاومة الانضغاط. المستطيلان المظلّلان هما نطاقا المنتجَين المستهدفَين.
+        </p>
+
+        <div class="viz">
+          <div class="viz-head">
+            <div>
+              <p class="viz-title">المقاومة مقابل التوصيل الحراري</p>
+              <p class="viz-sub">القيم قيم تمثيلية لكل نوع من الجداول المرجعية؛ النطاق الكامل يظهر عند تمرير المؤشر.</p>
+            </div>
+          </div>
+          <div class="legend" id="legend"></div>
+          <div class="plot-wrap"><svg class="plot" id="plot" viewBox="0 0 760 500" role="img" aria-label="مخطط انتشار: مقاومة الانضغاط مقابل التوصيل الحراري لأنواع الطابوق"></svg></div>
+          <div class="toggle-row">
+            <button class="chip" id="tableToggle" type="button" aria-pressed="false">عرض البيانات كجدول</button>
+          </div>
+          <div id="plotTable" hidden></div>
+        </div>
+
+        <div class="note">
+          <span class="tag">ما تقوله الخريطة</span>
+          <p>
+            لا نوع واحد يقع داخل نطاق المنتج «ث» اليوم. الثرمستون يسحق الجميع عزلاً (λ ≈ 0.12) وينهار إنشائياً
+            (‏≈ 4 ميغاباسكال)؛ والطابوق الطيني الصلد والحراريات تفوز بالحمل وتخسر العزل (λ ≈ 0.8–1.25).
+            <strong>الكتلة الطينية الحرارية المسامية هي الوحيدة القريبة من الحلّ الوسط</strong> —
+            λ = 0.26 مع مقاومة ≥ 7 ميغاباسكال — وهي لذلك أهم مؤشر على اتجاه التصميم.
+          </p>
+        </div>
+      </section>
+
+      <!-- 03 -->
+      <section id="types">
+        <p class="sec-kicker">03 — الفهرس</p>
+        <h2>مستكشف الأنواع: سبعون نوعاً بترميز موحّد</h2>
+        <p>ابحث بالاسم أو الرمز، أو رشِّح حسب المجموعة. الرمز نفسه مستخدم في كل ملفات المشروع.</p>
+        <div class="controls">
+          <input class="search" id="typeSearch" type="search" placeholder="ابحث: جيوبوليمر، حراري، جبس، A5…" aria-label="بحث في أنواع الطابوق">
+          <span class="count" id="typeCount"></span>
+        </div>
+        <div class="controls" id="famChips" role="group" aria-label="ترشيح حسب المجموعة"></div>
+        <div class="tw scroll-y">
+          <table>
+            <thead><tr><th class="n">الرمز</th><th>النوع</th><th>الوصف</th><th>الحالة</th></tr></thead>
+            <tbody id="typeBody"></tbody>
+          </table>
+        </div>
+        <p class="dim" style="font-size:.82rem">
+          الحالة: <strong>عالمي</strong> منتَج ومتداول عالمياً · <strong>عراقي</strong> متداول في العراق ·
+          <strong>بحثي</strong> محدود أو مختبري · <strong>تاريخي</strong> مندثر تجارياً.
+        </p>
+      </section>
+
+      <!-- 04 -->
+      <section id="fire">
+        <p class="sec-kicker">04 — الأداة</p>
+        <h2>حاسبة تصنيف مقاومة الحريق</h2>
+        <p>
+          تصنيف الحريق لا يأتي من «نوع المادة» بل من <strong>السماكة المكافئة ونوع الركام</strong> — وفق
+          <code>ACI 216.1 / TMS 0216</code> المعتمد في <code>IBC §721</code>. السماكة المكافئة = حجم المادة الصلبة
+          في الوحدة ÷ مساحة الوجه.
+        </p>
+
+        <div class="card">
+          <div class="calc-grid">
+            <div>
+              <div class="field">
+                <label class="f" for="fMat">نوع الوحدة</label>
+                <select id="fMat"></select>
+              </div>
+              <div class="field">
+                <label class="f" for="fThk">السماكة المكافئة: <span class="mono" id="fThkVal">100</span> مم</label>
+                <input type="range" id="fThk" min="30" max="200" step="1" value="100">
+                <div class="ticks"><span>30</span><span>100</span><span>200</span></div>
+              </div>
+              <div class="field">
+                <label class="f" for="fWythe">عدد الطبقات (‏wythes) بفجوة هوائية 13–89 مم بينها</label>
+                <select id="fWythe">
+                  <option value="1">طبقة واحدة</option>
+                  <option value="2">طبقتان + فجوة هوائية</option>
+                  <option value="3">ثلاث طبقات + فجوتان</option>
+                </select>
+              </div>
+              <p class="dim" style="font-size:.82rem;margin:0 0 .5rem">الطبقات المتعددة تُجمع بمعادلة المواصفة:</p>
+              <div class="formula" dir="ltr">R = ( ΣR<sub>i</sub><sup>0.59</sup> + ΣA )<sup>1.7</sup></div>
+              <p class="dim" style="font-size:.82rem;margin:.5rem 0 0">
+                قيمة A هي 0.30 لكل فجوة هوائية — ولهذا تعطي المجموعة أكثر من مجموع أجزائها.
+              </p>
+            </div>
+            <div class="readout">
+              <span class="big" id="fOut">—</span>
+              <span class="unit">ساعة تصنيف مقاومة حريق</span>
+              <div class="bar"><i id="fBar" style="width:0%"></i></div>
+              <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+              <span class="sub" id="fNote"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="note">
+          <span class="tag">أرخص رافعة متاحة</span>
+          <p>
+            جرّب: بلوك بركام <strong>خفّان أو خبث مُمدَّد</strong> بسماكة 119 مم يبلغ <strong>4 ساعات</strong>،
+            بينما الحصى العادي يحتاج <strong>157 مم</strong> — فرق 24% في المادة والوزن والكلفة لنفس التصنيف.
+            وجرّب طبقتين بساعة واحدة لكل منهما مع فجوة هوائية: النتيجة <strong>4 ساعات</strong> بلا مادة إضافية.
+          </p>
+        </div>
+
+        <h3>سلوك العائلات فوق 600 °م</h3>
+        <div class="tw">
+          <table>
+            <caption>الفارق الجوهري: الرابط المُماه له سقف حراري صلب، والرابط السيراميكي المُلبَّد لا</caption>
+            <thead><tr><th>العائلة</th><th>400–600 °م</th><th>600–800 °م</th><th>800–1000 °م</th><th>الحكم</th></tr></thead>
+            <tbody>
+              <tr><td>طيني محروق</td><td>مستقر</td><td>مستقر</td><td>مستقر حتى ~1000</td><td>ممتاز — مرّ أصلاً بحرارة أعلى</td></tr>
+              <tr><td>حراريات</td><td>مستقر</td><td>مستقر</td><td>مستقر</td><td>الأفضل مطلقاً</td></tr>
+              <tr><td>إسمنت بورتلاندي</td><td>تدهور من ~500 °م</td><td>تفكك المصفوفة</td><td>انهيار</td><td>الأضعف — تشظٍّ من 400 °م</td></tr>
+              <tr><td>جيوبوليمر / منشّط قلوياً</td><td>لا تشظٍّ حتى 600 °م</td><td>تناقص سريع</td><td>فقد ≈ 59% متبقٍّ بعد 800 °م</td><td>متفوّق على الإسمنت، غير معصوم</td></tr>
+              <tr><td>جبسي</td><td>يمتص حرارة بنزع ماء التبلور</td><td>يتفتّت</td><td>ينهار</td><td>طبقة تضحية ممتازة، لا عنصر إنشائي</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 05 -->
+      <section id="additives">
+        <p class="sec-kicker">05 — التصميم</p>
+        <h2>مصفوفة الإضافات: ماذا تفعل كل مادة بالخلطة</h2>
+        <p>
+          هذه المصفوفة هي قلب المشروع. الأسهم تعني: ↑ زيادة، ↓ نقصان، ≈ بلا أثر يُذكر.
+          «الحكم» يقيس الإضافة أمام الهدفين معاً لا أمام خاصية واحدة.
+        </p>
+        <div class="tw">
+          <table>
+            <thead><tr><th>الإضافة</th><th>المقاومة</th><th>العزل λ</th><th>الامتصاص</th><th>الحريق</th><th>الكلفة</th><th>الحكم الأولي</th></tr></thead>
+            <tbody id="addBody"></tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <span class="tag">القاعدة المستخلَصة</span>
+          <p>
+            كل إضافة تخفض λ عبر رفع <em>المسامية المفتوحة</em> تدفع الثمن مرتين: في المقاومة وفي الامتصاص —
+            وهذا انتحار في تربة الجنوب المالحة، حيث ترتفع نسبة الامتصاص إلى 17–53% مع الإضافات العضوية.
+            <strong>المشكلة ليست المسامية بل نوعها.</strong> الهدف الصحيح مسامية عالية <strong>مغلقة</strong>:
+            يحققها الزجاج المنصهر الذي يُغلق المسام، والركام الخفيف الذي مسامه محبوسة داخل الحبيبة،
+            والرغوة المضبوطة في الجيوبوليمر.
+          </p>
+        </div>
+
+        <h3>أقوى إضافة مفردة ظهرت: مسحوق الزجاج</h3>
+        <div class="grid2">
+          <div class="card">
+            <p style="margin:0 0 .5rem"><strong>ثلاث مشاكل عراقية بحلٍّ واحد</strong></p>
+            <ul style="margin:0;padding-inline-start:1.1rem;font-size:.9rem;color:var(--ink-2)">
+              <li>المقاومة: <span class="mono">+29.4%</span> عند 20% زجاج</li>
+              <li>التزهّر والأملاح: الامتصاص <span class="mono">−24.6%</span>، المسامية <span class="mono">−16%</span></li>
+              <li>فاتورة الوقود: 10% زجاج عند <span class="mono">900 °م</span> = طابوق عادي عند <span class="mono">1000 °م</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <p style="margin:0 0 .5rem"><strong>القيد الواجب حسابه</strong></p>
+            <p style="font-size:.9rem;margin:0;color:var(--ink-2)">
+              الأثر يعتمد على النعومة اعتماداً حاداً: <span class="mono">65.8</span> ميغاباسكال عند حجم حبيبي
+              <span class="mono">150</span> ميكرون مقابل <span class="mono">43.2</span> للحبيبات الأخشن.
+              أي أن <strong>الطحن جزء من الكلفة لا خطوة مجانية</strong> — طاقة وتآكل معدّات، تُحسب في المرحلة 4.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 -->
+      <section id="standards">
+        <p class="sec-kicker">06 — المرجعية</p>
+        <h2>ما الذي يجب تجاوزه: المواصفة القياسية العراقية 25 / 1988</h2>
+        <div class="tw">
+          <table>
+            <caption>متطلبات طابوق البناء الطيني — الأصناف A و B و C. طرق الفحص وفق المواصفة العراقية 24 / 1988.</caption>
+            <thead>
+              <tr><th>الصنف</th><th>التزهّر</th><th class="n">أقل مقاومة — طابوقة</th><th class="n">أقل مقاومة — معدل 10</th><th class="n">أقصى امتصاص — طابوقة</th><th class="n">أقصى امتصاص — معدل 10</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>A</strong> — أحمال وتعرية شديدة</td><td>طفيف</td><td class="n">16 MPa</td><td class="n">18 MPa</td><td class="n">22%</td><td class="n">20%</td></tr>
+              <tr><td><strong>B</strong> — أحمال بلا تعرية شديدة</td><td>طفيف</td><td class="n">11 MPa</td><td class="n">13 MPa</td><td class="n">26%</td><td class="n">24%</td></tr>
+              <tr><td><strong>C</strong> — بلا أحمال (قواطع)</td><td>لا يُشترط</td><td class="n">7 MPa</td><td class="n">9 MPa</td><td class="n">28%</td><td class="n">28%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          للمقارنة، تشترط <code>ASTM C62</code> للصنف <code>SW</code> مقاومة معدل <span class="mono">20.7</span> ميغاباسكال
+          وامتصاصاً بالغلي <span class="mono">≤ 17%</span> ومعامل إشباع <span class="mono">≤ 0.78</span>.
+        </p>
+        <div class="note">
+          <span class="tag">فرصة تنافسية</span>
+          <p>
+            حدّ الامتصاص العراقي (20–28%) متساهل مقارنةً بـ ASTM (17–22%). <strong>أي منتج يتجاوز الصنف A بهامش
+            معقول يصبح تنافسياً تقنياً قبل حتى احتساب ميزتَي الحريق والعزل</strong> — وهذا يخفض عتبة النجاح
+            التقني ويسمح بصرف الجهد على الكلفة بدلاً من مطاردة أرقام قياسية.
+          </p>
+        </div>
+      </section>
+
+      <!-- 07 -->
+      <section id="iraq">
+        <p class="sec-kicker">07 — الواقع</p>
+        <h2>لماذا لا تُنسَخ الحلول العالمية كما هي</h2>
+        <p>معظم أدبيات «الطابوق المستدام» مبنية على ثلاث مواد غير متوفّرة عملياً في العراق:</p>
+        <div class="tw">
+          <table>
+            <thead><tr><th>المادة</th><th>مصدرها عالمياً</th><th>وضعها في العراق</th></tr></thead>
+            <tbody>
+              <tr><td>الرماد المتطاير (Fly ash)</td><td>محطات الكهرباء بالفحم</td><td><strong>شبه معدوم</strong> — التوليد بالغاز والنفط لا بالفحم</td></tr>
+              <tr><td>خبث الأفران المحبّب (GGBS)</td><td>صناعة الحديد المتكاملة</td><td>محدود جداً</td></tr>
+              <tr><td>غبار السيليكا (Silica fume)</td><td>صناعة الفيروسيليكون</td><td>معدوم محلياً</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          هذا يُسقط معظم تلك الأدبيات من الاعتبار المباشر — لكنه ليس عائقاً، لأن البديل المعترف به عالمياً
+          هو <strong>الطين المُكلَّس</strong>، وقد ثبت أن الطين الكاؤوليني–الإيليتي <em>منخفض الدرجة</em>
+          يؤدي أداءً مماثلاً لأنظمة الرماد المتطاير. وهذا بالضبط نوع الطين المتوفّر في العراق.
+        </p>
+
+        <h3>ما يملكه العراق فعلاً</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th>المادة</th><th>الموقع</th><th>الحالة البحثية</th></tr></thead>
+            <tbody>
+              <tr><td>رمل سيليكا عالي النقاوة</td><td>أُرضمة — الصحراء الغربية</td><td>أُنتج منه طابوق سيليكا حراري</td></tr>
+              <tr><td>طين كاؤوليني</td><td>دويخلة</td><td>أُنتج منه طابوق حراري نصف سيليكي عازل</td></tr>
+              <tr><td>بورسلانايت وبوكسايت كارستي</td><td>الغعرة — الصحراء الغربية</td><td>بوزولان طبيعي وركام خفيف</td></tr>
+              <tr><td>طين الطابوق</td><td>إنجانة، المقدادية، باي حسن، الرباعي</td><td>مطابق للمواصفات العراقية للطابوق المثقّب والعادي</td></tr>
+              <tr><td>جبس</td><td>الأنبار والبصرة — تكوين الفتحة</td><td>احتياطي ≈ 130–142 مليون طن</td></tr>
+              <tr><td>ميتاكاؤولين محلي</td><td>مُكلَّس من الكاؤولين العراقي</td><td><strong>27.5 ميغاباسكال عند 7 أيام</strong> بمعالجة محيطية</td></tr>
+              <tr><td>مخلفات نخيل وقش أرز وقصب</td><td>الجنوب والفرات الأوسط</td><td>مُولّدات مسام ومصدر سيليكا لاشكلية</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <p style="margin:0 0 .5rem"><strong>نافذة الفرصة: قرار التحوّل إلى الغاز</strong></p>
+            <p style="font-size:.9rem;margin:0;color:var(--ink-2)">
+              أكثر من <span class="mono">360</span> معملاً في النهروان يشغّل <span class="mono">9000</span> عامل،
+              وكلها مُلزَمة بالتحوّل من زيت الوقود الثقيل إلى الغاز الطبيعي خلال 18 شهراً. أي أنها
+              <strong>تنفق رأسمالاً على القمائن الآن</strong> — وهي أرخص لحظة ممكنة لإدخال تعديل على الخلطة
+              ضمن الدورة الاستثمارية نفسها بدل انتظار دورة أخرى.
+            </p>
+          </div>
+          <div class="card">
+            <p style="margin:0 0 .5rem"><strong>قيود الجنوب التي تحكم التصميم</strong></p>
+            <ul style="margin:0;padding-inline-start:1.1rem;font-size:.9rem;color:var(--ink-2)">
+              <li>ملوحة وسبخة ومياه جوفية قريبة ← امتصاص منخفض إجباري</li>
+              <li>رطوبة عالية ← مسامية مغلقة لا مفتوحة</li>
+              <li>كهرباء غير مستقرة ← <strong>تجنّب الأوتوكلاف</strong> (ثرمستون وسيليكات كلسية)</li>
+              <li>غاز مصاحب وفير ← يرفع جدوى المسار السيراميكي المحروق</li>
+              <li>القطاع السكني يستهلك <span class="mono">&gt;60%</span> من الكهرباء، معظمها تكييف</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 -->
+      <section id="routes">
+        <p class="sec-kicker">08 — القرار</p>
+        <h2>المسارات المرشّحة والمستبعَدة</h2>
+        <p class="dim" style="font-size:.88rem">
+          استنتاجات المرحلة 1، مبنية على أدلة موثّقة لكنها ليست قراراً نهائياً — ستُختبر في المراحل التالية وقد يسقط بعضها.
+        </p>
+        <div class="routes" id="routes"></div>
+
+        <h3>المستبعَد صراحةً — ولماذا</h3>
+        <div class="reject"><b>طابوق الكبريت</b> — ينصهر عند ‎~119 °م ويشتعل عند ‎~250 °م. يتناقض مع الهدف جذرياً، رغم أنه ممتاز لتطبيق آخر تماماً: الأسس والبنى المقاومة للكبريتات في الجنوب.</div>
+        <div class="reject"><b>طابوق البلاستيك والمطاط</b> — يضيف حِمل حريق وغازات سامة عند الاحتراق.</div>
+        <div class="reject"><b>ثرمستون أو سيليكات كلسية جديدة</b> — تحتاج أوتوكلافاً وبخاراً وكهرباء مستقرة، وهي غير متاحة في الجنوب؛ والسوق مخدوم أصلاً.</div>
+        <div class="reject"><b>جيوبوليمر رماد متطاير</b> — المادة الخام غير متوفّرة في العراق.</div>
+        <div class="reject"><b>ترابي غير محروق للجدران الخارجية</b> — لا يصمد أمام المياه الجوفية المالحة والرطوبة العالية.</div>
+      </section>
+
+      <!-- 09 -->
+      <section id="plan">
+        <p class="sec-kicker">09 — الطريق</p>
+        <h2>خطة المراحل</h2>
+        <p>
+          العمل مقسّم على ست مراحل لتفادي استهلاك الحد اليومي دفعة واحدة، وأُعيد ترتيبها بعد قرار
+          <strong>تقديم البحث المختبري على التصنيع</strong>: الجدوى الاقتصادية أُجِّلت، وتصميم الخلطات وبروتوكول
+          التجارب قُدِّم.
+        </p>
+        <ol class="phases">
+          <li><span class="pnum">01</span><span class="pbody"><b>الفهرسة والخواص المرجعية</b><span>سبعون نوعاً، جداول الخواص، مقاومة الحريق، السياق العراقي، بذرة مصفوفة الإضافات</span></span><span class="pstate done">منجزة</span></li>
+          <li><span class="pnum">02</span><span class="pbody"><b>مصفوفة الأدبيات التجريبية</b><span>توثيق فردي لكل دراسة: النسب، منحنى الحرق، النتائج العددية، تحليل الاتجاه والتناقضات</span></span><span class="pstate next">التالية</span></li>
+          <li><span class="pnum">03</span><span class="pbody"><b>الكيمياء والديمومة والسلوك الحراري</b><span>الأطوار، TGA/DTA، المقاومة المتبقية، الكبريتات والأملاح، الخواص الكهربائية</span></span><span class="pstate wait">قيد الانتظار</span></li>
+          <li><span class="pnum">04</span><span class="pbody"><b>الخلطات التصميمية وبروتوكول التجارب</b><span>خلطات المنتجَين «ث» و«خ»، بروتوكولان: أساسي بأدوات بسيطة ومتقدّم بالتوصيف الدقيق</span></span><span class="pstate wait">قيد الانتظار</span></li>
+          <li><span class="pnum">05</span><span class="pbody"><b>الجدوى الاقتصادية التقديرية</b><span>سلاسل التوريد، الطاقة، كلفة الوحدة، المقارنة بالسوق</span></span><span class="pstate wait">قيد الانتظار</span></li>
+          <li><span class="pnum">06</span><span class="pbody"><b>التقرير النهائي ومصفوفة القرار</b><span>خارطة طريق: مختبر ← نموذج أولي ← خط إنتاج</span></span><span class="pstate wait">قيد الانتظار</span></li>
+        </ol>
+      </section>
+
+      <footer>
+        <p>
+          <strong>حدود هذه المرحلة، بصراحة:</strong> جزء من الأوراق خلف جدران دفع ولم يُطّلع على نصها الكامل —
+          أرقامها مأخوذة من الملخصات وستُعاد مراجعتها في المرحلة 2. جدول المواصفة العراقية 25/1988 مأخوذ من
+          مصدر أكاديمي عراقي لا من النسخة الرسمية للجهاز المركزي للتقييس. أسعار السوق العراقي لم تُجمع بعد.
+          ولا توجد بيانات منشورة كافية عن الخواص الكهربائية لأغلب الأنواع — وهي فجوة في الأدبيات العالمية
+          لا في هذا البحث.
+        </p>
+        <p style="margin-top:1rem">المصادر الكاملة (78 مرجعاً) وملفات البحث التقنية في مستودع المشروع.</p>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------------- theme ---------------- */
+var root=document.documentElement, btn=document.getElementById('themeBtn');
+try{ var st=localStorage.getItem('atlas-theme'); if(st==='dark'||st==='light') root.setAttribute('data-theme',st); }catch(e){}
+btn.addEventListener('click',function(){
+  var cur=root.getAttribute('data-theme');
+  var dark = cur ? cur==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  var next = dark ? 'light':'dark';
+  root.setAttribute('data-theme',next);
+  try{ localStorage.setItem('atlas-theme',next); }catch(e){}
+  drawPlot();
+});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',drawPlot);
+
+/* ---------------- data: types ---------------- */
+var FAM=[
+  {k:'A',n:'طيني محروق'},{k:'B',n:'ترابي غير محروق'},{k:'C',n:'جيري–سيليكاتي'},
+  {k:'D',n:'خرساني'},{k:'E',n:'مخلفات صناعية'},{k:'F',n:'جيوبوليمر'},
+  {k:'G',n:'جبسي'},{k:'H',n:'حراريات'},{k:'I',n:'أخرى وناشئة'}
+];
+var TYPES=[
+ ['A1','طابوق طيني صلد عادي','طين أو طَفَل مُشكَّل ومحروق 900–1050 °م، فجوات ≤ 25%','عالمي · عراقي'],
+ ['A2','طابوق واجهات','ضبط لوني وأبعادي وسطحي أعلى (ASTM C216)','عالمي · عراقي'],
+ ['A3','طابوق مثقّب عمودياً','ثقوب رأسية 25–45% لتخفيف الوزن وتحسين الحرق','عالمي · عراقي'],
+ ['A4','طابوق مجوّف وقراميد إنشائية','فجوات > 25% — ASTM C652 / C34 / C56','عالمي · عراقي'],
+ ['A5','كتلة طينية حرارية عالية المسامية','مسامية دقيقة مولّدة بمواد محترقة + هندسة فجوات متعرّجة','عالمي · بحثي'],
+ ['A6','طابوق مزجّج','طبقة زجاجية سطحية مقاومة للماء والتلوث','عالمي'],
+ ['A7','طابوق هندسي وكلنكر','حرق حتى التزجّج الجزئي — امتصاص منخفض جداً','عالمي'],
+ ['A8','طيني بإضافات مخلفات','طين + رماد أو زجاج أو حمأة أو مخلفات زراعية','بحثي'],
+ ['A9','من مخلفات الطابوق نفسه','مسحوق الطابوق المكسور كرَكام أو بوزولان','بحثي'],
+ ['A10','يدوي تقليدي','طرق ما قبل الميكنة — مرجع تاريخي','تاريخي · عراقي'],
+ ['A11','الآجر البابلي بالقار','آجر + قار كمونة — مرجع تاريخي عراقي','تاريخي'],
+ ['B1','اللِبن التقليدي','طين + تبن، تجفيف شمسي بلا ضغط','عالمي · عراقي · تاريخي'],
+ ['B2','ترابي مضغوط CEB','ضغط ميكانيكي 2–10 ميغاباسكال بلا مثبّت','عالمي'],
+ ['B3','ترابي مضغوط مثبّت CSEB','+ إسمنت 4–10% أو جير 6–12%','عالمي'],
+ ['B4','ترابي منشّط قلوياً','تربة + منشّط قلوي بديلاً عن الإسمنت','بحثي'],
+ ['B5','ترابي مسلّح بالألياف','+ ألياف نخيل أو قصب أو تبن أو زجاج','بحثي'],
+ ['B6','التراب المدكوك','نظام جداري مصبوب لا وحدات — مرجع مقارنة','عالمي'],
+ ['B7','طين مثبّت بالجير الهيدروليكي','تقنية تاريخية مُحدَّثة','بحثي'],
+ ['C1','رمل–جير بالأوتوكلاف','رمل + جير 9–15%، كبس ثم أوتوكلاف 6–12 ساعة','عالمي'],
+ ['C2','سيليكات كلسية مسامية','نفس الكيمياء بكثافة أقل','عالمي'],
+ ['C3','سيليكات كلسية بمخلفات','استبدال جزئي للرمل بزجاج أو بازلت أو رماد','بحثي'],
+ ['D1','طابوق خرساني صلد','إسمنت + ركام بأبعاد الطابوق — ASTM C55','عالمي · عراقي'],
+ ['D2','بلوك خرساني مجوّف','حامل أو غير حامل، فجوات 25–50% — ASTM C90','عالمي · عراقي'],
+ ['D3','خرساني بركام خفيف','ليكا أو خفّان أو بيرلايت أو بورسلانايت','عالمي · بحثي'],
+ ['D4','رغوي غير أوتوكلافي','رغوة مُولَّدة، معالجة عادية — كلفة رأسمالية منخفضة','عالمي'],
+ ['D5','خرسانة خلوية بالأوتوكلاف — ثرمستون','إسمنت + جير + رمل + ألمنيوم مُرغّي، أوتوكلاف 180–190 °م','عالمي · عراقي'],
+ ['D6','خرساني بإضافات مخلفات','زجاج أو مطاط أو بلاستيك أو خبث أو رماد قاع','بحثي'],
+ ['D7','خرساني مسلّح بالألياف','ألياف بوليمرية أو فولاذية أو طبيعية','بحثي'],
+ ['D8','بلوك مركّب معزول','جسم خرساني + قلب عازل','عالمي · عراقي'],
+ ['E1','رماد متطاير–جير–جبس FaL-G','تصلّب بوزولاني بلا حرق','عالمي'],
+ ['E2','رماد متطاير مُلبَّد','حرق الرماد بدل الطين','بحثي'],
+ ['E3','من الحمأة','حمأة صرف صحي أو تنقية مياه أو كهربة معادن','بحثي'],
+ ['E4','من الزجاج المُعاد تدويره','مسحوق زجاج كمُصهِر خافض لحرارة الحرق','بحثي'],
+ ['E5','بلاستيك PET أو HDPE','رمل + بلاستيك منصهر رابطاً','بحثي'],
+ ['E6','مطاط الإطارات','فُتات مطاط في مصفوفة إسمنتية','بحثي'],
+ ['E7','حمأة الورق — Papercrete','ألياف ورق + إسمنت أو جير','بحثي'],
+ ['E8','الطين الأحمر','مخلَّف Bayer لإنتاج الألومينا','بحثي'],
+ ['E9','مخلفات المناجم والخبث','خبث الأفران العالية أو نفايات التعدين','بحثي'],
+ ['E10','مخلفات الرخام والحجر','غبار نشر الحجر كمالئ','بحثي'],
+ ['E11','رماد قش الأرز وكسب الزيتون','مخلفات زراعية كمُولّد مسام ووقود داخلي','بحثي'],
+ ['F1','جيوبوليمر رماد متطاير','FA + هيدروكسيد وسيليكات صوديوم','عالمي · بحثي'],
+ ['F2','منشّط قلوياً بالخبث AAS','GGBS + منشّط — تصلّب أسرع بحرارة عادية','عالمي · بحثي'],
+ ['F3','جيوبوليمر ميتاكاؤولين','كاؤولين مُكلَّس 700–800 °م — متاح محلياً','بحثي'],
+ ['F4','جيوبوليمر من مخلفات البناء والهدم','طابوق وخرسانة مسحوقان كسلائف','بحثي'],
+ ['F5','جيوبوليمر رغوي عازل','رغوة أو ماء أوكسجيني لتوليد المسام','بحثي'],
+ ['F6','جيوبوليمر بوزولان طبيعي','بورسلانايت أو رماد بركاني — مسار عراقي محتمل','بحثي'],
+ ['G1','بلوك جبسي','جبس نصف مائي مصبوب — قواطع داخلية','عالمي · عراقي'],
+ ['G2','رابط ثلاثي جبس–جير–بوزولان','مقاومة ماء عبر تكوين الإترنجايت','بحثي'],
+ ['G3','فوسفوجبس','مخلَّف صناعة الأسمدة الفوسفاتية','بحثي'],
+ ['G4','جبس + ألياف طبيعية','بايوكومبوزيت عازل بألياف النخيل أو القصب','بحثي'],
+ ['G5','الجص العراقي التقليدي','تقنية محلية تاريخية','عراقي · تاريخي'],
+ ['H1','شاموتي Fireclay','25–45% ألومينا — خدمة حتى ~1350 °م','عالمي'],
+ ['H2','عالي الألومينا','50–85% ألومينا — 1500–1750 °م','عالمي'],
+ ['H3','سيليكا','أكثر من 93% سيليكا — 1650–1700 °م','عالمي'],
+ ['H4','نصف سيليكا','70–80% سيليكا — جُرّب من مواد عراقية','بحثي'],
+ ['H5','قاعدي: مغنيسيا ودولوميت','مغنيسيا أو مغنيسيا–كروم — 1700–2000 °م','عالمي'],
+ ['H6','خاص: مولايت وزركون وكربيد السيليكون','لأكثر من 1700 °م','عالمي'],
+ ['H7','عازل حراري IFB','مسامية 40–85%، كثافة 0.6–1.3 غم/سم³','عالمي'],
+ ['H8','حراريات من مخلفات','أنورثايت أو مولايت مُصنَّع من ورق ونشارة ورماد','بحثي'],
+ ['H9','حراريات غير مُشكّلة','قوالب صبّ ومونات — مرجع تركيبي','عالمي'],
+ ['I1','طابوق الكبريت','كبريت مُبلمر رابطاً — الكبريت وفير في العراق','بحثي'],
+ ['I2','حيوي بترسيب الكالسيت MICP','بكتيريا تُرسّب كربونات الكالسيوم رابطاً','بحثي'],
+ ['I3','الميسيليوم','فطر ينمو على مخلفات زراعية','بحثي'],
+ ['I4','القنّب والجير — Hempcrete','ألياف نباتية + جير، عازل غير حامل','عالمي'],
+ ['I5','الطابوق الزجاجي','لنقل الضوء، غير حامل عادة','عالمي · عراقي'],
+ ['I6','الخفاف والرماد البركاني','حجر بركاني خفيف مقطوع أو مُشكَّل','عالمي'],
+ ['I7','وحدة مركّبة متعددة الطبقات','قشرة إنشائية + قلب عازل داخل الوحدة','عالمي · بحثي'],
+ ['I8','مطبوع ثلاثي الأبعاد','هندسة داخلية مُحسَّنة حرارياً','بحثي'],
+ ['I9','تخزين الطاقة الحرارية PCM','مواد تغيير الطور داخل الفجوات','بحثي'],
+ ['I10','حجر طبيعي مقطوع','جيري أو رملي — مستعمل في شمال العراق','عالمي · عراقي']
+];
+
+var activeFam='ALL', q='';
+var famWrap=document.getElementById('famChips');
+var allChip=mkChip('الكل','ALL'); famWrap.appendChild(allChip);
+FAM.forEach(function(f){ famWrap.appendChild(mkChip(f.k+' · '+f.n, f.k)); });
+function mkChip(label,key){
+  var b=document.createElement('button');
+  b.type='button'; b.className='chip'; b.textContent=label;
+  b.setAttribute('aria-pressed', key==='ALL'?'true':'false');
+  b.addEventListener('click',function(){
+    activeFam=key;
+    Array.prototype.forEach.call(famWrap.children,function(c){c.setAttribute('aria-pressed','false')});
+    b.setAttribute('aria-pressed','true');
+    renderTypes();
+  });
+  return b;
+}
+var tbody=document.getElementById('typeBody'), tcount=document.getElementById('typeCount');
+document.getElementById('typeSearch').addEventListener('input',function(e){ q=e.target.value.trim(); renderTypes(); });
+function renderTypes(){
+  var rows=TYPES.filter(function(t){
+    if(activeFam!=='ALL' && t[0].charAt(0)!==activeFam) return false;
+    if(!q) return true;
+    var s=(t[0]+' '+t[1]+' '+t[2]+' '+t[3]).toLowerCase();
+    return s.indexOf(q.toLowerCase())>-1;
+  });
+  tbody.innerHTML = rows.length ? rows.map(function(t){
+    return '<tr><td class="code-cell">'+t[0]+'</td><td><strong>'+t[1]+'</strong></td><td>'+t[2]+'</td><td class="status">'+t[3]+'</td></tr>';
+  }).join('') : '<tr><td colspan="4" class="dim" style="text-align:center;padding:2rem">لا نتائج مطابقة</td></tr>';
+  tcount.textContent = rows.length+' من '+TYPES.length;
+}
+renderTypes();
+
+/* ---------------- data: additives ---------------- */
+var ADD=[
+ ['مُولّدات مسام عضوية','↓↓','↓↓ ممتاز','↑↑ سيئ','≈','↓ رخيص','مشروط — ممتاز حرارياً، خطر في بيئة مالحة'],
+ ['مسحوق زجاج','↑↑','↑ قليلاً','↓↓ ممتاز','≈','↓ يوفّر وقوداً','مرشّح قوي جداً'],
+ ['ركام خفيف — خفّان وبورسلانايت','↓','↓↓','↑','↑↑ ممتاز','متوسط','مرشّح قوي'],
+ ['ميتاكاؤولين — جيوبوليمر','↑↑','≈','↓','↑ حتى 600 °م','↑ كلفة التكليس والمنشّط','مرشّح قوي'],
+ ['خبث GGBS','↑↑','≈','↓','↑','↑↑ غير متوفّر محلياً','مستبعَد لعدم التوافر'],
+ ['جبس','↓','↓','↑↑ سيئ','↑ كطبقة تضحية','↓↓ الأرخص','مشروط — ضمن رابط ثلاثي فقط'],
+ ['ألياف طبيعية','↑ شد / ↓ ضغط','↓↓','↑↑','↓ عضوية','↓↓','مشروط — للطبقات غير الحاملة'],
+ ['كبريت','↑↑ سريع','≈','↓↓ ممتاز','مرفوض','↓','مرفوض للهدف'],
+ ['بلاستيك ومطاط','↓','↓','↓','مرفوض','↓','مرفوض للهدف']
+];
+document.getElementById('addBody').innerHTML=ADD.map(function(a){
+  var last=a[6], cls = /مرفوض/.test(last) ? 'color:var(--muted)' : (/قوي/.test(last)?'color:var(--ok);font-weight:600':'');
+  return '<tr><td><strong>'+a[0]+'</strong></td><td>'+a[1]+'</td><td>'+a[2]+'</td><td>'+a[3]+'</td><td>'+a[4]+'</td><td>'+a[5]+'</td><td style="'+cls+'">'+last+'</td></tr>';
+}).join('');
+
+/* ---------------- data: routes ---------------- */
+var ROUTES=[
+ {t:'طيني محروق معدّل بالزجاج والركام الخفيف',c:'A8 + D3',s:5,top:true,
+  d:'طين عراقي + 10–20% مسحوق زجاج + 10–20% ركام بورسلانايت أو خفّان، مثقّب عمودياً، حرق 900–950 °م بالغاز.',
+  v:'يعمل داخل بنية صناعية قائمة، ويوفّر 100 °م من حرارة الحرق. كل مكوّناته مُثبتة منفردةً.'},
+ {t:'جيوبوليمر ميتاكاؤولين عراقي غير محروق',c:'F3 + F6',s:4,
+  d:'كاؤولين دويخلة مُكلَّس 700–800 °م + بورسلانايت + منشّط قلوي، معالجة بحرارة الشمس.',
+  v:'27.5 ميغاباسكال عند 7 أيام مُثبتة محلياً. نقطة الضعف: كلفة سيليكات الصوديوم والصودا الكاوية المستوردة.'},
+ {t:'وحدة مركّبة ثنائية الطبقة',c:'I7',s:4,
+  d:'قشرة إنشائية كثيفة + قلب عازل، مصبوبان كوحدة أو مبنيان كطبقتين بفجوة هوائية.',
+  v:'الأقوى أداءً: 4 ساعات من طبقتين بساعة، ويجمع الكتلة الحرارية مع λ منخفض. الخطر: الالتصاق وتوافق التمدد.'},
+ {t:'طابوق حراري عازل من مواد عراقية',c:'H4 + H7',s:3,
+  d:'رمل أُرضمة + كاؤولين دويخلة + مُولّد مسام، لبطانات الأفران والتطبيقات الصناعية.',
+  v:'الجدوى التقنية مُثبتة بحثياً بالفعل، لكن الكلفة غير تنافسية سكنياً. سوق صناعية مستوردة بالكامل حالياً.'},
+ {t:'بلوك جبسي برابط ثلاثي',c:'G2',s:2,
+  d:'جبس عراقي + جير + بوزولان من مسحوق الطابوق المكسور أو البورسلانايت.',
+  v:'الأرخص بفارق كبير، لكن ضعف مقاومة الماء يحصره في القواطع الداخلية وطبقات الحماية من الحريق.'}
+];
+document.getElementById('routes').innerHTML=ROUTES.map(function(r){
+  var stars=''; for(var i=1;i<=5;i++){ stars += '<span class="'+(i<=r.s?'':'off')+'">★</span>'; }
+  return '<article class="route'+(r.top?' top':'')+'"><span class="codes">'+r.c+'</span><h4>'+r.t+'</h4>'+
+    '<p>'+r.d+'</p><p class="verdict">'+r.v+'</p><div class="rate" aria-label="التقييم '+r.s+' من 5">'+stars+'</div></article>';
+}).join('');
+
+/* ---------------- chart ---------------- */
+var GROUPS=[
+  {k:'ceramic', n:'سيراميكي مُلبَّد (محروق)', v:'--s1', shape:'circle'},
+  {k:'binder',  n:'رابط كيميائي (إسمنتي / جيوبوليمري)', v:'--s2', shape:'square'},
+  {k:'earth',   n:'غير محروق: ترابي وجبسي', v:'--s3', shape:'triangle'}
+];
+var PTS=[
+ {c:'A1',n:'طيني صلد',g:'ceramic',x:0.80,y:18,r:'λ 0.79–0.82 · fc 7–35'},
+ {c:'A3',n:'طيني مثقّب',g:'ceramic',x:0.52,y:12,r:'λ 0.35–0.70 · fc 5–20'},
+ {c:'A5',n:'كتلة طينية حرارية',g:'ceramic',x:0.26,y:7,r:'λ 0.26 · fc ≥ 3.5 وأنواع ≥ 7'},
+ {c:'A7',n:'كلنكر هندسي',g:'ceramic',x:1.15,y:50,r:'λ 1.0–1.3 · fc 50–100'},
+ {c:'H1',n:'شاموتي حراري',g:'ceramic',x:1.25,y:40,r:'λ 1.0–1.5 · fc 20–60'},
+ {c:'H7',n:'عازل حراري خفيف',g:'ceramic',x:0.35,y:5,r:'IFB · λ 0.15–0.45 · fc 1–10'},
+ {c:'D2',n:'بلوك خرساني مجوّف',g:'binder',x:1.15,y:12,r:'λ 0.9–1.4 · fc 4–20'},
+ {c:'D3',n:'خرساني بركام خفيف',g:'binder',x:0.42,y:6.5,r:'λ 0.25–0.60 · fc 3–10'},
+ {c:'D4',n:'رغوي غير أوتوكلافي',g:'binder',x:0.28,y:5,r:'λ 0.10–0.45 · fc 1–10'},
+ {c:'D5',n:'ثرمستون',g:'binder',x:0.12,y:4,r:'AAC · λ 0.08–0.20 · fc 2.5–6'},
+ {c:'C1',n:'سيليكات كلسية',g:'binder',x:1.25,y:10,r:'λ 1.0–1.5 · fc ≈ 10'},
+ {c:'F1',n:'جيوبوليمر كثيف',g:'binder',x:0.80,y:30,r:'λ 0.6–1.0 · fc 9.5–47'},
+ {c:'F5',n:'جيوبوليمر رغوي',g:'binder',x:0.17,y:4,r:'λ 0.171 مقابل 0.737 للكثيف'},
+ {c:'E1',n:'رماد–جير–جبس',g:'binder',x:0.75,y:11,r:'λ 0.6–0.9 · fc 7–15'},
+ {c:'B1',n:'لِبن',g:'earth',x:0.70,y:1.7,r:'λ 0.5–0.9 · fc 0.5–3'},
+ {c:'B3',n:'ترابي مثبّت',g:'earth',x:0.75,y:5.2,r:'CSEB · λ ≈ 0.75 · fc 3.5–7'},
+ {c:'G1',n:'بلوك جبسي',g:'earth',x:0.32,y:4.5,r:'λ 0.25–0.40 · fc 2–7'}
+];
+
+var svg=document.getElementById('plot'), tip=document.getElementById('tip');
+var W=760,H=500,M={t:22,r:26,b:56,l:56};
+function cssv(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+function esc(s){ return String(s).replace(/[&<>]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[m]}); }
+
+function drawPlot(){
+  var ink=cssv('--ink'), mut=cssv('--muted'), line=cssv('--line-soft'), surf=cssv('--surface'), acc=cssv('--accent');
+  var iw=W-M.l-M.r, ih=H-M.t-M.b;
+  var xmax=1.4, ymin=1.4, ymax=60;
+  var L0=Math.log10(ymin), L1=Math.log10(ymax);
+  function X(v){ return M.l + v/xmax*iw; }
+  function Y(v){ return M.t + ih - (Math.log10(Math.max(v,ymin))-L0)/(L1-L0)*ih; }
+
+  var s='';
+  var placed=[];                       // label boxes already on the plot
+  function fits(b){
+    if(b.x<M.l+1||b.x+b.w>W-M.r-1||b.y<M.t+1||b.y+b.h>M.t+ih-1) return false;
+    for(var i=0;i<placed.length;i++){ var o=placed[i];
+      if(b.x<o.x+o.w && b.x+b.w>o.x && b.y<o.y+o.h && b.y+b.h>o.y) return false; }
+    return true;
+  }
+  // greedy label placer: try above, below, right, left, then diagonals
+  function place(cx,cy,text,size){
+    var w=text.length*(size*0.52)+4, h=size+4;
+    var cands=[[0,-11],[0,13],[w/2+11,1],[-w/2-11,1],[w/2+11,-11],[-w/2-11,-11],[w/2+11,13],[-w/2-11,13],[0,-23],[0,25]];
+    for(var i=0;i<cands.length;i++){
+      var dx=cands[i][0], dy=cands[i][1];
+      var b={x:cx+dx-w/2, y:cy+dy-h+3, w:w, h:h};
+      if(fits(b)){ placed.push(b); return {x:cx+dx, y:cy+dy}; }
+    }
+    return null;                        // no room — mark stays, tooltip carries the name
+  }
+
+  // target zones (drawn first, their labels reserve space)
+  s+='<rect x="'+X(0)+'" y="'+M.t+'" width="'+(X(0.55)-X(0))+'" height="'+(Y(15)-M.t)+'" fill="'+acc+'" opacity="0.07"/>';
+  s+='<rect x="'+X(0)+'" y="'+Y(15)+'" width="'+(X(0.25)-X(0))+'" height="'+(Y(5)-Y(15))+'" fill="'+acc+'" opacity="0.14"/>';
+  var zt1={x:X(0.06), y:M.t+16}, zt2={x:X(0.02), y:Y(15)+16};
+  placed.push({x:zt1.x-4, y:zt1.y-13, w:150, h:16});
+  placed.push({x:zt2.x-4, y:zt2.y-13, w:96, h:16});
+  s+='<text x="'+zt1.x+'" y="'+zt1.y+'" text-anchor="start" font-size="11" fill="'+acc+'" font-weight="600" font-family="IBM Plex Sans Arabic, sans-serif">نطاق المنتج «ث» الحامل</text>';
+  s+='<text x="'+zt2.x+'" y="'+zt2.y+'" text-anchor="start" font-size="11" fill="'+acc+'" font-weight="600" font-family="IBM Plex Sans Arabic, sans-serif">«خ» العازل</text>';
+
+  // grid + axes (log y)
+  var yticks=[1.4,2,3,5,10,20,35,60], i;
+  for(i=0;i<yticks.length;i++){ var gy=Y(yticks[i]);
+    s+='<line x1="'+M.l+'" y1="'+gy+'" x2="'+(W-M.r)+'" y2="'+gy+'" stroke="'+line+'" stroke-width="1"/>'+
+       '<text x="'+(M.l-9)+'" y="'+(gy+4)+'" text-anchor="end" font-size="10" fill="'+mut+'">'+yticks[i]+'</text>'; }
+  for(i=0;i<=7;i++){ var vx=i*0.2, gx=X(vx);
+    s+='<line x1="'+gx+'" y1="'+M.t+'" x2="'+gx+'" y2="'+(M.t+ih)+'" stroke="'+line+'" stroke-width="1"/>'+
+       '<text x="'+gx+'" y="'+(M.t+ih+18)+'" text-anchor="middle" font-size="10" fill="'+mut+'">'+vx.toFixed(1)+'</text>'; }
+  s+='<line x1="'+M.l+'" y1="'+(M.t+ih)+'" x2="'+(W-M.r)+'" y2="'+(M.t+ih)+'" stroke="'+cssv('--line')+'" stroke-width="1.5"/>';
+  s+='<line x1="'+M.l+'" y1="'+M.t+'" x2="'+M.l+'" y2="'+(M.t+ih)+'" stroke="'+cssv('--line')+'" stroke-width="1.5"/>';
+  s+='<text x="'+(M.l+iw/2)+'" y="'+(H-12)+'" text-anchor="middle" font-size="11.5" fill="'+ink+'" font-family="IBM Plex Sans Arabic, sans-serif">التوصيل الحراري λ ‏(واط/م·كلفن) — كلما قلّ كان أعزل</text>';
+  s+='<text transform="translate(15,'+(M.t+ih/2)+') rotate(-90)" text-anchor="middle" font-size="11.5" fill="'+ink+'" font-family="IBM Plex Sans Arabic, sans-serif">مقاومة الانضغاط (ميغاباسكال) — مقياس لوغاريتمي</text>';
+
+  // every mark reserves its own footprint first — labels are painted last and would occlude them
+  PTS.forEach(function(p){ placed.push({x:X(p.x)-8, y:Y(p.y)-8, w:16, h:16}); });
+
+  // marks: densest region first so crowded points get the close slots
+  var order=PTS.slice().sort(function(a,b){ return a.y-b.y; });
+  var marks='', labels='';
+  order.forEach(function(p){
+    var g=GROUPS.filter(function(G){return G.k===p.g})[0];
+    var col=cssv(g.v), cx=X(p.x), cy=Y(p.y), m='';
+    if(g.shape==='circle') m='<circle cx="'+cx+'" cy="'+cy+'" r="6"';
+    else if(g.shape==='square') m='<rect x="'+(cx-5.4)+'" y="'+(cy-5.4)+'" width="10.8" height="10.8" rx="1.5"';
+    else m='<polygon points="'+cx+','+(cy-6.6)+' '+(cx+6)+','+(cy+4.6)+' '+(cx-6)+','+(cy+4.6)+'"';
+    marks+=m+' fill="'+col+'" stroke="'+surf+'" stroke-width="2" class="mk" data-c="'+p.c+'"/>';
+    var pos=place(cx,cy,p.n,10.5);
+    if(pos){
+      labels+='<text x="'+pos.x+'" y="'+pos.y+'" text-anchor="middle" font-size="10.5" fill="'+ink+'" '+
+        'font-family="IBM Plex Sans Arabic, sans-serif" paint-order="stroke" stroke="'+surf+'" stroke-width="3.5" '+
+        'stroke-linejoin="round">'+esc(p.n)+'</text>';
+    }
+  });
+  svg.innerHTML = s + marks + labels;
+
+  document.getElementById('legend').innerHTML=GROUPS.map(function(g){
+    var col=cssv(g.v), sw;
+    if(g.shape==='circle') sw='<svg class="swatch" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4.4" fill="'+col+'"/></svg>';
+    else if(g.shape==='square') sw='<svg class="swatch" viewBox="0 0 10 10" aria-hidden="true"><rect x="0.8" y="0.8" width="8.4" height="8.4" rx="1" fill="'+col+'"/></svg>';
+    else sw='<svg class="swatch" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.6 9.6,9 0.4,9" fill="'+col+'"/></svg>';
+    return '<span>'+sw+g.n+'</span>';
+  }).join('');
+
+  Array.prototype.forEach.call(svg.querySelectorAll('.mk'),function(el){
+    el.style.cursor='pointer';
+    el.addEventListener('mouseenter',function(e){ showTip(el.getAttribute('data-c'), e); });
+    el.addEventListener('mousemove',function(e){ moveTip(e); });
+    el.addEventListener('mouseleave',hideTip);
+    el.addEventListener('focus',function(e){ showTipAt(el); });
+    el.addEventListener('blur',hideTip);
+    el.setAttribute('tabindex','0');
+    var pp=PTS.filter(function(q){return q.c===el.getAttribute('data-c')})[0];
+    if(pp){ el.setAttribute('role','img'); el.setAttribute('aria-label', pp.n+': توصيل '+pp.x+'، مقاومة '+pp.y+' ميغاباسكال'); }
+  });
+}
+function showTipAt(el){
+  var r=el.getBoundingClientRect();
+  showTip(el.getAttribute('data-c'), {clientX:r.left+r.width/2, clientY:r.top+r.height/2});
+}
+function showTip(code,e){
+  var p=PTS.filter(function(q){return q.c===code})[0]; if(!p) return;
+  tip.innerHTML='<b>'+esc(p.n)+' <span class="mono" style="color:var(--muted)">'+p.c+'</span></b>'+
+    '<span class="mono">λ = '+p.x+' · fc = '+p.y+' MPa</span><br><span style="color:var(--muted);font-size:.76rem">النطاق: '+esc(p.r)+'</span>';
+  tip.classList.add('on'); moveTip(e);
+}
+function moveTip(e){
+  var x=e.clientX+14, y=e.clientY+14;
+  if(x+230>innerWidth) x=e.clientX-244;
+  if(y+90>innerHeight) y=e.clientY-100;
+  tip.style.left=x+'px'; tip.style.top=y+'px';
+}
+function hideTip(){ tip.classList.remove('on'); }
+drawPlot();
+
+/* table view (relief for the light-mode contrast warning) */
+var tt=document.getElementById('tableToggle'), pt=document.getElementById('plotTable');
+tt.addEventListener('click',function(){
+  var on = tt.getAttribute('aria-pressed')==='true';
+  tt.setAttribute('aria-pressed', on?'false':'true');
+  tt.textContent = on ? 'عرض البيانات كجدول' : 'إخفاء الجدول';
+  pt.hidden = on;
+  if(!on && !pt.innerHTML){
+    pt.innerHTML='<div class="tw"><table><thead><tr><th class="n">الرمز</th><th>النوع</th><th>المجموعة</th><th class="n">λ</th><th class="n">fc</th><th>النطاق المنشور</th></tr></thead><tbody>'+
+      PTS.map(function(p){ var g=GROUPS.filter(function(G){return G.k===p.g})[0];
+        return '<tr><td class="code-cell">'+p.c+'</td><td>'+esc(p.n)+'</td><td>'+g.n+'</td><td class="n">'+p.x+'</td><td class="n">'+p.y+'</td><td>'+esc(p.r)+'</td></tr>';
+      }).join('')+'</tbody></table></div>';
+  }
+});
+
+/* ---------------- fire calculator ---------------- */
+var FIRE=[
+ {k:'clay-solid', n:'طابوق طيني صلد (مساحة صافية ≥ 75%)', hrs:[1,2,3,4], mm:[69,97,124,152]},
+ {k:'clay-hollow',n:'طابوق طيني مجوّف غير مملوء', hrs:[1,2,3,4], mm:[58,86,109,127]},
+ {k:'clay-fill',  n:'طابوق طيني مجوّف محشو أو مملوء', hrs:[1,2,3,4], mm:[76,112,140,168]},
+ {k:'cmu-gravel', n:'بلوك خرساني — حصى كلسي أو سيليسي', hrs:[0.5,0.75,1,1.5,2,3,4], mm:[51,61,71,91,107,135,157]},
+ {k:'cmu-lime',   n:'بلوك خرساني — حجر جيري أو خبث مبرَّد بالهواء', hrs:[0.5,0.75,1,1.5,2,3,4], mm:[48,58,69,86,102,127,150]},
+ {k:'cmu-exp',    n:'بلوك خرساني — طين أو طَفَل مُمدَّد', hrs:[0.5,0.75,1,1.5,2,3,4], mm:[46,56,66,84,91,112,130]},
+ {k:'cmu-pumice', n:'بلوك خرساني — خبث مُمدَّد أو خفّان', hrs:[0.5,0.75,1,1.5,2,3,4], mm:[38,48,53,69,81,102,119]}
+];
+var selMat=document.getElementById('fMat');
+selMat.innerHTML=FIRE.map(function(f,i){ return '<option value="'+i+'"'+(f.k==='cmu-pumice'?' selected':'')+'>'+f.n+'</option>'; }).join('');
+var rng=document.getElementById('fThk'), thkVal=document.getElementById('fThkVal'),
+    wSel=document.getElementById('fWythe'), out=document.getElementById('fOut'),
+    bar=document.getElementById('fBar'), note=document.getElementById('fNote');
+
+function hoursFor(f,mm){
+  if(mm < f.mm[0]) return f.hrs[0]*mm/f.mm[0];      // below the table: proportional, reported as approximate
+  for(var i=0;i<f.mm.length-1;i++){
+    if(mm>=f.mm[i] && mm<=f.mm[i+1]){
+      var t=(mm-f.mm[i])/(f.mm[i+1]-f.mm[i]);
+      return f.hrs[i]+t*(f.hrs[i+1]-f.hrs[i]);
+    }
+  }
+  return f.hrs[f.hrs.length-1];                      // capped at 4 h by code
+}
+function calc(){
+  var f=FIRE[+selMat.value], mm=+rng.value, w=+wSel.value;
+  thkVal.textContent=mm;
+  var single=hoursFor(f,mm);
+  var R=single, msg='';
+  if(w>1){
+    var sum=0; for(var i=0;i<w;i++) sum+=Math.pow(single,0.59);
+    sum += 0.30*(w-1);
+    R=Math.pow(sum,1.7);
+  }
+  var capped=false;
+  if(R>4){ R=4; capped=true; }
+  out.textContent=R.toFixed(2);
+  bar.style.width=Math.min(100,R/4*100)+'%';
+
+  if(w>1){
+    msg='كل طبقة بسماكة '+mm+' مم تعطي <span class="mono">'+single.toFixed(2)+'</span> ساعة منفردةً؛ '+
+        'ومجموعة الطبقات مع الفجوات الهوائية تعطي <span class="mono">'+(capped?'أكثر من 4':R.toFixed(2))+'</span>.';
+  } else {
+    msg='السماكة المكافئة = حجم المادة الصلبة ÷ مساحة الوجه — لا السماكة الظاهرية للوحدة.';
+  }
+  if(capped) msg += ' <strong>التصنيف يُحدَّد بأربع ساعات كحد أقصى في المدوّنة.</strong>';
+  if(mm < f.mm[0]) msg += ' <strong>القيمة دون أدنى صف في جدول المواصفة — تقدير استرشادي لا تصنيفاً معتمداً.</strong>';
+  note.innerHTML=msg;
+}
+[selMat,rng,wSel].forEach(function(el){ el.addEventListener('input',calc); el.addEventListener('change',calc); });
+calc();
+
+/* ---------------- scrollspy ---------------- */
+var links=Array.prototype.slice.call(document.querySelectorAll('.rail a'));
+var secs=links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        var i=secs.indexOf(en.target);
+        links.forEach(function(l,j){ l.classList.toggle('active', i===j); });
+      }
+    });
+  },{rootMargin:'-15% 0px -70% 0px'});
+  secs.forEach(function(s){ if(s) io.observe(s); });
+}
+})();
+</script>
