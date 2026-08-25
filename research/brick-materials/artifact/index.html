@@ -290,7 +290,7 @@ footer p{max-width:70ch}
   <div class="topbar-in">
     <div class="brand"><span class="glyph" aria-hidden="true"></span> أطلس الطابوق</div>
     <div style="display:flex;align-items:center;gap:.6rem">
-      <span class="phase-chip">المراحل 1–4 من 6 · منجزة</span>
+      <span class="phase-chip">المراحل 1–5 من 6 · منجزة</span>
       <button class="theme-btn" id="themeBtn" type="button">◐ السمة</button>
     </div>
   </div>
@@ -307,8 +307,8 @@ footer p{max-width:70ch}
     </p>
     <div class="hero-stats">
       <div class="stat"><span class="n">70</span><span class="l">نوعاً مفهرساً في 9 مجموعات</span></div>
-      <div class="stat"><span class="n">215</span><span class="l">مصدراً علمياً ومواصفة</span></div>
-      <div class="stat"><span class="n">6</span><span class="l">خلطات مرشّحة للفحص</span></div>
+      <div class="stat"><span class="n">222</span><span class="l">مصدراً علمياً ومواصفة</span></div>
+      <div class="stat"><span class="n">47</span><span class="l">دينار/طابوقة — ميزانية الإضافات</span></div>
       <div class="stat"><span class="n">20+</span><span class="l">دولة مصدرها في المراجعة</span></div>
     </div>
   </header>
@@ -342,9 +342,13 @@ footer p{max-width:70ch}
         <li><a href="#mixes"><span class="num">18</span> الخلطات المقترحة</a></li>
         <li><a href="#protocol"><span class="num">19</span> بروتوكول التجارب</a></li>
         <li><a href="#spec"><span class="num">20</span> المواصفة والتصريح</a></li>
+        <li class="rgroup">الاقتصاد</li>
+        <li><a href="#market"><span class="num">21</span> أسعار السوق</a></li>
+        <li><a href="#parity"><span class="num">22</span> ميزانية الإضافات</a></li>
+        <li><a href="#verdict"><span class="num">23</span> حكم الجدوى</a></li>
         <li class="rgroup">الخلاصة</li>
-        <li><a href="#atlas"><span class="num">21</span> الفهرس الجغرافي</a></li>
-        <li><a href="#plan"><span class="num">22</span> خطة المراحل</a></li>
+        <li><a href="#atlas"><span class="num">24</span> الفهرس الجغرافي</a></li>
+        <li><a href="#plan"><span class="num">25</span> خطة المراحل</a></li>
       </ol>
     </nav>
 
@@ -1503,8 +1507,224 @@ footer p{max-width:70ch}
       </section>
 
       <!-- 21 -->
+      <section id="market">
+        <p class="sec-kicker">21 — الاقتصاد</p>
+        <h2>أسعار السوق: ما تقوله البيانات الرسمية</h2>
+        <p>
+          المصدر: <strong>مديرية إحصاءات البناء والتشييد</strong> — أسعار المواد الإنشائية وأجور العاملين
+          لشهر <strong>تموز 2026</strong> مقارنةً بحزيران. الأسعار بالألف دينار.
+        </p>
+
+        <div class="tw">
+          <table>
+            <caption>مواد الجدران — المنشأ العراقي. عمود التغيّر يقارن تموز بحزيران 2026.</caption>
+            <thead><tr><th>المادة</th><th>الوحدة</th><th class="n">حزيران</th><th class="n">تموز</th><th class="n">التغيّر</th><th class="n">سعر الوحدة</th></tr></thead>
+            <tbody>
+              <tr><td><strong>طابوق عادي</strong></td><td>ألف</td><td class="n">167</td><td class="n"><strong>164</strong></td><td class="n">−2%</td><td class="n"><strong>164 دينار/طابوقة</strong></td></tr>
+              <tr><td><strong>طابوق جمهوري</strong></td><td>ألف</td><td class="n">217</td><td class="n"><strong>211</strong></td><td class="n">−3%</td><td class="n"><strong>211 دينار/طابوقة</strong></td></tr>
+              <tr><td><strong>ثرمستون</strong></td><td>ألف</td><td class="n">1810</td><td class="n"><strong>1820</strong></td><td class="n">+1%</td><td class="n"><strong>1,820 دينار/بلوكة</strong></td></tr>
+              <tr><td>بلوك خرساني كبير</td><td>ألف</td><td class="n">627</td><td class="n">630</td><td class="n">0%</td><td class="n">630 دينار/بلوكة</td></tr>
+              <tr><td>سمنت مقاوم</td><td>طن</td><td class="n">122</td><td class="n"><strong>121</strong></td><td class="n">−1%</td><td class="n">121,000 دينار/طن</td></tr>
+              <tr><td>سمنت عادي</td><td>طن</td><td class="n">104</td><td class="n">105</td><td class="n">+1%</td><td class="n">105,000 دينار/طن</td></tr>
+              <tr><td>جص فني</td><td>طن</td><td class="n">99</td><td class="n">97</td><td class="n">−2%</td><td class="n">97,000 دينار/طن</td></tr>
+              <tr><td>رمل أسود</td><td>م³</td><td class="n">16</td><td class="n">16</td><td class="n">0%</td><td class="n">16,000 دينار/م³</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="viz">
+          <div class="viz-head"><div>
+            <p class="viz-title">كلفة مادة المتر المربع من الجدار</p>
+            <p class="viz-sub">عند السماكات المستعملة فعلياً في العراق. قيمة التوصيل الحراري مذكورة بجانب كل عمود.</p>
+          </div></div>
+          <div id="m2Bars"></div>
+        </div>
+
+        <div class="note">
+          <span class="tag">الاكتشاف المركزي في المرحلة 5</span>
+          <p>
+            <strong>الطابوق والثرمستون يبيعان بنفس السعر تقريباً للمتر المربع — فارق 1.8% فقط —
+            رغم أن الثرمستون يعزل أفضل بسبع مرات.</strong>
+          </p>
+          <p style="margin-top:.6rem">
+            معنى ذلك أن السوق <strong>لا يفاضل بينهما على أساس العزل أو السعر</strong>. المشتري الذي يختار الطابوق
+            رغم عزله الأسوأ سبع مرات يدفع نفس المبلغ ويشتري شيئاً آخر: <strong>المقاومة، والقدرة على تثبيت
+            الأحمال، والثقة بالديمومة</strong> — وهي الخصائص الثلاث التي طلبتَ التركيز عليها.
+          </p>
+        </div>
+
+        <h3>أجور العاملين — دينار لكل يوم عمل</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th>الفئة</th><th class="n">البصرة</th><th class="n">معدل المحافظات</th><th class="n">الفارق</th></tr></thead>
+            <tbody>
+              <tr><td><strong>العمال الماهرون</strong></td><td class="n"><strong>50,000</strong></td><td class="n">63,000</td><td class="n" style="color:var(--ok)"><strong>−21%</strong></td></tr>
+              <tr><td>شبه الماهرين</td><td class="n">35,000</td><td class="n">34,333</td><td class="n">+2%</td></tr>
+              <tr><td>غير الماهرين</td><td class="n">25,000</td><td class="n">24,667</td><td class="n">+1%</td></tr>
+              <tr><td><strong>المهندسون</strong></td><td class="n"><strong>80,000</strong></td><td class="n">57,333</td><td class="n" style="color:var(--ember)"><strong>+40%</strong></td></tr>
+              <tr><td><strong>الإداريون</strong></td><td class="n"><strong>35,000</strong></td><td class="n">24,667</td><td class="n" style="color:var(--ember)"><strong>+42%</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          <span class="tag">أثر مباشر على بروتوكول المرحلة 4</span>
+          <p>
+            العمالة الماهرة في البصرة <strong>أرخص 21% من المعدل الوطني</strong> — ميزة حقيقية. لكن المهندسين
+            والإداريين هم <strong>الأغلى في العراق</strong>. والبروتوكول الذي وضعتُه كثيف السيطرة النوعية — معاينة
+            قلب أسود لكل دفعة، ضبط التشتّت، تسجيل مواضع الفرن — وهذا <strong>إشراف هندسي وإداري، أي أغلى ما في
+            البصرة</strong>. <strong>أتمتة الفحص ليست ترفاً — هي وفر تشغيلي دائم.</strong>
+          </p>
+        </div>
+      </section>
+
+      <!-- 22 -->
+      <section id="parity">
+        <p class="sec-kicker">22 — الأداة</p>
+        <h2>ميزانية الإضافات: هل يمرّ المنتج اقتصادياً؟</h2>
+        <p>
+          فارق السعر بين الطابوق العادي (164) والجمهوري (211) = <strong>47 دينار/طابوقة</strong>. هذه ليست
+          علاوة مأمولة بل <strong>علاوة قائمة يدفعها السوق فعلاً</strong> — وهي ميزانية الإضافات المتاحة.
+          حرّك المدخلات وشاهد إن كانت الخلطة تمرّ.
+        </p>
+
+        <div class="card">
+          <div class="calc-grid">
+            <div>
+              <div class="field">
+                <label class="f" for="gP">سعر الزجاج مطحوناً عند بوابة المعمل: <span class="mono" id="gPv">50</span> ألف دينار/طن</label>
+                <input type="range" id="gP" min="10" max="90" step="5" value="50">
+                <div class="ticks"><span>10</span><span>50</span><span>90</span></div>
+              </div>
+              <div class="field">
+                <label class="f" for="gN">نسبة الزجاج: <span class="mono" id="gNv">15</span>%</label>
+                <input type="range" id="gN" min="0" max="20" step="1" value="15">
+                <div class="ticks"><span>0</span><span>10</span><span>20</span></div>
+              </div>
+              <div class="field">
+                <label class="f" for="bP">سعر كربونات الباريوم: <span class="mono" id="bPv">550</span> دولار/طن</label>
+                <input type="range" id="bP" min="300" max="900" step="50" value="550">
+                <div class="ticks"><span>300</span><span>600</span><span>900</span></div>
+              </div>
+              <div class="field">
+                <label class="f" for="bN">نسبة كربونات الباريوم: <span class="mono" id="bNv">0.4</span>%</label>
+                <input type="range" id="bN" min="0" max="0.8" step="0.1" value="0.4">
+                <div class="ticks"><span>0</span><span>0.4</span><span>0.8</span></div>
+              </div>
+              <div class="field">
+                <label class="f" for="pN">مُولّد المسام (وقود داخلي): <span class="mono" id="pNv">0</span>%</label>
+                <input type="range" id="pN" min="0" max="12" step="0.5" value="0">
+                <div class="ticks"><span>0</span><span>6</span><span>12</span></div>
+              </div>
+            </div>
+            <div class="readout" style="text-align:right">
+              <div class="dual">
+                <div><span class="mini">الكلفة المضافة الصافية</span><span class="big2" id="pkC">—</span><span class="mini">دينار/طابوقة</span></div>
+                <div><span class="mini">الفائض من الميزانية</span><span class="big2" id="pkS">—</span><span class="mini">دينار</span></div>
+              </div>
+              <div class="sub" style="text-align:right">
+                <span class="mini" id="pkBreak"></span>
+              </div>
+              <div class="verdict-row" id="pkVerdict"></div>
+            </div>
+          </div>
+          <p class="dim" style="font-size:.8rem;margin:1rem 0 0">
+            طابوقة 240×115×75 مم بكثافة 1700 = 3.52 كغم. الطين المُزاح بـ10 دنانير/كغم. الوقود: نفط أسود مدعوم
+            150 ألف دينار/طن بقيمة حرارية 40 ميجاجول/كغم ← 3.75 دينار/ميجاجول. مُولّد المسام يُحتسب وقوداً
+            داخلياً بقيمة حرارية 15 ميجاجول/كغم وكفاءة احتراق 70%، مطروحاً منه كلفة رفع الحرق 100 °م.
+          </p>
+        </div>
+
+        <div class="note">
+          <span class="tag">تصحيح لما قلتُه في المرحلة 2</span>
+          <p>
+            قدّمتُ «توفير 100 درجة بالزجاج» كمكسب اقتصادي كبير. الحساب يصحّح ذلك: الوفر
+            <strong>1.7–3.3 دينار للطابوقة فقط — أي 1–2% من السعر</strong>، لأن معظم الطاقة تُستهلك في الوصول إلى
+            900 °م أصلاً وفي خسائر القمينة. <strong>الزجاج يُشترى بالأداء لا بالوقود</strong>: مقاومة +29.4%،
+            امتصاص −24.6%، وإزاحة توزيع المسام عن النطاق الحرج.
+          </p>
+        </div>
+
+        <div class="note" style="border-right-color:var(--accent);background:var(--accent-soft)">
+          <span class="tag" style="color:var(--accent-ink)">نتيجة تقلب الحدس</span>
+          <p>
+            <strong>مُولّد المسام يموّل نفسه ويزيد.</strong> النشارة عند 7.5% تعطي وفراً في الوقود قدره 10.4 دينار
+            (وقود داخلي) + 2.6 دينار طيناً مُزاحاً، ناقص 2.5 دينار كلفة رفع الحرق = <strong>رصيد صافٍ
+            10.6 دينار للطابوقة</strong>، وسعر تعادلها ~40 ألف دينار/طن — أعلى بكثير من سعرها الفعلي في العراق.
+          </p>
+          <p style="margin-top:.6rem">
+            <strong>أي أن المنتج العازل أرخص في مواده من المنتج الحامل</strong> — عكس الافتراض الحدسي بأن العزل
+            يكلّف أكثر. <strong>القيد:</strong> هذا مشروط بحلّ القلب الأسود بمنحنى حرق مطوّل الأكسدة، وهو يستهلك
+            زمن قمينة أطول — ثمن لم يُحسب لغياب بيانات المعمل.
+          </p>
+        </div>
+      </section>
+
+      <!-- 23 -->
+      <section id="verdict">
+        <p class="sec-kicker">23 — الحكم</p>
+        <h2>هل المشروع مجدٍ؟</h2>
+        <div class="note" style="border-right-color:var(--ok);background:color-mix(in srgb,var(--ok) 10%, transparent)">
+          <span class="tag" style="color:var(--ok)">الحكم المباشر</span>
+          <p style="font-size:1.02rem">
+            <strong>نعم — المسار الأول مجدٍ اقتصادياً، بهامش معقول، وبأسوأ الافتراضات.</strong>
+            الكلفة المضافة للمنتج الحامل ~<strong>30 دينار/طابوقة</strong> مقابل ميزانية <strong>47 ديناراً</strong>
+            — فائض <strong>17 ديناراً (احتياطي 37%)</strong>. والأهم: هذه ليست علاوة مأمولة بل
+            <strong>الفارق المُسجَّل رسمياً</strong> بين الطابوق العادي والجمهوري في تموز 2026.
+          </p>
+        </div>
+
+        <h3>سبع نتائج غيّرتها البيانات</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th class="n">#</th><th>ما كنا نظنّه</th><th>ما تبيّن</th></tr></thead>
+            <tbody>
+              <tr><td class="code-cell">1</td><td>توفير 100 °م بالزجاج مكسب اقتصادي كبير</td><td><strong>1.7–3.3 دينار فقط (1–2%)</strong> — الزجاج يُشترى بالأداء</td></tr>
+              <tr><td class="code-cell">2</td><td>العزل يكلّف أكثر</td><td><strong>العكس</strong> — مُولّد المسام يعطي رصيداً 10.6 دينار</td></tr>
+              <tr><td class="code-cell">3</td><td>ميزانية الإضافات ~صفر</td><td><strong>47 دينار/طابوقة</strong>، مُثبتة سوقياً</td></tr>
+              <tr><td class="code-cell">4</td><td>الخلطة هي الرافعة الاقتصادية</td><td><strong>كفاءة القمينة أكبر</strong> — الانتقال من 4.0 إلى 2.5 ميجاجول/كغم يوفّر 20 ديناراً، أكثر من كل ميزانية الإضافات</td></tr>
+              <tr><td class="code-cell">5</td><td>العمالة في الجنوب مشكلة</td><td>الماهرة <strong>أرخص 21%</strong>، لكن الإشراف الهندسي والإداري الأغلى في العراق</td></tr>
+              <tr><td class="code-cell">6</td><td>الجيوبوليمر خيار ثانٍ قابل</td><td><strong>يضعف أكثر</strong> — مكوّنات مستوردة بمخاطرة صرف 14% وبلا وفر وقود يعوّضها</td></tr>
+              <tr><td class="code-cell">7</td><td>البلوك الخرساني منافس</td><td><strong>شريحة أخرى بنصف السعر</strong> — لا تحاول منافسته</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>ثمانية مجاهيل — سبعة منها تُحسم بزيارة معمل واحد</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th class="n">#</th><th>المجهول</th><th>لماذا يهمّ</th></tr></thead>
+            <tbody>
+              <tr><td class="code-cell">1</td><td><strong>تعرفة الغاز الطبيعي للمعامل</strong></td><td>التحوّل الإلزامي خلال 18 شهراً — إن كان الغاز أغلى من النفط الأسود المدعوم <strong>يرتفع سعر السوق كله</strong> لا كلفتك وحدها</td></tr>
+              <tr><td class="code-cell">2</td><td><strong>الاستهلاك النوعي للقمائن العراقية</strong></td><td>يقرّر إن كانت كلفة الوقود 16% أم 40% من السعر</td></tr>
+              <tr><td class="code-cell">3</td><td>سعر الزجاج مجموعاً ومطحوناً</td><td>البند الوحيد الذي قد يقلب ميزانية الإضافات</td></tr>
+              <tr><td class="code-cell">4</td><td>سعر كربونات الباريوم مستورداً</td><td>5–13 دينار/طابوقة حسب السعر والنسبة</td></tr>
+              <tr><td class="code-cell">5</td><td>الأبعاد المرجعية للثرمستون والبلوك</td><td>تغيّر مقارنة المتر المربع</td></tr>
+              <tr><td class="code-cell">6</td><td>إنتاجية المعمل</td><td>يقرّر كلفة العمالة الحقيقية</td></tr>
+              <tr><td class="code-cell">7</td><td>كلفة زمن القمينة الإضافي لمنحنى الأكسدة</td><td>يقتطع من رصيد مُولّد المسام</td></tr>
+              <tr><td class="code-cell">8</td><td>سعر باب المعمل مقابل سعر السوق</td><td>الهوامش الحقيقية أقل من الظاهرة</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>التوصية العملية — بأثر تنازلي</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th class="n">#</th><th>الخطوة</th><th>لماذا</th></tr></thead>
+            <tbody>
+              <tr><td class="code-cell">1</td><td><strong>زُر معملاً في النهروان أو قرب البصرة ليومين</strong></td><td><strong>يحسم سبعة من ثمانية مجاهيل</strong> — أرخص خطوة في المشروع كله وأعلاها عائداً على الوقت</td></tr>
+              <tr><td class="code-cell">2</td><td>اطلب عرض سعر للزجاج المكسّر من جامعي الخردة</td><td>قارنه بسعر التعادل 14,700 دينار/طن</td></tr>
+              <tr><td class="code-cell">3</td><td><strong>غيّر شكل المنتج قبل أن تغيّر خلطته</strong></td><td>الكتلة الكبيرة المثقّبة تخفض كلفة المتر المربع من ثلاث جهات: وحدات أقل، مونة أقل، عمالة أقل</td></tr>
+              <tr><td class="code-cell">4</td><td>لا تنافس البلوك الخرساني</td><td>شريحته 7,875 دينار/م² ولا يمكن بلوغها — موقعك شريحة 15,000–20,000</td></tr>
+              <tr><td class="code-cell">5</td><td>اجعل السمنت المقاوم شرطاً في دليل التركيب</td><td>فرقه عن العادي <strong>16 ألف دينار للطن فقط (+15%)</strong> ويمنع الهجوم الكبريتاتي — أرخص توصية في المشروع</td></tr>
+              <tr><td class="code-cell">6</td><td>أتمت السيطرة النوعية بدل تكثيف الإشراف</td><td>الإشراف أغلى ما في البصرة (+40% و+42%)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 24 -->
       <section id="atlas">
-        <p class="sec-kicker">21 — النطاق</p>
+        <p class="sec-kicker">24 — النطاق</p>
         <h2>الفهرس الجغرافي: من أين جاءت الأدلة</h2>
         <p>
           البحث لم يُحصر بالعراق. هذه الدول التي ظهرت مصادرها فعلياً في المراجعة — والعراق فيها حالة
@@ -1539,7 +1759,7 @@ footer p{max-width:70ch}
 
       <!-- 15 -->
       <section id="plan">
-        <p class="sec-kicker">22 — الطريق</p>
+        <p class="sec-kicker">25 — الطريق</p>
         <h2>خطة المراحل</h2>
         <p>
           العمل مقسّم على ست مراحل لتفادي استهلاك الحد اليومي دفعة واحدة، وأُعيد ترتيبها بعد قرار
@@ -1551,8 +1771,8 @@ footer p{max-width:70ch}
           <li><span class="pnum">02</span><span class="pbody"><b>المراجعة العالمية: العزل والتثبيت والانضغاط</b><span>عشرون دولة، المصفوفات الكاملة، قوانين المسامية والترابط والتثبيت، والمقايضات الخمس</span></span><span class="pstate done">منجزة</span></li>
           <li><span class="pnum">03</span><span class="pbody"><b>الكيمياء والديمومة والسلوك الحراري</b><span>تحوّلات الأطوار، العيوب الثلاثة، الأملاح وحجم المسام الحرج، المقاومة المتبقية بعد 1000 °م، الخواص الكهربائية</span></span><span class="pstate done">منجزة</span></li>
           <li><span class="pnum">04</span><span class="pbody" data-next="1"><b>الخلطات التصميمية وبروتوكول التجارب</b><span>ستّ خلطات، برنامجا حرق منفصلان، مصفوفة Taguchi L9، خمس بوابات قرار، والمواصفة الداخلية للتصريح</span></span><span class="pstate done">منجزة</span></li>
-          <li><span class="pnum">05</span><span class="pbody"><b>الجدوى الاقتصادية التقديرية</b><span>سلاسل التوريد، الطاقة، كلفة الوحدة، المقارنة بالسوق</span></span><span class="pstate next">التالية</span></li>
-          <li><span class="pnum">06</span><span class="pbody"><b>التقرير النهائي ومصفوفة القرار</b><span>خارطة طريق: مختبر ← نموذج أولي ← خط إنتاج</span></span><span class="pstate wait">قيد الانتظار</span></li>
+          <li><span class="pnum">05</span><span class="pbody"><b>الجدوى الاقتصادية بالبيانات الرسمية</b><span>أسعار تموز 2026، كلفة المتر المربع، ميزانية الإضافات المُثبتة سوقياً، والموقع التنافسي</span></span><span class="pstate done">منجزة</span></li>
+          <li><span class="pnum">06</span><span class="pbody"><b>التقرير النهائي ومصفوفة القرار</b><span>خارطة طريق: مختبر ← نموذج أولي ← خط إنتاج</span></span><span class="pstate next">التالية</span></li>
         </ol>
       </section>
 
@@ -2028,6 +2248,59 @@ unitCalc();
            '<span class="val">'+r.lab+' W/m·K</span></div>';
   }).join('') +
   '<p class="dim" style="font-size:.8rem;margin:.6rem 0 0">الفارق: <strong>أقل توصيلاً بـ 1.69–1.82 مرة</strong> — ومقاومة البلوكات المتعاشقة العازلة بقيت 13.0–15.9 ميغاباسكال، أي حاملة فعلاً.</p>';
+})();
+
+/* ---------------- cost per m2 bars ---------------- */
+(function(){
+  var el=document.getElementById('m2Bars'); if(!el) return;
+  var rows=[
+    {n:'بلوك خرساني 200 مم', v:7875,  lam:'λ ~1.1'},
+    {n:'ثرمستون 200 مم',     v:15167, lam:'λ ~0.12'},
+    {n:'طابوق عادي 240 مم',  v:15435, lam:'λ ~0.80'},
+    {n:'طابوق جمهوري 240 مم',v:19855, lam:'λ ~0.80'}
+  ];
+  var max=21000;
+  el.innerHTML = rows.map(function(r){
+    return '<div class="gbar"><span>'+r.n+'</span><span class="track"><i style="width:'+(r.v/max*100).toFixed(1)+'%"></i></span>'+
+           '<span class="val">'+r.v.toLocaleString('en-US')+' د · '+r.lam+'</span></div>';
+  }).join('') +
+  '<p class="dim" style="font-size:.8rem;margin:.6rem 0 0">افتراضات الأبعاد: بلوك وجه 400×200 مم، ثرمستون وجه 600×200 مم، طابوق 240×115×75 مم بفواصل 10 مم (94.1 طابوقة/م²). الأبعاد المرجعية غير مذكورة في الجدول الرسمي — تُراجَع محلياً.</p>';
+})();
+
+/* ---------------- additive budget / price parity ---------------- */
+(function(){
+  var gP=document.getElementById('gP'); if(!gP) return;
+  var gN=document.getElementById('gN'), bP=document.getElementById('bP'), bN=document.getElementById('bN'), pN=document.getElementById('pN');
+  var MASS=3.52, CLAY=10, IQD_MJ=3.75, FX=1320, BUDGET=47;
+  var E_BASE=2.5*MASS, FUEL_SAVE=E_BASE*0.075*IQD_MJ;   // ~2.47 IQD for the 100 C reduction
+  function calc(){
+    var gp=+gP.value*1000/1000, gn=+gN.value, bp=+bP.value, bn=+bN.value, pn=+pN.value;
+    document.getElementById('gPv').textContent=gP.value;
+    document.getElementById('gNv').textContent=gn;
+    document.getElementById('bPv').textContent=bp;
+    document.getElementById('bNv').textContent=bn.toFixed(1);
+    document.getElementById('pNv').textContent=pn.toFixed(1);
+    var gKg=MASS*gn/100, bKg=MASS*bn/100, pKg=MASS*pn/100;
+    var glassCost = gKg*gp - gKg*CLAY - (gn>0?FUEL_SAVE:0);   // price is IQD/kg since thousand IQD/tonne = IQD/kg
+    var baCost    = bKg*(bp*FX/1000);
+    var fibre     = 1.0;
+    var poreCredit= pn>0 ? (pKg*15*0.70*IQD_MJ + pKg*CLAY - FUEL_SAVE) : 0;
+    var net = glassCost + baCost + fibre - poreCredit;
+    var surplus = BUDGET - net;
+    document.getElementById('pkC').textContent=net.toFixed(1);
+    document.getElementById('pkS').textContent=surplus.toFixed(1);
+    // break-even glass price at the current glass dose
+    var beTxt='';
+    if(gn>0){ var be=(FUEL_SAVE/gKg)+CLAY; beTxt='سعر تعادل الزجاج عند هذه النسبة: <b class="mono">'+(be*1000).toLocaleString('en-US',{maximumFractionDigits:0})+'</b> دينار/طن<br>'; }
+    beTxt+='الزجاج <b class="mono">'+glassCost.toFixed(1)+'</b> · الباريوم <b class="mono">'+baCost.toFixed(1)+'</b> · الألياف <b class="mono">1.0</b>'+
+           (pn>0?' · مُولّد المسام <b class="mono" style="color:var(--ok)">−'+poreCredit.toFixed(1)+'</b>':'');
+    document.getElementById('pkBreak').innerHTML=beTxt;
+    var ok = surplus>=0;
+    document.getElementById('pkVerdict').innerHTML =
+      '<span class="pill '+(ok?'ok':'no')+'">'+(ok?'✓ يمرّ — ضمن ميزانية 47 ديناراً':'✕ يتجاوز الميزانية بـ '+(-surplus).toFixed(1)+' دينار')+'</span>';
+  }
+  [gP,gN,bP,bN,pN].forEach(function(e){ e.addEventListener('input',calc); e.addEventListener('change',calc); });
+  calc();
 })();
 
 /* ---------------- characteristic value calculator ---------------- */

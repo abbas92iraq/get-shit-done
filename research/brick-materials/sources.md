@@ -304,3 +304,20 @@
 213. **[ن]** **EN 772-1** مقاومة الانضغاط — **EN 772-2** نسبة مساحة الفجوات — **EN 772-3** الحجم الصافي ونسبة الفجوات بالوزن الهيدروستاتيكي — **EN 772-8** الامتصاص بالغلي. https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+772
 214. **[ن]** Irish Concrete Federation — *Guidance for Specifiers and Manufacturers on I.S. EN 771-3*. https://irishconcrete.ie/wp-content/uploads/2018/03/03-ICF-Information-Sheet-ISEN771.pdf
 215. **[ن]** *Characteristic strength of masonry* — H+H Celcon TSD03. https://www.hhcelcon.co.uk/media/1534/TSD03%20Characteristic%20strength%20of%20masonry%20(Aug%202014).pdf
+
+---
+
+# المصادر — المرحلة 5 (الأسعار والجدوى الاقتصادية)
+
+## 23. البيانات الرسمية العراقية
+
+216. **[م] مديرية إحصاءات البناء والتشييد — العراق.** *معدل أسعار المواد الإنشائية حسب المنشأ وتوفرها في الأسواق المحلية لشهر تموز ونسبة التغيير مقارنة بشهر حزيران لسنة 2026.* 65 مادة إنشائية بأسعار المنشأ العراقي والعربي والأجنبي ونسب التغيّر الشهرية. **(وثيقة مرفوعة من المستخدم — استُخرجت جداولها كاملةً بإعادة بناء إحداثية.)**
+217. **[م] مديرية إحصاءات البناء والتشييد — العراق.** *معدل أجور العاملين حسب المحافظة لشهر تموز لسنة 2026.* ست فئات مهنية × 15 محافظة + معدل المحافظات. **(الوثيقة نفسها.)**
+
+## 24. الطاقة وسعر الصرف
+
+218. **[ن]** AGBI — *Iraq to export over 1 million bpd of black oil* (شباط 2026). سعر النفط الأسود المدعوم محلياً حتى 150,000 دينار/طن. https://www.agbi.com/oil-and-gas/2026/02/iraq-to-export-over-1-million-bpd-of-black-oil/
+219. **[ن]** DailyFuels — *Iraq Gasoline & Diesel Prices, July 2026*. https://www.dailyfuels.com/iraq/
+220. **[ن]** Baker Institute — *Iraq's Electricity Shortage and the Paradox of Gas Flaring*. تعرفة الشريحة الأولى 10 دنانير/كيلوواط.ساعة. https://www.bakerinstitute.org/research/iraqs-electricity-shortage-and-paradox-gas-flaring
+221. **[ن]** البنك المركزي العراقي — سعر الصرف الرسمي 1,300 دينار/دولار (ثابت منذ شباط 2023)، وبيع المصارف 1,320، والسوق الموازية ~1,506.
+222. **[ن]** GlobalPetrolPrices — *Iraq energy prices*. https://www.globalpetrolprices.com/Iraq/
