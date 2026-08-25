@@ -204,3 +204,73 @@
 145. **[ن]** *Synergistic Improvement of Strength Characteristics in Recycled Aggregates Using Nano-Clay and Polypropylene Fiber*, PMC10857017.
 146. **[ن]** *Effects of expanded polystyrene (EPS) particles on fire resistance, thermal conductivity and compressive strength of foamed concrete*. https://www.sciencedirect.com/science/article/abs/pii/S0950061816302756
 147. **[ن]** *Optimization and performance of expanded polystyrene concrete for sustainable infill wall construction*, Scientific Reports. https://www.nature.com/articles/s41598-025-07705-z
+
+---
+
+# المصادر — المرحلة 3 (الكيمياء والديمومة والسلوك الحراري والكهربائي)
+
+## 15. الكيمياء وتحوّلات الأطوار
+
+148. **[ن]** *Thermal behaviours of clay mixtures during brick firing: A combined study of in-situ XRD, TGA and thermal dilatometry*, Construction and Building Materials. https://www.sciencedirect.com/science/article/abs/pii/S095006182102078X
+149. **[ن]** *The change of phase composition in kaolinite- and illite-rich clay-based ceramic bodies*, Applied Clay Science. https://www.sciencedirect.com/science/article/abs/pii/S0169131703002382
+150. **[ن]** *Microstructural Development on Firing Illite and Smectite Clays Compared With That in Kaolinite*. https://www.researchgate.net/publication/229726426
+151. **[ن]** *Influence of Firing Temperature on the Physical, Thermal and Microstructural Properties of Kankara Kaolin Clay*, PMC7215478.
+152. **[ن]** *High- and low-defect kaolinite for brick making: Comparisons of technological properties, phase evolution and microstructure*. https://www.sciencedirect.com/science/article/abs/pii/S095006182203906X
+153. **[ن]** *Thermal treatment and phase formation in kaolinite and illite based clays from tropical regions of Bolivia*. https://www.researchgate.net/publication/258682928
+154. **[ن]** *Assessment of Limestone Waste Addition for Fired Clay Bricks*, PMC9229666.
+155. **[ن]** *Limestone Clays for Ceramic Industry*, IntechOpen. https://www.intechopen.com/chapters/72560
+156. **[ن]** *Improvement of Engineering Properties of Fired Clay Bricks Through the Addition of Calcite*. https://www.researchgate.net/publication/276831956
+157. **[ن]** *Calcium and sulphur distribution in fired clay brick in the presence of a black reduction core using micro X-ray fluorescence mapping*. https://www.sciencedirect.com/science/article/abs/pii/S0950061811001000
+158. **[ن]** *Prevention of black core formation in ceramic bodies*, Physicochemical Problems of Mineral Processing. https://www.journalssystem.com/ppmp/pdf-203933-124342
+159. **[ن]** Brosnan & Sanders — *Residual Sulfur in Clay Bricks*, ZI 10/05. https://brickandtile.org/wikibrick/images/4/4b/Zi_10_05_residual_sulfur.pdf
+160. **[ن]** *Measuring Soluble Sulfates in Raw Materials*, Borregaard. https://www.borregaard.com/biokeram/measuring-soluble-sulfates-in-raw-materials
+161. **[ن]** المواصفة البريطانية **BS 3921** — حدود الأملاح الذائبة للأصناف L و N.
+
+## 16. الديمومة والأملاح
+
+162. **[م]** BIA Technical Note 23A — *Efflorescence – Causes and Prevention* (June 2019). الشروط الثلاثة، جدول مصادر الأملاح، فحص ASTM C67 ومحدوديته، التزهّر الداخلي، توصيات التصميم. https://www.gobrick.com/media/file/23a-tn23a.pdf
+163. **[ن]** *Study on Deterioration Law and Mechanism of Gray Brick Due to Salt Crystallization*, Materials 15(8):2936 / PMC9024910. https://doi.org/10.3390/ma15082936
+164. **[ن]** *Crystallization damage by sodium sulfate*, Journal of Cultural Heritage. https://www.sciencedirect.com/science/article/abs/pii/S1296207403000220
+165. **[ن]** *Towards a more effective and reliable salt crystallization test for porous building materials: state of the art* (RILEM TC 271-ASC). https://www.academia.edu/47984832
+166. **[ن]** *Towards a more effective and reliable salt crystallisation test: Predictive modelling of sodium chloride salt distribution*. https://www.sciencedirect.com/science/article/pii/S0950061821021942
+167. **[ن]** *The role of sea salts in the occurrence of different damage mechanisms and decay patterns on brick masonry*. https://www.sciencedirect.com/science/article/abs/pii/S0950061803000710
+168. **[ن]** *Effect of salt crystallisation on the shear behaviour of masonry walls: An experimental study*. https://www.sciencedirect.com/science/article/abs/pii/S0950061812005569
+169. **[ن]** *The Effects of Salt Crystallization in Ceramic Bricks in Terms of Line Deformations*. https://www.sciencedirect.com/science/article/pii/S187770581732742X
+170. **[ن]** *How Different is the Deteriorating Mechanism of Fired Clay Bricks Due to NaCl Salt Compared to the Highly Damaging Na2SO4?*, Springer. https://link.springer.com/chapter/10.1007/978-3-031-21735-7_75
+171. **[ن]** *A Review: Durability of Fired Clay Brick Masonry Wall due to Salt Attack*. https://www.researchgate.net/publication/285907752
+172. **[ن]** *Influence of Pore-Size Distribution on the Resistance of Clay Brick to Freeze–Thaw Cycles*, Materials 13(10):2364 / PMC7288054. https://doi.org/10.3390/ma13102364
+173. **[ن]** *Combined multi-analytical approach for study of pore system in bricks: How much porosity is there?*. https://www.sciencedirect.com/science/article/abs/pii/S104458031630314X
+174. **[ن]** *Review of Thaumasite Sulfate Attack on Cement Mortar and Concrete*, ASCE J. Materials in Civil Engineering 24(12). https://ascelibrary.org/doi/10.1061/(ASCE)MT.1943-5533.0000530
+175. **[ن]** *Internal Sulphate Attack in Masonry Mortars with Thaumasite Formation*, PMC9416336.
+176. **[ن]** *Mechanism and Performance Control Methods of Sulfate Attack on Concrete: A Review*, PMC11477950.
+177. **[ن]** *Prevention and treatment of sulphate attack on brickwork*.
+178. **[ن]** *Assessing the Freeze-Thaw Resistance of Clay Brick for Interior Insulation Retrofit Projects*, ORNL/Buildings XI. https://web.ornl.gov/sci/buildings/conf-archive/2010%20B11%20papers/203_Mensinga.pdf
+179. معايير: **EN 12370** (تبلور الأملاح)، **RILEM TC 271-ASC**، **ASTM C67** (فحص التزهّر).
+
+## 17. الديمومة في بيئة العراق
+
+180. **[ن]** *Possible Sources of Salinity in the Upper Dibdibba Aquifer, Basrah, Iraq*, Water 13(4):578. https://doi.org/10.3390/w13040578
+181. **[ن]** *Evaluation of the Drinking and Irrigation Quality of Groundwater in Basra, Iraq*. https://www.researchgate.net/publication/373588705
+182. **[ن]** *Assessment of Sulfate and Chloride Concentrations in Groundwater and Their Impact on Public Health and the Environment in Iraq: A review*, Al-Rafidain Journal of Engineering Sciences. https://rjes.iq/index.php/rjes/article/view/202
+183. **[ن]** *Effect of groundwater salinity level on soil using remote sensing and GIS techniques: Case study of southwest of Basra Province*. https://www.researchgate.net/publication/324013310
+184. **[ن]** *Unveiling soil and groundwater salinity dynamics and its impact on date palm yield in Southern Basrah, Iraq*, DYSONA Applied Science.
+
+## 18. السلوك تحت الحرارة العالية والتمدد الرطوبي
+
+185. **[م]** Padilha, Veronese, Moreno, Parsekian — *Residual Compressive Strength of Structural Masonry Clay Units*, 15th Canadian Masonry Symposium — **البرازيل** (Unicamp و UFSCar). 32 وحدة عند حرارة الغرفة و400 و800 و1000 °م، مع تحليل ANOVA. https://www.canadamasonrydesigncentre.com/wp-content/uploads/15th_symposium/106-Padilha.pdf
+186. **[ن]** *Properties of partition wall blocks prepared with high percentages of recycled clay brick after exposure to elevated temperatures*. https://www.sciencedirect.com/science/article/abs/pii/S0950061813007344
+187. **[ن]** *Strength Properties of Sustainable Mortar Containing Waste Steel Slag and Waste Clay Brick: Effect of Temperature*, PMC8122282.
+188. **[ن]** Hall et al. — *Kinetics of Long-Term Moisture Expansion in Fired-Clay Brick*, J. American Ceramic Society. https://ceramics.onlinelibrary.wiley.com/doi/10.1111/j.1551-2916.2011.04831.x
+189. **[ن]** *Kinetics of Moisture Expansion in Fired Clay Ceramics: A (Time)^1/4 Law*. https://www.researchgate.net/publication/10810413
+190. **[ن]** Clegg et al. — *Dehydroxylation and Rehydroxylation Mechanisms in Fired Clay Ceramic: A TG-MS and DRIFTS Investigation*, J. American Ceramic Society. https://ceramics.onlinelibrary.wiley.com/doi/10.1111/j.1551-2916.2011.04926.x
+191. **[ن]** *Effect of Humidity Instability on Rehydroxylation in Fired Clay Ceramics*. https://ceramics.onlinelibrary.wiley.com/doi/10.1111/jace.12262
+
+## 19. الخواص الكهربائية وديمومة الأنظمة البديلة
+
+192. **[ن]** *Influence of technological texture on electrical properties of industrial ceramics*. https://www.academia.edu/117796153
+193. **[ن]** *Durability of geopolymer materials in sodium and magnesium sulfate solutions*, Cement and Concrete Research. https://www.sciencedirect.com/science/article/abs/pii/S0008884604004090
+194. **[ن]** *The Durability of Alkali-Activated Materials in Comparison with Ordinary Portland Cements and Concretes: A Review*, Engineering. https://www.engineering.org.cn/engi/EN/10.1016/j.eng.2019.08.019
+195. **[ن]** *Alkali-Activated Binders as Sustainable Alternatives to Portland Cement and Their Resistance to Saline Water*, PMC11396123.
+196. **[ن]** *Study on the Chloride–Sulfate Resistance of a Metakaolin-Based Geopolymer Mortar*, PMC11509200.
+197. **[ن]** *Long-term durability properties of geopolymer concrete: An in-depth review*. https://www.sciencedirect.com/science/article/pii/S2214509521001765
+198. **[ن]** *Durability of fly ash/slag geopolymers: Role of OPC and silica under sulfate attack*. https://www.sciencedirect.com/science/article/abs/pii/S0950061825000029
