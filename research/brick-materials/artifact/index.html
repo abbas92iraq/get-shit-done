@@ -113,6 +113,15 @@ h1 .hl{color:var(--ember)}
 .stat .n{font-family:"IBM Plex Mono",monospace; font-size:1.65rem; font-weight:600; line-height:1.1; color:var(--ink); font-variant-numeric:tabular-nums; display:block}
 .stat .l{font-size:.8rem; color:var(--muted); margin-top:.3rem; display:block}
 
+/* ---------- executive summary ---------- */
+.summary-band{padding:clamp(2rem,4vw,3rem) 0; border-bottom:1px solid var(--line-soft)}
+.sum-grid{display:grid; grid-template-columns:1fr; gap:1rem; margin-bottom:1.5rem}
+@media(min-width:760px){ .sum-grid{grid-template-columns:1fr 1fr} }
+@media(min-width:1100px){ .sum-grid{grid-template-columns:repeat(4,1fr)} }
+.sum-card{background:var(--surface); border:1px solid var(--line-soft); border-radius:12px; padding:1.1rem; box-shadow:var(--shadow)}
+.sum-card .mini{display:block; margin-bottom:.45rem; font-family:"IBM Plex Mono",monospace; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent)}
+.sum-card p{margin:0; font-size:.9rem; color:var(--ink-2); max-width:none}
+
 /* ---------- nav rail ---------- */
 .rail{display:none}
 @media (min-width:1060px){
@@ -244,6 +253,16 @@ input[type=range]{width:100%; accent-color:var(--accent)}
 .pill{font-size:.76rem; font-weight:600; padding:.22rem .6rem; border-radius:999px; border:1px solid transparent; white-space:nowrap}
 .pill.ok{background:color-mix(in srgb,var(--ok) 15%,transparent); color:var(--ok); border-color:color-mix(in srgb,var(--ok) 35%,transparent)}
 .pill.no{background:var(--line-soft); color:var(--muted); border-color:var(--line)}
+.wgrid{display:grid; grid-template-columns:1fr; gap:.75rem}
+@media(min-width:700px){ .wgrid{grid-template-columns:1fr 1fr} }
+.wrow{display:grid; grid-template-columns:minmax(7rem,auto) 1fr 2.6rem; gap:.6rem; align-items:center; font-size:.85rem}
+.wrow .wv{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; text-align:left; color:var(--ink-2)}
+.mxrow{display:grid; grid-template-columns:minmax(9rem,auto) 1fr auto; gap:.6rem; align-items:center; margin:.45rem 0; font-size:.87rem}
+.mxrow.win span:first-child{font-weight:700; color:var(--accent-ink)}
+.mxrow .track{height:16px; background:var(--line-soft); border-radius:3px; overflow:hidden}
+.mxrow .track>i{display:block; height:100%; background:var(--line); border-radius:3px; transition:width .18s ease}
+.mxrow.win .track>i{background:var(--accent)}
+.mxrow .val{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-size:.82rem; color:var(--ink-2)}
 .gbar{display:grid; grid-template-columns:minmax(7.5rem,auto) 1fr auto; gap:.6rem; align-items:center; margin:.5rem 0; font-size:.85rem}
 .gbar .track{height:14px; background:var(--line-soft); border-radius:3px; overflow:hidden}
 .gbar .track>i{display:block; height:100%; background:var(--accent); border-radius:3px}
@@ -290,7 +309,7 @@ footer p{max-width:70ch}
   <div class="topbar-in">
     <div class="brand"><span class="glyph" aria-hidden="true"></span> أطلس الطابوق</div>
     <div style="display:flex;align-items:center;gap:.6rem">
-      <span class="phase-chip">المراحل 1–5 من 6 · منجزة</span>
+      <span class="phase-chip">المراحل الست · مكتملة</span>
       <button class="theme-btn" id="themeBtn" type="button">◐ السمة</button>
     </div>
   </div>
@@ -313,11 +332,50 @@ footer p{max-width:70ch}
     </div>
   </header>
 
+  <section id="summary" class="summary-band">
+    <p class="sec-kicker">00 — الخلاصة التنفيذية</p>
+    <h2>الجواب في صفحة واحدة</h2>
+    <p class="lede" style="margin-bottom:1.5rem">
+      <strong>نعم — عبر تعديل الطابوق الطيني المحروق داخل معمل قائم، لا عبر تقنية جديدة.</strong>
+    </p>
+    <div class="sum-grid">
+      <div class="sum-card">
+        <span class="mini">المسار الموصى به</span>
+        <p>طين عراقي + <strong>15% مسحوق زجاج ≤150 ميكرون</strong> + <strong>0.4% كربونات باريوم</strong> +
+        <strong>0.25% ألياف نخيل</strong>، مُشكَّلاً <strong>ككتلة كبيرة بفجوات محسّنة وأضلاع تثبيت مصمتة</strong>، حرق 950 °م.</p>
+      </div>
+      <div class="sum-card">
+        <span class="mini">الجدوى</span>
+        <p>الكلفة المضافة <strong>~30 دينار/طابوقة</strong> مقابل ميزانية <strong>47 ديناراً</strong> مُثبتة سوقياً
+        (فارق العادي/الجمهوري) — فائض <strong>17 ديناراً، احتياطي 37%</strong>.</p>
+      </div>
+      <div class="sum-card">
+        <span class="mini">الفجوة السوقية</span>
+        <p>الطابوق والثرمستون بنفس السعر للمتر المربع (فارق 1.8%) رغم عزل أفضل بسبع مرات — أي أن السوق
+        يشتري <strong>المقاومة والتثبيت والديمومة</strong>، لا العزل ولا السعر.</p>
+      </div>
+      <div class="sum-card">
+        <span class="mini">أرخص خطوة تالية</span>
+        <p><strong>زيارة معمل ليومين</strong> — تحسم سبعة من ثمانية مجاهيل بلا مختبر ولا بحث. الزمن إلى
+        السوق <strong>18–24 شهراً</strong> عبر ست مراحل ببوابات قرار.</p>
+      </div>
+    </div>
+    <div class="note" style="margin-bottom:0">
+      <span class="tag">القاعدة الأولى للمشروع</span>
+      <p>
+        رافعة واحدة لا تدفع أي ثمن أدائي: <strong>الهندسة</strong>. بلوك بفجوات على شكل H أعطى توصيلاً
+        0.43–0.50 مقابل 0.78–0.81 للمتصالب — <strong>بنفس المادة ونفس الكثافة</strong> — ومقاومته بقيت
+        13.0–15.9 ميغاباسكال. <strong>قبل أن تعدّل الخلطة، عدّل القالب.</strong>
+      </p>
+    </div>
+  </section>
+
   <div class="layout">
     <nav class="rail" aria-label="فهرس الصفحة">
       <p class="rail-title">الفهرس</p>
       <ol id="railList">
         <li class="rgroup">الأساس</li>
+        <li><a href="#summary"><span class="num">00</span> الخلاصة التنفيذية</a></li>
         <li><a href="#tension"><span class="num">01</span> التناقض الهندسي</a></li>
         <li><a href="#tradeoffs"><span class="num">02</span> المقايضات الخمس</a></li>
         <li><a href="#tradeoff"><span class="num">03</span> خريطة المقايضة</a></li>
@@ -346,9 +404,12 @@ footer p{max-width:70ch}
         <li><a href="#market"><span class="num">21</span> أسعار السوق</a></li>
         <li><a href="#parity"><span class="num">22</span> ميزانية الإضافات</a></li>
         <li><a href="#verdict"><span class="num">23</span> حكم الجدوى</a></li>
+        <li class="rgroup">القرار</li>
+        <li><a href="#matrix"><span class="num">24</span> مصفوفة القرار</a></li>
+        <li><a href="#roadmap"><span class="num">25</span> خارطة الطريق</a></li>
         <li class="rgroup">الخلاصة</li>
-        <li><a href="#atlas"><span class="num">24</span> الفهرس الجغرافي</a></li>
-        <li><a href="#plan"><span class="num">25</span> خطة المراحل</a></li>
+        <li><a href="#atlas"><span class="num">26</span> الفهرس الجغرافي</a></li>
+        <li><a href="#plan"><span class="num">27</span> خطة المراحل</a></li>
       </ol>
     </nav>
 
@@ -1723,8 +1784,114 @@ footer p{max-width:70ch}
       </section>
 
       <!-- 24 -->
+      <section id="matrix">
+        <p class="sec-kicker">24 — القرار</p>
+        <h2>مصفوفة القرار: غيّر أوزانك وشاهد النتيجة</h2>
+        <p>
+          الدرجات (1–5) مسنودة بأدلة المراحل الخمس. الأوزان الافتراضية تعكس أولوياتك المعلنة —
+          العزل والتثبيت والانضغاط — مع وزن معتبر للديمومة والاقتصاد، لأنهما يقرّران البقاء لا التفضيل.
+        </p>
+
+        <div class="card">
+          <div class="wgrid" id="wSliders"></div>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:1rem 0 .3rem">
+            <span class="count">مجموع الأوزان: <b class="mono" id="wSum">100</b></span>
+            <button class="chip" id="wReset" type="button">إعادة الأوزان الافتراضية</button>
+            <button class="chip" id="wInsul" type="button">سيناريو: العزل أولاً</button>
+          </div>
+          <div id="mxBars" style="margin-top:1rem"></div>
+        </div>
+
+        <div class="note">
+          <span class="tag">القراءة الصحيحة</span>
+          <p>
+            المساران الأول والثاني <strong>متعادلان عملياً</strong> — والفارق أصغر من عدم يقين الدرجات نفسها.
+            والأهم أنهما <strong>ليسا بديلين</strong>: الأول <em>خلطة</em> والثاني <em>شكل</em>.
+            <strong>الجمع بينهما هو المنتج الفعلي.</strong> وهذا يؤكد بطريق مستقل ما وصلت إليه المرحلة 5:
+            غيّر الشكل قبل الخلطة، ثم اجمعهما.
+          </p>
+        </div>
+
+        <h3>الدرجات ومسوّغاتها</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th>المسار</th><th class="n">انضغاط</th><th class="n">عزل</th><th class="n">تثبيت</th><th class="n">ديمومة</th><th class="n">اقتصاد</th><th class="n">حريق</th><th class="n">نضج</th></tr></thead>
+            <tbody>
+              <tr><td><strong>طيني + زجاج + ركام خفيف</strong></td><td class="n"><strong>5</strong></td><td class="n">3</td><td class="n"><strong>5</strong></td><td class="n">4</td><td class="n"><strong>5</strong></td><td class="n">5</td><td class="n"><strong>5</strong></td></tr>
+              <tr><td><strong>كتلة كبيرة مثقّبة / مركّبة</strong></td><td class="n">4</td><td class="n"><strong>5</strong></td><td class="n">4</td><td class="n">4</td><td class="n"><strong>5</strong></td><td class="n">5</td><td class="n">3</td></tr>
+              <tr><td>حراري عازل من مواد عراقية</td><td class="n">3</td><td class="n">4</td><td class="n">3</td><td class="n">4</td><td class="n" style="color:var(--ember)"><strong>1</strong></td><td class="n">5</td><td class="n">2</td></tr>
+              <tr><td>جيوبوليمر ميتاكاؤولين</td><td class="n">5</td><td class="n">3</td><td class="n" style="color:var(--ember)">2</td><td class="n">3</td><td class="n">2</td><td class="n">3</td><td class="n">2</td></tr>
+              <tr><td>بلوك جبسي برابط ثلاثي</td><td class="n">2</td><td class="n">4</td><td class="n">2</td><td class="n" style="color:var(--ember)"><strong>1</strong></td><td class="n">5</td><td class="n">4</td><td class="n">3</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="dim" style="font-size:.85rem">
+          <strong>أمثلة على المسوّغات:</strong> الجيوبوليمر يأخذ 2 في التثبيت لأنه <strong>لا توجد بيانات ترابط أو سحب
+          منشورة له إطلاقاً</strong> — فجوة توثيق لا ضعف مُثبت. والجبس يأخذ 1 في الديمومة لأنه <strong>مصدر كبريتات
+          بذاته</strong> في بيئة مشبعة بالكبريتات. والحراري يأخذ 1 في الاقتصاد لأن كلفته أعلى بمراتب من الجدران السكنية.
+        </p>
+
+        <h3>ما يغيّر رأيي — شروط التكذيب</h3>
+        <p>توصيةٌ بلا شروط تكذيب ليست توصية بل رأياً. هذه قائمة صريحة بما يُسقط التوصية:</p>
+        <div class="tw">
+          <table>
+            <thead><tr><th class="n">#</th><th>لو حدث هذا</th><th>لتغيّرت التوصية إلى</th></tr></thead>
+            <tbody>
+              <tr><td class="code-cell">1</td><td><strong>البوابة 1:</strong> لم تبلغ أي خلطة 13 ميغاباسكال حتى بـ20% زجاج وحرق 1100 °م</td><td><strong>الطينة نفسها هي القيد</strong> — يُنقَل الثقل كلياً إلى الهندسة، أو يُغيَّر مصدر الطين</td></tr>
+              <tr><td class="code-cell">2</td><td><strong>البوابة 2:</strong> الهندسة لم تخفض التوصيل بأكثر من 15%</td><td>تسقط فرضية «الهندسة رافعة مجانية» ويعود الثقل إلى الكيمياء</td></tr>
+              <tr><td class="code-cell">3</td><td><strong>البوابة 3:</strong> فقد كتلي &gt; 5% بعد 15 دورة تبلور أملاح</td><td><strong>يتوقف المشروع</strong> — لا يُكمَل بحجة المقاومة الممتازة</td></tr>
+              <tr><td class="code-cell">4</td><td>سعر الزجاج تجاوز 90 ألف دينار/طن</td><td>الزجاج يخرج من الخلطة ويُبحث عن بديل (فلسبار، رماد قلوي)</td></tr>
+              <tr><td class="code-cell">5</td><td>تعرفة الغاز ضاعفت كلفة الحرق</td><td><strong>الجيوبوليمر يعود للمنافسة</strong> رغم عيوبه — لأن ميزة الطابوق تتآكل</td></tr>
+              <tr><td class="code-cell">6</td><td>قلب أسود في &gt;20% من وحدات المنتج العازل رغم الأكسدة المطوّلة</td><td>يُخفَّض مُولّد المسام إلى ≤5% ويُعوَّض العزل بالهندسة وحدها</td></tr>
+              <tr><td class="code-cell">7</td><td>الترابط مع المونة التقليدية أقل من 0.3 ميغاباسكال</td><td><strong>لا يُطرح المنتج بلا نظام مونة مرافق</strong> — يصبح تطويره شرطاً سابقاً</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 25 -->
+      <section id="roadmap">
+        <p class="sec-kicker">25 — التنفيذ</p>
+        <h2>خارطة الطريق: 18–24 شهراً بخمس بوابات</h2>
+        <ol class="phases">
+          <li><span class="pnum">أ</span><span class="pbody"><b>الاستطلاع الميداني — أسبوعان</b><span>زيارة معمل، تعرفة الغاز، عروض الزجاج والباريوم، اختيار مصدر الطينة. <strong>يحسم 7 من 8 مجاهيل بلا مختبر.</strong></span></span><span class="pstate next">ابدأ هنا</span></li>
+          <li><span class="pnum">ب</span><span class="pbody"><b>التوصيف والفرز المختبري — 3 أشهر</b><span>حدود أتربرغ و XRD و XRF والأملاح؛ مصفوفة L9 بـ50 وحدة؛ الفحوص العشرة. <strong>وابدأ تصنيع قالب البثق بالتوازي، لا بعد البوابة.</strong></span></span><span class="pstate wait">🚪 بوابة 1</span></li>
+          <li><span class="pnum">ج</span><span class="pbody"><b>التأكيد والهندسة — 3 أشهر</b><span>خلطتان × أربعة أشكال × 10 وحدات؛ قياس التوصيل على ثلاث نقاط؛ برنامجا حرق منفصلان.</span></span><span class="pstate wait">🚪 بوابة 2</span></li>
+          <li><span class="pnum">د</span><span class="pbody"><b>الديمومة والترابط — 3 أشهر</b><span>تبلور الأملاح (EN 12370) إجباري؛ التزهّر؛ توزيع حجم المسام؛ الترابط مع ثلاث مونات؛ <strong>فحص سحب المثبتات — الفجوة القابلة للنشر.</strong></span></span><span class="pstate wait">🚪 بوابتا 3 و4</span></li>
+          <li><span class="pnum">هـ</span><span class="pbody"><b>النموذج الأولي الصناعي — 3–6 أشهر</b><span>دفعة كاملة في معمل قائم بالقالب الجديد؛ جدار تجريبي ≥10 م² يُترك دورة صيفية كاملة؛ قياس أداء المجموعة لا المادة.</span></span><span class="pstate wait">🚪 بوابة 5</span></li>
+          <li><span class="pnum">و</span><span class="pbody"><b>الاعتماد والإطلاق — 6+ أشهر</b><span>ملف التقييس وفق م.ع. 24 و25؛ دليل التركيب بالقواعد الثماني؛ نظام المونة المرافق. <strong>وتحقّق مبكّراً من وجود مختبر حريق معتمد في العراق.</strong></span></span><span class="pstate wait">الإطلاق</span></li>
+        </ol>
+
+        <h3>سجل المخاطر</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th class="n">#</th><th>الخطر</th><th class="n">الاحتمال</th><th class="n">الأثر</th><th>التخفيف</th></tr></thead>
+            <tbody>
+              <tr><td class="code-cell">1</td><td>تعرفة الغاز ترفع كلفة الحرق</td><td class="n">متوسط</td><td class="n">عالٍ</td><td>يُحسم في المرحلة أ — والأثر يقع على <strong>كل المعامل</strong>، فقد لا يضرّ موقعك النسبي</td></tr>
+              <tr><td class="code-cell">2</td><td>سعر الزجاج فوق سعر التعادل</td><td class="n" style="color:var(--ember)">عالٍ</td><td class="n">متوسط</td><td>خفض النسبة إلى 10%، أو الاعتماد على العلاوة السعرية بدل التعادل</td></tr>
+              <tr><td class="code-cell">3</td><td>الطينة المحلية لا تبلغ المقاومة</td><td class="n">متوسط</td><td class="n">عالٍ</td><td>تغيير المصدر أو خفض الهدف إلى جدار من طابقين</td></tr>
+              <tr><td class="code-cell">4</td><td><strong>القلب الأسود يفسد المنتج العازل</strong></td><td class="n" style="color:var(--ember)">عالٍ</td><td class="n">عالٍ</td><td>أكسدة مطوّلة + فحص كسر إجباري لكل دفعة</td></tr>
+              <tr><td class="code-cell">5</td><td><strong>فشل الديمومة أمام الأملاح</strong></td><td class="n">متوسط</td><td class="n" style="color:var(--ember)"><strong>قاتل</strong></td><td>البوابة 3 توقف المشروع مبكّراً قبل أي التزام صناعي</td></tr>
+              <tr><td class="code-cell">6</td><td>المعامل ترفض تعديل الخلطة</td><td class="n">متوسط</td><td class="n">عالٍ</td><td>البدء بمعمل شريك واحد وإثبات الجدوى عليه</td></tr>
+              <tr><td class="code-cell">7</td><td>الترابط مع المونة التقليدية يفشل</td><td class="n">متوسط</td><td class="n">عالٍ</td><td>نظام مونة مرافق — <strong>فرصة تجارية لا عبء</strong></td></tr>
+              <tr><td class="code-cell">8</td><td>تقلّب الصرف يرفع كلفة الباريوم</td><td class="n" style="color:var(--ember)">عالٍ</td><td class="n">منخفض</td><td>خفض النسبة إلى 0.2% أو بديل محلي</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note" style="border-right-color:var(--ok);background:color-mix(in srgb,var(--ok) 10%, transparent)">
+          <span class="tag" style="color:var(--ok)">فلسفة البوابات</span>
+          <p>
+            كل بوابة مصمَّمة <strong>لتوقف المشروع مبكّراً إن كان سيفشل</strong> — لأن الفشل الرخيص المبكر أفضل من
+            النجاح المتأخر الباهظ. <strong>البحث انتهى؛ ما يليه ليس بحثاً بل قياساً:</strong> زيارة معمل، ثم مختبر،
+            ثم جدار تجريبي.
+          </p>
+        </div>
+      </section>
+
+      <!-- 26 -->
       <section id="atlas">
-        <p class="sec-kicker">24 — النطاق</p>
+        <p class="sec-kicker">26 — النطاق</p>
         <h2>الفهرس الجغرافي: من أين جاءت الأدلة</h2>
         <p>
           البحث لم يُحصر بالعراق. هذه الدول التي ظهرت مصادرها فعلياً في المراجعة — والعراق فيها حالة
@@ -1759,7 +1926,7 @@ footer p{max-width:70ch}
 
       <!-- 15 -->
       <section id="plan">
-        <p class="sec-kicker">25 — الطريق</p>
+        <p class="sec-kicker">27 — الطريق</p>
         <h2>خطة المراحل</h2>
         <p>
           العمل مقسّم على ست مراحل لتفادي استهلاك الحد اليومي دفعة واحدة، وأُعيد ترتيبها بعد قرار
@@ -1772,7 +1939,7 @@ footer p{max-width:70ch}
           <li><span class="pnum">03</span><span class="pbody"><b>الكيمياء والديمومة والسلوك الحراري</b><span>تحوّلات الأطوار، العيوب الثلاثة، الأملاح وحجم المسام الحرج، المقاومة المتبقية بعد 1000 °م، الخواص الكهربائية</span></span><span class="pstate done">منجزة</span></li>
           <li><span class="pnum">04</span><span class="pbody" data-next="1"><b>الخلطات التصميمية وبروتوكول التجارب</b><span>ستّ خلطات، برنامجا حرق منفصلان، مصفوفة Taguchi L9، خمس بوابات قرار، والمواصفة الداخلية للتصريح</span></span><span class="pstate done">منجزة</span></li>
           <li><span class="pnum">05</span><span class="pbody"><b>الجدوى الاقتصادية بالبيانات الرسمية</b><span>أسعار تموز 2026، كلفة المتر المربع، ميزانية الإضافات المُثبتة سوقياً، والموقع التنافسي</span></span><span class="pstate done">منجزة</span></li>
-          <li><span class="pnum">06</span><span class="pbody"><b>التقرير النهائي ومصفوفة القرار</b><span>خارطة طريق: مختبر ← نموذج أولي ← خط إنتاج</span></span><span class="pstate next">التالية</span></li>
+          <li><span class="pnum">06</span><span class="pbody"><b>التقرير النهائي ومصفوفة القرار</b><span>خارطة طريق: مختبر ← نموذج أولي ← خط إنتاج</span></span><span class="pstate done">منجزة</span></li>
         </ol>
       </section>
 
@@ -2248,6 +2415,58 @@ unitCalc();
            '<span class="val">'+r.lab+' W/m·K</span></div>';
   }).join('') +
   '<p class="dim" style="font-size:.8rem;margin:.6rem 0 0">الفارق: <strong>أقل توصيلاً بـ 1.69–1.82 مرة</strong> — ومقاومة البلوكات المتعاشقة العازلة بقيت 13.0–15.9 ميغاباسكال، أي حاملة فعلاً.</p>';
+})();
+
+/* ---------------- decision matrix ---------------- */
+(function(){
+  var host=document.getElementById('wSliders'); if(!host) return;
+  var CRIT=[
+    {k:'str', n:'مقاومة الانضغاط', w:20},
+    {k:'ins', n:'العزل الحراري',   w:20},
+    {k:'fix', n:'قوة التثبيت',     w:15},
+    {k:'dur', n:'الديمومة',        w:15},
+    {k:'eco', n:'الجدوى الاقتصادية',w:15},
+    {k:'fir', n:'مقاومة الحريق',   w:10},
+    {k:'mat', n:'نضج التقنية',     w:5}
+  ];
+  var DEF=CRIT.map(function(c){return c.w;});
+  var ROUTES=[
+    {n:'طيني + زجاج + ركام خفيف', s:{str:5,ins:3,fix:5,dur:4,eco:5,fir:5,mat:5}},
+    {n:'كتلة كبيرة مثقّبة / مركّبة', s:{str:4,ins:5,fix:4,dur:4,eco:5,fir:5,mat:3}},
+    {n:'حراري عازل عراقي',        s:{str:3,ins:4,fix:3,dur:4,eco:1,fir:5,mat:2}},
+    {n:'جيوبوليمر ميتاكاؤولين',    s:{str:5,ins:3,fix:2,dur:3,eco:2,fir:3,mat:2}},
+    {n:'بلوك جبسي برابط ثلاثي',    s:{str:2,ins:4,fix:2,dur:1,eco:5,fir:4,mat:3}}
+  ];
+  host.innerHTML = CRIT.map(function(c,i){
+    return '<div class="wrow"><span>'+c.n+'</span>'+
+      '<input type="range" id="w_'+c.k+'" min="0" max="40" step="1" value="'+c.w+'" aria-label="وزن '+c.n+'">'+
+      '<span class="wv" id="wv_'+c.k+'">'+c.w+'</span></div>';
+  }).join('');
+  var out=document.getElementById('mxBars');
+  function render(){
+    var sum=0;
+    CRIT.forEach(function(c){ c.w=+document.getElementById('w_'+c.k).value; sum+=c.w;
+      document.getElementById('wv_'+c.k).textContent=c.w; });
+    document.getElementById('wSum').textContent=sum;
+    var rows=ROUTES.map(function(r){
+      var t=0; CRIT.forEach(function(c){ t+=c.w*r.s[c.k]; });
+      return {n:r.n, pts:t, pct: sum>0 ? t/(sum*5)*100 : 0};
+    }).sort(function(a,b){ return b.pts-a.pts; });
+    out.innerHTML = rows.map(function(r,i){
+      return '<div class="mxrow'+(i===0?' win':'')+'"><span>'+r.n+'</span>'+
+        '<span class="track"><i style="width:'+r.pct.toFixed(1)+'%"></i></span>'+
+        '<span class="val">'+r.pct.toFixed(0)+'%</span></div>';
+    }).join('');
+  }
+  CRIT.forEach(function(c){ document.getElementById('w_'+c.k).addEventListener('input',render); });
+  document.getElementById('wReset').addEventListener('click',function(){
+    CRIT.forEach(function(c,i){ document.getElementById('w_'+c.k).value=DEF[i]; }); render();
+  });
+  document.getElementById('wInsul').addEventListener('click',function(){
+    var sc={str:5,ins:35,fix:15,dur:15,eco:15,fir:10,mat:5};
+    CRIT.forEach(function(c){ document.getElementById('w_'+c.k).value=sc[c.k]; }); render();
+  });
+  render();
 })();
 
 /* ---------------- cost per m2 bars ---------------- */
