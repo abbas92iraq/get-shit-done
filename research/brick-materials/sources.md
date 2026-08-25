@@ -274,3 +274,33 @@
 196. **[ن]** *Study on the Chloride–Sulfate Resistance of a Metakaolin-Based Geopolymer Mortar*, PMC11509200.
 197. **[ن]** *Long-term durability properties of geopolymer concrete: An in-depth review*. https://www.sciencedirect.com/science/article/pii/S2214509521001765
 198. **[ن]** *Durability of fly ash/slag geopolymers: Role of OPC and silica under sulfate attack*. https://www.sciencedirect.com/science/article/abs/pii/S0950061825000029
+
+---
+
+# المصادر — المرحلة 4 (الخلطات والبروتوكول والمواصفة)
+
+## 20. التصنيع والتشكيل والحرق
+
+199. **[م]** BIA Technical Note 9 — *Manufacturing of Brick*. طرق التشكيل الثلاث ومحتويات الماء، ضغوط الكبس، خلخلة نزع الهواء، التجفيف، مراحل الحرق الخمس بمداياتها الحرارية، وأزمنة الحرق والتبريد. https://www.gobrick.com/media/file/9-manufacturing-of-brick.pdf
+200. **[ن]** BIA Technical Note 39 — *Testing for Engineered Brick Masonry — Brick and Mortar*. https://www.gobrick.com/media/file/39-testing-for-engineered-brick-masonry--brick-and-mortar.pdf
+201. **[ن]** *Lightweight vertically perforated brick* — براءة أمريكية US5499478؛ و *Vertically perforated lightweight brick* — براءة أوروبية EP0599283B1. حدود سماكة الأضلاع ونسبة التثقيب وتباعد الصفوف. https://patents.google.com/patent/EP0599283B1/en
+202. **[ن]** *Extended BaCO₃ for brick scum prevention* — براءة أمريكية US4226635A. https://patents.google.com/patent/US4226635A/en
+203. **[ن]** Solvay — *Barium Carbonate: Avoidance of Dry Efflorescence in Heavy Clay Products*. https://www.solvay.com/sites/g/files/srpend616/files/tridion/documents/Bariumcarbonat-special-en.pdf
+204. **[ن]** Digitalfire — *Barium Carbonate in Clay Bodies* (نطاق الجرعة 0.2–0.8%). https://digitalfire.com/hazard/barium+carbonate+in+clay+bodies
+
+## 21. تصميم التجارب وتحسين الخلطات
+
+205. **[ن]** *Optimization of the production process through response surface method: Bricks made of loess*, Ceramics International — معاملات التشغيل المثلى (35% طين، 25% رطوبة تشكيل، 1030 °م، مكوث 105 دقيقة). https://www.sciencedirect.com/science/article/abs/pii/S0272884212009364
+206. **[ن]** *Optimization of process parameters using response surface methodology: A review*. https://www.sciencedirect.com/science/article/abs/pii/S2214785320349440
+207. **[ن]** *Comparison between response surface methodology and Taguchi method for process parameters optimization*, PMC11937516 — دقة Taguchi 92%، BBD 96%، CCD 98%.
+208. **[ن]** *Evaluation and Multi-Objective Optimization of Lightweight Mortars Parameters at Elevated Temperature via Box–Behnken Optimization Approach*, PMC8658890.
+209. **[ن]** *Measuring the plasticity of clays: A review*, Applied Clay Science. https://www.sciencedirect.com/science/article/pii/S0169131710003601
+210. **[ن]** *Test Methods for Plasticity and Extrusion Behaviour*. https://www.researchgate.net/publication/226120900
+211. **[ن]** *Review of Recent Developments and Understanding of Atterberg Limits Determinations*. https://mdpi.com/2673-7094/1/1/4/htm
+
+## 22. معايير الفحص والتصريح
+
+212. **[ن]** **EN 771-1** (طابوق طيني) و**EN 771-3** و**EN 771-4** — مواصفات المنتج ومبدأ القيمة المُصرَّح بها (الشريحة 50% أو 5%) ومعيار القبول «100% من النتائج > 80% من المتوسط المُصرَّح». https://nobelcert.com/DataFiles/FreeUpload/EN%20771-5-2011%20plus%20A1-2015.pdf
+213. **[ن]** **EN 772-1** مقاومة الانضغاط — **EN 772-2** نسبة مساحة الفجوات — **EN 772-3** الحجم الصافي ونسبة الفجوات بالوزن الهيدروستاتيكي — **EN 772-8** الامتصاص بالغلي. https://landingpage.bsigroup.com/LandingPage/Series?UPI=BS+EN+772
+214. **[ن]** Irish Concrete Federation — *Guidance for Specifiers and Manufacturers on I.S. EN 771-3*. https://irishconcrete.ie/wp-content/uploads/2018/03/03-ICF-Information-Sheet-ISEN771.pdf
+215. **[ن]** *Characteristic strength of masonry* — H+H Celcon TSD03. https://www.hhcelcon.co.uk/media/1534/TSD03%20Characteristic%20strength%20of%20masonry%20(Aug%202014).pdf

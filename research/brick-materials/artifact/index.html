@@ -118,6 +118,8 @@ h1 .hl{color:var(--ember)}
 @media (min-width:1060px){
   .rail{display:block; position:sticky; top:4.2rem; padding:2.5rem 0; max-height:calc(100vh - 4.2rem); overflow-y:auto}
 }
+.rgroup{font-family:"IBM Plex Mono",monospace; font-size:.64rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); padding:.9rem .6rem .3rem; border-top:1px solid var(--line-soft); margin-top:.3rem}
+.rail ol>li.rgroup:first-child{border-top:none; margin-top:0; padding-top:0}
 .rail-title{font-family:"IBM Plex Mono",monospace; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 .9rem}
 .rail ol{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.1rem}
 .rail a{
@@ -288,7 +290,7 @@ footer p{max-width:70ch}
   <div class="topbar-in">
     <div class="brand"><span class="glyph" aria-hidden="true"></span> أطلس الطابوق</div>
     <div style="display:flex;align-items:center;gap:.6rem">
-      <span class="phase-chip">المراحل 1–3 من 6 · منجزة</span>
+      <span class="phase-chip">المراحل 1–4 من 6 · منجزة</span>
       <button class="theme-btn" id="themeBtn" type="button">◐ السمة</button>
     </div>
   </div>
@@ -305,8 +307,8 @@ footer p{max-width:70ch}
     </p>
     <div class="hero-stats">
       <div class="stat"><span class="n">70</span><span class="l">نوعاً مفهرساً في 9 مجموعات</span></div>
-      <div class="stat"><span class="n">198</span><span class="l">مصدراً علمياً ومواصفة</span></div>
-      <div class="stat"><span class="n">2</span><span class="l">منتجان مستهدفان: حامل وعازل</span></div>
+      <div class="stat"><span class="n">215</span><span class="l">مصدراً علمياً ومواصفة</span></div>
+      <div class="stat"><span class="n">6</span><span class="l">خلطات مرشّحة للفحص</span></div>
       <div class="stat"><span class="n">20+</span><span class="l">دولة مصدرها في المراجعة</span></div>
     </div>
   </header>
@@ -315,25 +317,34 @@ footer p{max-width:70ch}
     <nav class="rail" aria-label="فهرس الصفحة">
       <p class="rail-title">الفهرس</p>
       <ol id="railList">
+        <li class="rgroup">الأساس</li>
         <li><a href="#tension"><span class="num">01</span> التناقض الهندسي</a></li>
         <li><a href="#tradeoffs"><span class="num">02</span> المقايضات الخمس</a></li>
         <li><a href="#tradeoff"><span class="num">03</span> خريطة المقايضة</a></li>
         <li><a href="#porelab"><span class="num">04</span> مختبر المسامية</a></li>
         <li><a href="#unitwall"><span class="num">05</span> من الوحدة إلى الجدار</a></li>
+        <li class="rgroup">الخواص الثلاث</li>
         <li><a href="#thermal"><span class="num">06</span> العزل الحراري</a></li>
         <li><a href="#fixing"><span class="num">07</span> قوة التثبيت</a></li>
         <li><a href="#types"><span class="num">08</span> مستكشف الأنواع</a></li>
         <li><a href="#fire"><span class="num">09</span> تصنيف الحريق</a></li>
         <li><a href="#additives"><span class="num">10</span> مصفوفة الإضافات</a></li>
+        <li class="rgroup">المرجعية والسياق</li>
         <li><a href="#standards"><span class="num">11</span> المواصفة العراقية</a></li>
         <li><a href="#iraq"><span class="num">12</span> السياق العراقي</a></li>
         <li><a href="#routes"><span class="num">13</span> المسارات المرشّحة</a></li>
+        <li class="rgroup">الكيمياء والديمومة</li>
         <li><a href="#chem"><span class="num">14</span> الكيمياء والعيوب</a></li>
         <li><a href="#salts"><span class="num">15</span> الأملاح والديمومة</a></li>
         <li><a href="#residual"><span class="num">16</span> الدليل الحراري</a></li>
         <li><a href="#wallrules"><span class="num">17</span> قواعد تصميم الجدار</a></li>
-        <li><a href="#atlas"><span class="num">18</span> الفهرس الجغرافي</a></li>
-        <li><a href="#plan"><span class="num">19</span> خطة المراحل</a></li>
+        <li class="rgroup">التنفيذ</li>
+        <li><a href="#mixes"><span class="num">18</span> الخلطات المقترحة</a></li>
+        <li><a href="#protocol"><span class="num">19</span> بروتوكول التجارب</a></li>
+        <li><a href="#spec"><span class="num">20</span> المواصفة والتصريح</a></li>
+        <li class="rgroup">الخلاصة</li>
+        <li><a href="#atlas"><span class="num">21</span> الفهرس الجغرافي</a></li>
+        <li><a href="#plan"><span class="num">22</span> خطة المراحل</a></li>
       </ol>
     </nav>
 
@@ -1232,8 +1243,268 @@ footer p{max-width:70ch}
       </section>
 
       <!-- 18 -->
+      <section id="mixes">
+        <p class="sec-kicker">18 — التنفيذ</p>
+        <h2>الخلطات المقترحة: ستّ تركيبات للفحص</h2>
+        <p>
+          كل رقم هنا مشتقّ من نتيجة موثّقة في المراحل السابقة. النسب <strong>بالوزن الجاف لجسم الطينة</strong>،
+          وجميعها بطريقة <strong>البثق</strong> بمحتوى ماء 12–14% — لأنها الطريقة السائدة في المعامل العراقية،
+          و<strong>الوحيدة التي تسمح بهندسة الفجوات</strong>.
+        </p>
+
+        <h3>المنتج «ث» — الحامل الكثيف</h3>
+        <div class="tw">
+          <table>
+            <caption>الأهداف: مقاومة ≥ 20–25 ميغاباسكال جافاً · امتصاص ≤ 15% · λ تصميمي ≤ 0.50</caption>
+            <thead><tr><th class="n">الرمز</th><th class="n">الطين</th><th class="n">زجاج</th><th class="n">ركام خفيف</th><th class="n">BaCO₃</th><th class="n">ألياف</th><th class="n">الحرق</th><th>الفكرة</th></tr></thead>
+            <tbody>
+              <tr><td class="code-cell">T1</td><td class="n">84.35%</td><td class="n"><strong>15%</strong></td><td class="n">—</td><td class="n">0.4%</td><td class="n">0.25%</td><td class="n">950 °م</td><td>الخلطة الأساس — أقصى مكسب من الزجاج بأقل تعقيد</td></tr>
+              <tr><td class="code-cell">T2</td><td class="n">79.35%</td><td class="n">15%</td><td class="n"><strong>5%</strong></td><td class="n">0.4%</td><td class="n">0.25%</td><td class="n">950 °م</td><td>+ ركام خفيف لخفض التوصيل ورفع تصنيف الحريق</td></tr>
+              <tr><td class="code-cell">T3</td><td class="n">89.6%</td><td class="n">10%</td><td class="n">—</td><td class="n">0.4%</td><td class="n">—</td><td class="n"><strong>900 °م</strong></td><td><strong>مسار توفير الطاقة</strong> — يستهدف تكرار نتيجة «10% زجاج عند 900 = عادي عند 1000»</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>المنتج «خ» — العازل الخفيف</h3>
+        <div class="tw">
+          <table>
+            <caption>الأهداف: مقاومة ≥ 7–10 ميغاباسكال · λ تصميمي ≤ 0.28 · مسامية 30–35%</caption>
+            <thead><tr><th class="n">الرمز</th><th class="n">الطين</th><th class="n">زجاج</th><th class="n">مُولّد مسام</th><th class="n">BaCO₃</th><th class="n">ألياف</th><th class="n">الحرق</th><th>الفكرة</th></tr></thead>
+            <tbody>
+              <tr><td class="code-cell">K1</td><td class="n">76.85%</td><td class="n">15%</td><td class="n"><strong>7.5%</strong></td><td class="n">0.4%</td><td class="n">0.25%</td><td class="n"><strong>1050 °م</strong></td><td>مسامية معتدلة مع تعويض المقاومة برفع الحرق</td></tr>
+              <tr><td class="code-cell">K2</td><td class="n">74.35%</td><td class="n">15%</td><td class="n"><strong>10%</strong></td><td class="n">0.4%</td><td class="n">0.25%</td><td class="n">1050 °م</td><td>أقصى عزل ضمن الحدود المقبولة</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <span class="tag">لماذا حرارة أعلى للمنتج الأخف؟ يبدو مقلوباً لكنه صحيح</span>
+          <p>
+            بيانات المرحلة 2: المقاومة تنخفض <span class="mono">−0.21</span> ميغاباسكال لكل 1% مُولّد مسام، وترتفع
+            <span class="mono">+0.26</span> ميغاباسكال مع كل درجة رفع في برنامج الحرق. أي أن <strong>رفع الحرق يعوّض
+            خسارة مُولّد المسام</strong>. وأفضل نتيجة في المصفوفة التايلاندية كاملةً كانت 2.5% نشارة عند
+            <strong>1100 °م ← 18.2 ميغاباسكال</strong>. الثمن: وقود إضافي وانكماش أعلى.
+          </p>
+        </div>
+
+        <h3>برنامجا حرق منفصلان — لا برنامج واحد</h3>
+        <p>
+          هذا أهم بند تنفيذي، وهو نتيجة مباشرة لتصادم القلب الأسود. مرحلة الأكسدة الصناعية تقع بين
+          <strong>538 و982 °م</strong> — وهذه بالضبط النافذة التي يجب إطالتها للمنتج عالي الحمل الكربوني.
+        </p>
+        <div class="tw">
+          <table>
+            <thead><tr><th>المرحلة</th><th>برنامج «ث»</th><th>برنامج «خ» — عالي الكربون</th></tr></thead>
+            <tbody>
+              <tr><td>التجفيف النهائي</td><td>حتى 200 °م، 50 °م/ساعة</td><td>حتى 200 °م، <strong>40 °م/ساعة</strong> (خطر تشقّق بخاري أعلى)</td></tr>
+              <tr><td>نزع الماء</td><td>200 → 600 °م، 60 °م/ساعة</td><td>200 → 550 °م، 50 °م/ساعة</td></tr>
+              <tr><td><strong>الأكسدة</strong></td><td>600 → 900 °م، 50 °م/ساعة، مكوث ساعة عند 850</td><td><strong>550 → 950 °م، 30 °م/ساعة، مكوث ساعتين عند 750 وساعتين عند 900، بجوّ مؤكسِد وتهوية قصوى</strong></td></tr>
+              <tr><td>التزجّج</td><td>900 → 950 °م، مكوث ساعتان</td><td>950 → 1050 °م، مكوث ساعتان</td></tr>
+              <tr><td>التبريد</td><td>≤ 80 °م/ساعة</td><td>≤ 70 °م/ساعة</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>المتغيّرات الهندسية — تُختبر منفصلةً عن الكيمياء</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th class="n">الرمز</th><th>الشكل</th><th class="n">التثقيب</th><th class="n">سماكة الضلع</th><th>الملاحظة</th></tr></thead>
+            <tbody>
+              <tr><td class="code-cell">G0</td><td>مصمت</td><td class="n">0%</td><td class="n">—</td><td>مرجع</td></tr>
+              <tr><td class="code-cell">G1</td><td>مثقّب تقليدي</td><td class="n">35%</td><td class="n">5–6 مم</td><td>صفوف مستقيمة</td></tr>
+              <tr><td class="code-cell">G2</td><td><strong>مثقّب محسّن</strong></td><td class="n">40–45%</td><td class="n">4–5 مم</td><td><strong>نمط متعرّج، تباعد صفوف ≤ 22 مم، نسبة مقطع الثقب بين 1:1 و1:2.5</strong></td></tr>
+              <tr><td class="code-cell">G3</td><td>G2 + مناطق تثبيت</td><td class="n">40%</td><td class="n">4–5 مم</td><td><strong>أضلاع مصمتة ≥ 40 مم في مواضع معلَّمة</strong> — يحلّ ضعف سحب المثبتات هندسياً</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          <span class="tag">قراءة صريحة للتقديرات</span>
+          <p>
+            لا خلطة من الست تصل بثقة إلى 20–25 ميغاباسكال المطلوبة للمنتج «ث». <strong>هذا متوقّع ومقصود</strong>:
+            التجارب مصمَّمة لتحديد <strong>أين يقع السقف الفعلي</strong>، لا لتأكيد رقم مُسبق. إن جاء السقف عند 18،
+            فالقرار الصحيح خفض هدف المنتج ليناسب جداراً حاملاً من طابقين — لا إجهاد الخلطة لبلوغ رقم غير ضروري.
+          </p>
+        </div>
+      </section>
+
+      <!-- 19 -->
+      <section id="protocol">
+        <p class="sec-kicker">19 — التنفيذ</p>
+        <h2>بروتوكول التجارب: تسع تجارب بدل سبع وعشرين</h2>
+        <p>
+          التجربة الكاملة لثلاثة عوامل بثلاثة مستويات = <strong>27 خلطة</strong>، وبعشر وحدات لكل خلطة = 270 وحدة
+          و27 دورة حرق. غير عملي. <strong>مصفوفة Taguchi L9</strong> تغطي نفس فضاء العوامل بتسع تجارب —
+          بدقة <span class="mono">92%</span> مقابل 96% لـ Box–Behnken و98% لـ Central Composite. ودقة 92% كافية
+          <strong>للفرز والترتيب</strong>؛ الدقة العالية تلزم فقط للتحسين الدقيق لاحقاً.
+        </p>
+
+        <div class="tw">
+          <table>
+            <caption>مصفوفة الفرز L9. الثوابت: كربونات باريوم 0.4%، ألياف نخيل 0.25%، ماء بثق 12–14%، شكل مصمت (لعزل أثر الكيمياء عن الهندسة).</caption>
+            <thead><tr><th class="n">#</th><th class="n">A — زجاج</th><th class="n">B — مُولّد مسام</th><th class="n">C — حرارة</th><th>ملاحظة</th></tr></thead>
+            <tbody>
+              <tr><td class="code-cell">R1</td><td class="n">0%</td><td class="n">0%</td><td class="n">900 °م</td><td>—</td></tr>
+              <tr><td class="code-cell">R2</td><td class="n">0%</td><td class="n">5%</td><td class="n">1000 °م</td><td>—</td></tr>
+              <tr><td class="code-cell">R3</td><td class="n">0%</td><td class="n">10%</td><td class="n">1100 °م</td><td>—</td></tr>
+              <tr><td class="code-cell">R4</td><td class="n">10%</td><td class="n">0%</td><td class="n">1000 °م</td><td>—</td></tr>
+              <tr><td class="code-cell">R5</td><td class="n">10%</td><td class="n">5%</td><td class="n">1100 °م</td><td>—</td></tr>
+              <tr><td class="code-cell">R6</td><td class="n">10%</td><td class="n">10%</td><td class="n">900 °م</td><td><strong>يختبر توفير الطاقة عند حمل مسامي عالٍ</strong></td></tr>
+              <tr><td class="code-cell">R7</td><td class="n">20%</td><td class="n">0%</td><td class="n">1100 °م</td><td>—</td></tr>
+              <tr><td class="code-cell">R8</td><td class="n">20%</td><td class="n">5%</td><td class="n">900 °م</td><td><strong>يختبر فرضية توفير الطاقة الأساسية</strong></td></tr>
+              <tr><td class="code-cell">R9</td><td class="n">20%</td><td class="n">10%</td><td class="n">1000 °م</td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <p style="margin:0 0 .5rem"><strong>حجم البرنامج</strong></p>
+            <ul style="margin:0;padding-inline-start:1.1rem;font-size:.9rem;color:var(--ink-2)">
+              <li>الفرز: 5 وحدات × 9 خلطات + شاهد = <strong>50 وحدة</strong></li>
+              <li>التأكيد والهندسة: خلطتان × 4 أشكال × 10 = <strong>80 وحدة</strong></li>
+              <li>الديمومة والترابط: <strong>~70 وحدة</strong></li>
+              <li><strong>الإجمالي ~200 وحدة</strong> — واقعي لمختبر جامعي خلال 3–4 أشهر</li>
+              <li>الزمن الكلي المقدّر: <strong>6–8 أشهر</strong></li>
+            </ul>
+          </div>
+          <div class="card">
+            <p style="margin:0 0 .5rem"><strong>فحصان لا يوجدان في أي مواصفة قبول</strong></p>
+            <p style="font-size:.9rem;margin:0 0 .5rem;color:var(--ink-2)">
+              <strong>1. معاينة القلب الأسود</strong> — كسر 3 وحدات من كل دفعة ومعاينة المقطع. العيب غير مرئي من
+              الخارج ولا يكشفه أي فحص قياسي، واستراتيجية العزل ترفع خطره.
+            </p>
+            <p style="font-size:.9rem;margin:0;color:var(--ink-2)">
+              <strong>2. تسجيل موضع الوحدة داخل الفرن</strong> — بند لا يُسجَّل عادةً، وهو مصدر رئيسي للتشتّت. تسجيله
+              يحوّل التشتّت من ضوضاء إلى <strong>معلومة قابلة للتصحيح</strong>.
+            </p>
+          </div>
+        </div>
+
+        <h3>بوابات القرار — ومعايير الإيقاف</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th>البوابة</th><th>معيار العبور</th><th>معيار الإيقاف وما يعنيه</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1 — الخلطة</strong></td><td>خلطة واحدة على الأقل ≥ <strong>16 ميغاباسكال</strong> معدّلاً و≤ 18% امتصاصاً عند ≤ 1000 °م</td><td>لم تبلغ أي خلطة 13 ← <strong>الطينة المحلية نفسها هي القيد</strong>؛ يُراجَع مصدر الطين</td></tr>
+              <tr><td><strong>2 — الهندسة</strong></td><td>G2 يخفض λ المكافئ <strong>≥ 30%</strong> مقابل G1</td><td>الخفض &lt; 15% ← الهندسة ليست الرافعة هنا؛ يُعاد الثقل إلى الكيمياء</td></tr>
+              <tr><td><strong>3 — الديمومة</strong></td><td>فقد كتلي <strong>≤ 2%</strong> بعد 15 دورة تبلور أملاح؛ تزهّر ≤ «طفيف»؛ ولا قلب أسود</td><td>فقد &gt; 5% أو تزهّر شديد ← <strong>المنتج غير صالح للجنوب مهما كانت مقاومته</strong></td></tr>
+              <tr><td><strong>4 — الترابط</strong></td><td>ترابط انحناء ≥ 0.5 («ث») أو ≥ 0.3 ميغاباسكال («خ»)</td><td>أقل ← يلزم تطوير نظام مونة مرافق قبل أي طرح</td></tr>
+              <tr><td><strong>5 — الاقتصاد</strong></td><td>كلفة الوحدة ≤ سعر السوق للمنتج المكافئ</td><td>أعلى بأكثر من 15% ← يُراجَع الزجاج (كلفة الطحن) أو حرارة الحرق</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          <span class="tag">قاعدة الأمانة</span>
+          <p>
+            إن رسبت البوابة 3، <strong>لا يُكمَل المشروع بحجة أن المقاومة ممتازة</strong>. الديمومة في بيئة الجنوب
+            ليست خاصية إضافية — هي شرط وجود. منتج قوي يتفتّت بعد خمس سنوات <strong>أسوأ من لا شيء</strong>، لأنه
+            يحرق سمعة الفكرة كلها.
+          </p>
+        </div>
+      </section>
+
+      <!-- 20 -->
+      <section id="spec">
+        <p class="sec-kicker">20 — التنفيذ</p>
+        <h2>المواصفة والتصريح: لماذا التشتّت أهم من المتوسط</h2>
+        <p>
+          مواصفة <code>EN 771</code> تسمح بالتصريح بالقيمة <strong>المتوسطة</strong> (الشريحة 50%) أو
+          <strong>المميّزة</strong> (الشريحة 5%)، بشرط ذكر أيّهما. ومعيار القبول: <strong>100% من النتائج يجب أن
+          تتجاوز 80% من المتوسط المُصرَّح به</strong>.
+        </p>
+
+        <div class="card">
+          <p style="margin:0 0 1rem"><strong>حاسبة: ما الذي يرفع القيمة القابلة للتصريح فعلاً؟</strong></p>
+          <div class="calc-grid">
+            <div>
+              <div class="field">
+                <label class="f" for="cM">متوسط مقاومة الانضغاط: <span class="mono" id="cMv">20</span> ميغاباسكال</label>
+                <input type="range" id="cM" min="8" max="40" step="1" value="20">
+                <div class="ticks"><span>8</span><span>24</span><span>40</span></div>
+              </div>
+              <div class="field">
+                <label class="f" for="cV">معامل الاختلاف: <span class="mono" id="cVv">17.5</span>%</label>
+                <input type="range" id="cV" min="5" max="25" step="0.5" value="17.5">
+                <div class="ticks"><span>5</span><span>15</span><span>25</span></div>
+              </div>
+              <p class="dim" style="font-size:.82rem;margin:0">
+                القيمة المميّزة = المتوسط − 1.64 × الانحراف المعياري (توزيع طبيعي). معامل الاختلاف
+                <span class="mono">17.49%</span> هو القيمة المقيسة فعلاً في الدراسة البرازيلية.
+              </p>
+            </div>
+            <div class="readout" style="text-align:right">
+              <div class="dual">
+                <div><span class="mini">القيمة المميّزة القابلة للتصريح</span><span class="big2" id="cK">—</span><span class="mini">ميغاباسكال</span></div>
+                <div><span class="mini">نسبتها إلى المتوسط</span><span class="big2" id="cR">—</span><span class="mini">%</span></div>
+              </div>
+              <div class="sub" style="text-align:right">
+                <span class="mini" id="cCmp"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="note">
+          <span class="tag">القرار المتخذ لهذا المنتج</span>
+          <p>
+            <strong>يُصرَّح بالقيمة المميّزة، لا المتوسطة.</strong> لأن التصميم الإنشائي يستعمل المميّزة أصلاً،
+            ولأن التصريح بها <strong>يخلق حافزاً داخلياً لخفض التشتّت</strong> بدل رفع المتوسط — وهو الطريق الأرخص.
+            جرّب الحاسبة: خفض معامل الاختلاف من 17.5% إلى 10% يرفع القيمة القابلة للتصريح
+            <strong>بنحو 18% بلا أي تغيير في الخلطة</strong> — مكسب يقارب ما يعطيه رفع المتوسط 20%، لكن بضبط
+            القمينة وحدها بدل وقود إضافي ومواد أغلى.
+          </p>
+        </div>
+
+        <h3>المواصفة المقترحة مقابل المرجعيتين</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th>البند</th><th>م.ع. 25 صنف A</th><th>ASTM C62 صنف SW</th><th>المقترح «ث»</th><th>الحكم</th></tr></thead>
+            <tbody>
+              <tr><td>المقاومة</td><td class="n">18 معدّلاً</td><td class="n">20.7 معدّلاً</td><td class="n"><strong>16 مميّزة</strong></td><td>مكافئ أو أفضل، وأصدق منهجياً</td></tr>
+              <tr><td>الامتصاص</td><td class="n">20% معدّلاً</td><td class="n">17% بالغلي</td><td class="n"><strong>15%</strong></td><td><strong>أشدّ</strong></td></tr>
+              <tr><td>معامل الإشباع</td><td class="n">—</td><td class="n">≤ 0.78</td><td>يُسجَّل ولا يُقرَّر عليه</td><td>مبرَّر — مؤشر صقيع لا صلة له بالبصرة</td></tr>
+              <tr><td><strong>تبلور الأملاح</strong></td><td class="n">غير مطلوب</td><td class="n">غير مطلوب</td><td class="n"><strong>≤ 2% إجباري</strong></td><td><strong>إضافة أصيلة لبيئة الجنوب</strong></td></tr>
+              <tr><td><strong>القلب الأسود</strong></td><td class="n">غير مطلوب</td><td class="n">غير مطلوب</td><td class="n"><strong>إجباري</strong></td><td><strong>إضافة أصيلة</strong></td></tr>
+              <tr><td><strong>التوصيل الحراري</strong></td><td class="n">غير مطلوب</td><td class="n">غير مطلوب</td><td>مُصرَّح ومحدَّد</td><td>ميزة تسويقية</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>ما لا يجوز للمنتج ادّعاؤه</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th class="n">#</th><th>الادعاء الممنوع</th><th>الشرط قبل الادّعاء</th></tr></thead>
+            <tbody>
+              <tr><td class="code-cell">1</td><td>«مقاوم للحريق لساعتين»</td><td>حساب موثّق وفق ACI 216.1/TMS 0216 أو فحص معتمد. <strong>«غير قابل للاحتراق» ≠ تصنيف بالساعات</strong></td></tr>
+              <tr><td class="code-cell">2</td><td>أداء حراري للجدار من قيمة λ للمادة</td><td>صندوق ساخن على مجموعة جدارية أو حساب وفق EN 1745 — الجدار يضيف المونة والفجوات والرطوبة</td></tr>
+              <tr><td class="code-cell">3</td><td>«مقاوم للأملاح»</td><td>اجتياز EN 12370</td></tr>
+              <tr><td class="code-cell">4</td><td>قدرة تثبيت بالكيلونيوتن</td><td>فحص سحب فعلي على المنتج نفسه</td></tr>
+              <tr><td class="code-cell">5</td><td>λ الجاف المختبري كقيمة تصميمية</td><td>التصريح بالقيمة <strong>المصحّحة للرطوبة</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note">
+          <span class="tag">لماذا هذا القسم تجاري لا أخلاقي فقط</span>
+          <p>
+            السوق العراقي مليء بادعاءات «طابوق حراري» و«عازل» بلا سند. <strong>المنتج الذي يصرّح بأرقام مسنودة
+            ويرفض ادّعاء ما لا يملك دليله يبني موقعاً تنافسياً لا يمكن تقليده بالسعر</strong> — وهو الطريق الوحيد
+            للخروج من منافسة السعر الصرفة.
+          </p>
+        </div>
+
+        <div class="note" style="border-right-color:var(--accent);background:var(--accent-soft)">
+          <span class="tag" style="color:var(--accent-ink)">⚠ بند يحتاج تحقّقاً منك</span>
+          <p>
+            لم أستطع التأكد من وجود مختبر عراقي معتمد لفحص مقاومة الحريق (ASTM E119 أو EN 1364). إن لم
+            يوجد، فإن <strong>الادعاء بتصنيف حريق بالساعات يجب أن يُصاغ كحساب وفق المدوّنة لا كنتيجة فحص</strong> —
+            وهذا فرق قانوني وتسويقي مهم. راجعه مع جهة التقييس مبكّراً.
+          </p>
+        </div>
+      </section>
+
+      <!-- 21 -->
       <section id="atlas">
-        <p class="sec-kicker">18 — النطاق</p>
+        <p class="sec-kicker">21 — النطاق</p>
         <h2>الفهرس الجغرافي: من أين جاءت الأدلة</h2>
         <p>
           البحث لم يُحصر بالعراق. هذه الدول التي ظهرت مصادرها فعلياً في المراجعة — والعراق فيها حالة
@@ -1268,7 +1539,7 @@ footer p{max-width:70ch}
 
       <!-- 15 -->
       <section id="plan">
-        <p class="sec-kicker">19 — الطريق</p>
+        <p class="sec-kicker">22 — الطريق</p>
         <h2>خطة المراحل</h2>
         <p>
           العمل مقسّم على ست مراحل لتفادي استهلاك الحد اليومي دفعة واحدة، وأُعيد ترتيبها بعد قرار
@@ -1279,8 +1550,8 @@ footer p{max-width:70ch}
           <li><span class="pnum">01</span><span class="pbody"><b>الفهرسة والخواص المرجعية</b><span>سبعون نوعاً، جداول الخواص، مقاومة الحريق، السياق العراقي، بذرة مصفوفة الإضافات</span></span><span class="pstate done">منجزة</span></li>
           <li><span class="pnum">02</span><span class="pbody"><b>المراجعة العالمية: العزل والتثبيت والانضغاط</b><span>عشرون دولة، المصفوفات الكاملة، قوانين المسامية والترابط والتثبيت، والمقايضات الخمس</span></span><span class="pstate done">منجزة</span></li>
           <li><span class="pnum">03</span><span class="pbody"><b>الكيمياء والديمومة والسلوك الحراري</b><span>تحوّلات الأطوار، العيوب الثلاثة، الأملاح وحجم المسام الحرج، المقاومة المتبقية بعد 1000 °م، الخواص الكهربائية</span></span><span class="pstate done">منجزة</span></li>
-          <li><span class="pnum">04</span><span class="pbody" data-next="1"><b>الخلطات التصميمية وبروتوكول التجارب</b><span>خلطات المنتجَين «ث» و«خ»، بروتوكولان: أساسي بأدوات بسيطة ومتقدّم بالتوصيف الدقيق</span></span><span class="pstate next">التالية</span></li>
-          <li><span class="pnum">05</span><span class="pbody"><b>الجدوى الاقتصادية التقديرية</b><span>سلاسل التوريد، الطاقة، كلفة الوحدة، المقارنة بالسوق</span></span><span class="pstate wait">قيد الانتظار</span></li>
+          <li><span class="pnum">04</span><span class="pbody" data-next="1"><b>الخلطات التصميمية وبروتوكول التجارب</b><span>ستّ خلطات، برنامجا حرق منفصلان، مصفوفة Taguchi L9، خمس بوابات قرار، والمواصفة الداخلية للتصريح</span></span><span class="pstate done">منجزة</span></li>
+          <li><span class="pnum">05</span><span class="pbody"><b>الجدوى الاقتصادية التقديرية</b><span>سلاسل التوريد، الطاقة، كلفة الوحدة، المقارنة بالسوق</span></span><span class="pstate next">التالية</span></li>
           <li><span class="pnum">06</span><span class="pbody"><b>التقرير النهائي ومصفوفة القرار</b><span>خارطة طريق: مختبر ← نموذج أولي ← خط إنتاج</span></span><span class="pstate wait">قيد الانتظار</span></li>
         </ol>
       </section>
@@ -1757,6 +2028,31 @@ unitCalc();
            '<span class="val">'+r.lab+' W/m·K</span></div>';
   }).join('') +
   '<p class="dim" style="font-size:.8rem;margin:.6rem 0 0">الفارق: <strong>أقل توصيلاً بـ 1.69–1.82 مرة</strong> — ومقاومة البلوكات المتعاشقة العازلة بقيت 13.0–15.9 ميغاباسكال، أي حاملة فعلاً.</p>';
+})();
+
+/* ---------------- characteristic value calculator ---------------- */
+(function(){
+  var cM=document.getElementById('cM'), cV=document.getElementById('cV'); if(!cM) return;
+  function calc(){
+    var m=+cM.value, cv=+cV.value;
+    document.getElementById('cMv').textContent=m;
+    document.getElementById('cVv').textContent=cv.toFixed(1);
+    var ratio=1-1.64*cv/100;
+    var k=m*ratio;
+    document.getElementById('cK').textContent=k.toFixed(1);
+    document.getElementById('cR').textContent=(ratio*100).toFixed(0);
+    // two routes to a higher declarable value — compared by cost, not only by magnitude
+    var byMean = (m*1.20)*ratio;                 // raise the mean 20% (needs a mix or firing change)
+    var byCV   = m*(1-1.64*0.10);                // cut CV to 10% (needs only kiln control)
+    document.getElementById('cCmp').innerHTML =
+      'رفع المتوسط 20% ← <b class="mono">'+byMean.toFixed(1)+'</b> ميغاباسكال '+
+      '<span style="color:var(--muted)">— يحتاج تغيير الخلطة أو رفع الحرق</span><br>'+
+      'خفض معامل الاختلاف إلى 10% ← <b class="mono">'+byCV.toFixed(1)+'</b> ميغاباسكال '+
+      '<span style="color:var(--muted)">— يحتاج ضبط القمينة فقط</span><br>'+
+      '<span style="color:var(--ok);font-weight:600">المكسبان متقاربان — والثاني بلا تغيير في الخلطة ولا وقود إضافي.</span>';
+  }
+  [cM,cV].forEach(function(e){ e.addEventListener('input',calc); e.addEventListener('change',calc); });
+  calc();
 })();
 
 /* ---------------- residual strength bars ---------------- */
